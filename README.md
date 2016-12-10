@@ -13,7 +13,7 @@ gem "rubocop-github"
 **.rubocop.yml**
 
 ``` yaml
-require: rubocop-github
+require: rubocop/cop/github
 ```
 
 ## The Cops
