@@ -13,7 +13,8 @@ gem "rubocop-github"
 **.rubocop.yml**
 
 ``` yaml
-require: rubocop/cop/github
+inherit_gem:
+  rubocop-github: config/default.yml
 ```
 
 ## The Cops
