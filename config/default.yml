@@ -1,3 +1,8 @@
+require: rubocop/cop/github
+
+AllCops:
+  DisabledByDefault: true
+
 GitHub/ApplicationRecord:
   Enabled: true
 

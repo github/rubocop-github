@@ -1,1 +1,1 @@
-require: ./lib/rubocop/cop/github
+inherit_from: ./config/default.yml
