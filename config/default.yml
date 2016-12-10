@@ -1,2 +1,5 @@
+GitHub/ApplicationRecord:
+  Enabled: true
+
 Style/TrailingWhitespace:
   Enabled: true
