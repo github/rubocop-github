@@ -6,9 +6,6 @@ AllCops:
 GitHub/ApplicationRecord:
   Enabled: true
 
-Style/TrailingWhitespace:
-  Enabled: true
-
 Lint/BlockAlignment:
   Enabled: true
 
