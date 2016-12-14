@@ -1,0 +1,24 @@
+Rails:
+  Enabled: true
+
+Rails/FindEach:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/RequestReferer:
+  Enabled: true
+  EnforcedStyle: referrer
+
+Rails/ScopeArgs:
+  Enabled: true
+
+Rails/UniqBeforePluck:
+  Enabled: true
+
+GitHub/RailsApplicationRecord:
+  Enabled: true
