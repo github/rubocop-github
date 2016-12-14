@@ -14,7 +14,9 @@ gem "rubocop-github"
 
 ``` yaml
 inherit_gem:
-  rubocop-github: config/default.yml
+  rubocop-github:
+    - config/default.yml
+    - config/rails.yml
 ```
 
 ## The Cops
