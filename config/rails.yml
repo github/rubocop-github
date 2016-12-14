@@ -19,3 +19,6 @@ Rails/ScopeArgs:
 
 Rails/UniqBeforePluck:
   Enabled: true
+
+GitHub/ApplicationRecord:
+  Enabled: true
