@@ -3,7 +3,7 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class ApplicationRecord < Cop
+      class RailsApplicationRecord < Cop
         MSG = "Models should subclass from ApplicationRecord"
 
         ACTIVE_RECORD_BASE = s(:const, s(:const, nil, :ActiveRecord), :Base)

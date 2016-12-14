@@ -1,10 +1,10 @@
-require "rubocop/cop/github/application_record"
+require "rubocop/cop/github/rails_application_record"
 require "minitest/autorun"
 
-class TestApplicationRecord < MiniTest::Test
+class TestRailsApplicationRecord < MiniTest::Test
   def setup
     config = RuboCop::Config.new
-    @cop = RuboCop::Cop::GitHub::ApplicationRecord.new(config)
+    @cop = RuboCop::Cop::GitHub::RailsApplicationRecord.new(config)
   end
 
   def test_good_model
