@@ -22,3 +22,34 @@ Rails/UniqBeforePluck:
 
 GitHub/RailsApplicationRecord:
   Enabled: true
+
+
+# Exclude Rails ERB files from incompatible cops
+
+Lint/BlockAlignment:
+  Exclude:
+    - 'app/views/**/*.erb'
+
+Style/For:
+  Exclude:
+    - 'app/views/**/*.erb'
+
+Style/OneLineConditional:
+  Exclude:
+    - 'app/views/**/*.erb'
+
+Style/SpaceInsideParens:
+  Exclude:
+    - 'app/views/**/*.erb'
+
+Style/StringLiterals:
+  Exclude:
+    - 'app/views/**/*.erb'
+
+Style/TrailingBlankLines:
+  Exclude:
+    - 'app/views/**/*.erb'
+
+Style/TrailingWhitespace:
+  Exclude:
+    - 'app/views/**/*.erb'
