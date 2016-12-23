@@ -16,6 +16,15 @@ class TestRailsApplicationRecord < MiniTest::Test
     assert_empty @cop.offenses.map(&:message)
   end
 
+  def test_application_record_model
+    investigate(@cop, <<-RUBY)
+      class ApplicationRecord < ActiveRecord::Base
+      end
+    RUBY
+
+    assert_empty @cop.offenses.map(&:message)
+  end
+
   def test_bad_model
     investigate(@cop, <<-RUBY)
       class Repository < ActiveRecord::Base
