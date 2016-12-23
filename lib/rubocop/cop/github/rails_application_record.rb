@@ -9,9 +9,9 @@ module RuboCop
         ACTIVE_RECORD_BASE = s(:const, s(:const, nil, :ActiveRecord), :Base)
 
         def on_class(node)
-          _name, superclass, _body = *node
+          name, superclass, _body = *node
 
-          if superclass == ACTIVE_RECORD_BASE && !(_name.const_name == "ApplicationRecord")
+          if superclass == ACTIVE_RECORD_BASE && !(name.const_name == "ApplicationRecord")
             add_offense(superclass, :expression)
           end
         end
