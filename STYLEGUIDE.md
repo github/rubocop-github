@@ -1,4 +1,4 @@
-# Style Guide
+# Ruby Style Guide
 
 * Use soft-tabs with a two space indent.
 
