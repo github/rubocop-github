@@ -667,8 +667,8 @@ def some_method(arg1 = :default, arg2 = nil, arg3 = [])
 end
 ```
 
-    While several Ruby books suggest the first style, the second is much more prominent
-    in practice (and arguably a bit more readable).
+While several Ruby books suggest the first style, the second is much more prominent
+in practice (and arguably a bit more readable).
 
 * Using the return value of `=` (an assignment) is ok.
 
