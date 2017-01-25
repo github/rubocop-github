@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/github/rubocop-github"
   s.license = "MIT"
 
-  s.files = Dir["README.md", "LICENSE", "config/*.yml", "lib/**/*.rb"]
+  s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb"]
 
   s.add_dependency "rubocop", "~> 0.47"
 
