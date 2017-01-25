@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["README.md", "LICENSE", "config/*.yml", "lib/**/*.rb"]
 
-  s.add_dependency "rubocop", "~> 0.46"
+  s.add_dependency "rubocop", "~> 0.47"
 
   s.add_development_dependency "minitest", "~> 5.10"
   s.add_development_dependency "rake", "~> 12.0"
