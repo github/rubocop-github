@@ -38,6 +38,10 @@ Style/OneLineConditional:
   Exclude:
     - 'app/views/**/*.erb'
 
+Style/Semicolon:
+  Exclude:
+    - 'app/views/**/*.erb'
+
 Style/SpaceInsideParens:
   Exclude:
     - 'app/views/**/*.erb'
