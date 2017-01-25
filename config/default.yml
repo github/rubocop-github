@@ -216,7 +216,7 @@ Style/ClassMethods:
   Enabled: true
 
 Style/Copyright:
-  Enabled: true
+  Enabled: false
 
 Style/DefWithParentheses:
   Enabled: true
