@@ -56,7 +56,7 @@ Lint/FloatOutOfRange:
 
 Lint/FormatParameterMismatch:
   Enabled: true
-  
+
 Style/HashSyntax:
   EnforcedStyle: ruby19
 
@@ -211,7 +211,7 @@ Style/InitialIndentation:
 Style/LambdaCall:
   Enabled: true
 
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Enabled: true
 
 Style/MethodDefParentheses:
