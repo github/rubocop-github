@@ -56,6 +56,9 @@ Lint/FloatOutOfRange:
 
 Lint/FormatParameterMismatch:
   Enabled: true
+  
+Style/HashSyntax:
+  EnforcedStyle: ruby19
 
 Lint/InvalidCharacterLiteral:
   Enabled: true
