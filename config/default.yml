@@ -48,9 +48,6 @@ Lint/EndAlignment:
 Lint/EnsureReturn:
   Enabled: true
 
-Lint/Eval:
-  Enabled: true
-
 Lint/FloatOutOfRange:
   Enabled: true
 
@@ -186,6 +183,9 @@ Performance/Size:
   Enabled: true
 
 Performance/StartWith:
+  Enabled: true
+
+Security/Eval:
   Enabled: true
 
 Style/ArrayJoin:
