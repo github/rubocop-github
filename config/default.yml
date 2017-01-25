@@ -215,6 +215,9 @@ Style/ClassAndModuleCamelCase:
 Style/ClassMethods:
   Enabled: true
 
+Style/Copyright:
+  Enabled: true
+
 Style/DefWithParentheses:
   Enabled: true
 
