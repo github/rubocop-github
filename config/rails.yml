@@ -23,11 +23,15 @@ Rails/UniqBeforePluck:
 GitHub/RailsApplicationRecord:
   Enabled: true
 
-
 GitHub/RailsControllerRenderPathsExist:
   Enabled: true
   ViewPath:
     - 'app/views'
+  Include:
+    - 'app/controllers/**/*.rb'
+
+GitHub/RailsRenderActionSymbol:
+  Enabled: true
   Include:
     - 'app/controllers/**/*.rb'
 

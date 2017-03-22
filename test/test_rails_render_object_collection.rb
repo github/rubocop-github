@@ -4,7 +4,7 @@ require_relative "./cop_test"
 require "minitest/autorun"
 require "rubocop/cop/github/rails_render_object_collection"
 
-class RailsRenderObjectCollectionTest < CopTest
+class TestRailsRenderObjectCollection < CopTest
   def cop_class
     RuboCop::Cop::GitHub::RailsRenderObjectCollection
   end
