@@ -6,6 +6,9 @@ AllCops:
 Bundler/DuplicatedGem:
   Enabled: true
 
+Bundler/OrderedGems:
+  Enabled: true
+
 Lint/BlockAlignment:
   Enabled: true
 
