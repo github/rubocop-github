@@ -3,6 +3,9 @@ require: rubocop/cop/github
 AllCops:
   DisabledByDefault: true
 
+Bundler/DuplicatedGem:
+  Enabled: true
+
 Lint/BlockAlignment:
   Enabled: true
 
