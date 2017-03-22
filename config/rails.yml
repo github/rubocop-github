@@ -23,6 +23,11 @@ Rails/UniqBeforePluck:
 GitHub/RailsApplicationRecord:
   Enabled: true
 
+GitHub/RailsRenderInline:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-inline.md
+  Include:
+    - 'app/controllers/**/*.rb'
 
 # Exclude Rails ERB files from incompatible cops
 
