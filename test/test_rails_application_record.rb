@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rubocop/cop/github/rails_application_record"
 require "minitest/autorun"
 
