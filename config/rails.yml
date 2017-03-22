@@ -30,6 +30,12 @@ GitHub/RailsControllerRenderPathsExist:
   Include:
     - 'app/controllers/**/*.rb'
 
+GitHub/RailsControllerRenderShorthand:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-shorthand.md
+  Include:
+    - 'app/controllers/**/*.rb'
+
 GitHub/RailsRenderActionSymbol:
   Enabled: true
   Include:
