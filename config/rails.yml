@@ -65,6 +65,13 @@ GitHub/RailsViewRenderPathsExist:
     - 'app/view_models/**/*.rb'
     - 'app/views/**/*.erb'
 
+GitHub/RailsViewRenderShorthand:
+  Enabled: true
+  Include:
+    - 'app/helpers/**/*.rb'
+    - 'app/view_models/**/*.rb'
+    - 'app/views/**/*.erb'
+
 # Exclude Rails ERB files from incompatible cops
 
 Lint/BlockAlignment:
