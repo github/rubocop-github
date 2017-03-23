@@ -47,6 +47,15 @@ GitHub/RailsRenderInline:
   Include:
     - 'app/controllers/**/*.rb'
 
+GitHub/RailsRenderLiteral:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
+  Include:
+    - 'app/controllers/**/*.rb'
+    - 'app/helpers/**/*.rb'
+    - 'app/view_models/**/*.rb'
+    - 'app/views/**/*.erb'
+
 GitHub/RailsViewRenderPathsExist:
   Enabled: true
   ViewPath:
