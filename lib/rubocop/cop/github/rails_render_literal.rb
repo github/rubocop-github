@@ -24,6 +24,18 @@ module RuboCop
           (send nil :render (hash $...))
         PATTERN
 
+        def_node_matcher :ignore_key?, <<-PATTERN
+          (pair (sym {
+            :body
+            :file
+            :file
+            :html
+            :json
+            :plain
+            :xml
+          }) $_)
+        PATTERN
+
         def_node_matcher :template_key?, <<-PATTERN
           (pair (sym {
             :action
@@ -45,6 +57,10 @@ module RuboCop
 
           if render_literal?(node)
           elsif option_pairs = render_with_options?(node)
+            if option_pairs.any? { |pair| ignore_key?(pair) }
+              return
+            end
+
             if template_node = option_pairs.map { |pair| template_key?(pair) }.compact.first
               if !literal?(template_node)
                 add_offense(node, :expression)

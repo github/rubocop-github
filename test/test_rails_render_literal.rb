@@ -25,6 +25,32 @@ class TestRailsRenderLiteral < CopTest
     assert_equal 0, cop.offenses.count
   end
 
+  def test_controller_render_dynamic_file_no_offense
+    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+      class ProductsController < ActionController::Base
+        def index
+          render file: "\#{Rails.root}/public/404.html"
+          render file: "\#{Rails.root}/public/404.html", layout: false
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_controller_render_xml_json_no_offense
+    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+      class ProductsController < ActionController::Base
+        def index
+          render json: @product
+          render xml: @product
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_view_render_string_literal_no_offense
     erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
       <%= render "products/listing" %>
