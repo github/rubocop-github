@@ -56,6 +56,9 @@ GitHub/RailsRenderLiteral:
     - 'app/view_models/**/*.rb'
     - 'app/views/**/*.erb'
 
+GitHub/RailsRenderObjectCollection:
+  Enabled: false
+
 GitHub/RailsViewRenderPathsExist:
   Enabled: true
   ViewPath:
