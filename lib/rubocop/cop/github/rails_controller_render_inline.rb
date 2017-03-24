@@ -5,7 +5,7 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsRenderInline < Cop
+      class RailsControllerRenderInline < Cop
         MSG = "Avoid `render inline:`"
 
         def_node_matcher :render_with_options?, <<-PATTERN

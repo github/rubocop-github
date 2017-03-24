@@ -23,6 +23,17 @@ Rails/UniqBeforePluck:
 GitHub/RailsApplicationRecord:
   Enabled: true
 
+GitHub/RailsControllerRenderActionSymbol:
+  Enabled: true
+  Include:
+    - 'app/controllers/**/*.rb'
+
+GitHub/RailsControllerRenderInline:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-inline.md
+  Include:
+    - 'app/controllers/**/*.rb'
+
 GitHub/RailsControllerRenderLiteral:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
@@ -39,17 +50,6 @@ GitHub/RailsControllerRenderPathsExist:
 GitHub/RailsControllerRenderShorthand:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-shorthand.md
-  Include:
-    - 'app/controllers/**/*.rb'
-
-GitHub/RailsRenderActionSymbol:
-  Enabled: true
-  Include:
-    - 'app/controllers/**/*.rb'
-
-GitHub/RailsRenderInline:
-  Enabled: true
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-inline.md
   Include:
     - 'app/controllers/**/*.rb'
 

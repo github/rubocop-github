@@ -1,4 +1,4 @@
-# GitHub/RailsRenderInline
+# GitHub/RailsControllerRenderInline
 
 tldr; Do not use `render inline:`.
 

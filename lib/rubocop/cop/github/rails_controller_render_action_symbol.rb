@@ -5,7 +5,7 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsRenderActionSymbol < Cop
+      class RailsControllerRenderActionSymbol < Cop
         MSG = "Prefer `render` with string instead of symbol"
 
         def_node_matcher :render_sym?, <<-PATTERN

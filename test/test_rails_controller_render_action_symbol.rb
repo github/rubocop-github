@@ -2,11 +2,11 @@
 
 require_relative "./cop_test"
 require "minitest/autorun"
-require "rubocop/cop/github/rails_render_action_symbol"
+require "rubocop/cop/github/rails_controller_render_action_symbol"
 
-class TestRailsRenderActionSymbol < CopTest
+class TestRailsControllerRenderActionSymbol < CopTest
   def cop_class
-    RuboCop::Cop::GitHub::RailsRenderActionSymbol
+    RuboCop::Cop::GitHub::RailsControllerRenderActionSymbol
   end
 
   def test_render_string_no_offense
