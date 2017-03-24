@@ -23,6 +23,12 @@ Rails/UniqBeforePluck:
 GitHub/RailsApplicationRecord:
   Enabled: true
 
+GitHub/RailsControllerRenderLiteral:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
+  Include:
+    - 'app/controllers/**/*.rb'
+
 GitHub/RailsControllerRenderPathsExist:
   Enabled: true
   ViewPath:
@@ -47,17 +53,16 @@ GitHub/RailsRenderInline:
   Include:
     - 'app/controllers/**/*.rb'
 
-GitHub/RailsRenderLiteral:
+GitHub/RailsRenderObjectCollection:
+  Enabled: false
+
+GitHub/RailsViewRenderLiteral:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
   Include:
-    - 'app/controllers/**/*.rb'
     - 'app/helpers/**/*.rb'
     - 'app/view_models/**/*.rb'
     - 'app/views/**/*.erb'
-
-GitHub/RailsRenderObjectCollection:
-  Enabled: false
 
 GitHub/RailsViewRenderPathsExist:
   Enabled: true
