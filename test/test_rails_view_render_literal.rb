@@ -28,6 +28,14 @@ class TestRailsViewRenderLiteral < CopTest
     assert_equal 0, cop.offenses.count
   end
 
+  def test_render_layout_string_literal_with_block_pass_no_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render layout: "layouts/head", &head %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_render_variable_offense
     erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
       <%= render magic_string %>
