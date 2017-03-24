@@ -48,4 +48,12 @@ class TestRailsViewRenderLiteral < CopTest
     assert_equal 1, cop.offenses.count
     assert_equal "render must be used with a string literal", cop.offenses[0].message
   end
+
+  def test_render_inline_no_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render inline: magic_string %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
 end

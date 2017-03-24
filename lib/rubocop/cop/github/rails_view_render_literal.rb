@@ -24,6 +24,12 @@ module RuboCop
           (send nil :render (hash $...))
         PATTERN
 
+        def_node_matcher :ignore_key?, <<-PATTERN
+          (pair (sym {
+            :inline
+          }) $_)
+        PATTERN
+
         def_node_matcher :partial_key?, <<-PATTERN
           (pair (sym {
             :file
@@ -37,6 +43,10 @@ module RuboCop
 
           if render_literal?(node)
           elsif option_pairs = render_with_options?(node)
+            if option_pairs.any? { |pair| ignore_key?(pair) }
+              return
+            end
+
             if partial_node = option_pairs.map { |pair| partial_key?(pair) }.compact.first
               if !literal?(partial_node)
                 add_offense(node, :expression)
