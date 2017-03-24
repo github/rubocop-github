@@ -1,3 +1,4 @@
+require "action_view"
 require "minitest"
 
 class CopTest < MiniTest::Test
@@ -17,5 +18,10 @@ class CopTest < MiniTest::Test
     commissioner = RuboCop::Cop::Commissioner.new([cop], [], raise_error: true)
     commissioner.investigate(processed_source)
     commissioner
+  end
+
+  def erb_investigate(cop, src, filename = nil)
+    engine = ActionView::Template::Handlers::Erubis.new(src)
+    investigate(cop, engine.src, filename)
   end
 end
