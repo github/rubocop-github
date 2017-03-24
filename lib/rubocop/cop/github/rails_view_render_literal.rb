@@ -26,6 +26,7 @@ module RuboCop
 
         def_node_matcher :partial_key?, <<-PATTERN
           (pair (sym {
+            :file
             :layout
             :partial
           }) $_)
