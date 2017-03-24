@@ -29,6 +29,7 @@ module RuboCop
             :body
             :file
             :html
+            :inline
             :js
             :json
             :nothing

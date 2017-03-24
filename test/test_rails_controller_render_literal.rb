@@ -118,6 +118,18 @@ class TestRailsControllerRenderLiteral < CopTest
     assert_equal 0, cop.offenses.count
   end
 
+  def test_render_inline_no_offense
+    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+      class ProductsController < ActionController::Base
+        def index
+          render inline: "Hello <%= @name %>"
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_render_xml_no_offense
     investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
