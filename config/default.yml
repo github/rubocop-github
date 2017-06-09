@@ -206,7 +206,7 @@ Style/BeginBlock:
 Style/BlockComments:
   Enabled: true
 
-Style/BlockEndNewline:
+Layout/BlockEndNewline:
   Enabled: true
 
 Style/CaseEquality:
@@ -230,7 +230,7 @@ Style/DefWithParentheses:
 Style/EndBlock:
   Enabled: true
 
-Style/EndOfLine:
+Layout/EndOfLine:
   Enabled: true
 
 Style/FileName:
@@ -245,7 +245,7 @@ Style/For:
 Style/FrozenStringLiteralComment:
   Enabled: true
 
-Style/InitialIndentation:
+Layout/InitialIndentation:
   Enabled: true
 
 Style/LambdaCall:
@@ -272,37 +272,37 @@ Style/Not:
 Style/OneLineConditional:
   Enabled: true
 
-Style/SpaceAfterMethodName:
+Layout/SpaceAfterMethodName:
   Enabled: true
 
-Style/SpaceAfterColon:
+Layout/SpaceAfterColon:
   Enabled: true
 
-Style/SpaceAfterComma:
+Layout/SpaceAfterComma:
   Enabled: true
 
-Style/SpaceAfterNot:
+Layout/SpaceAfterNot:
   Enabled: true
 
-Style/SpaceAfterSemicolon:
+Layout/SpaceAfterSemicolon:
   Enabled: true
 
-Style/SpaceAroundBlockParameters:
+Layout/SpaceAroundBlockParameters:
   Enabled: true
 
-Style/SpaceAroundEqualsInParameterDefault:
+Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: true
 
-Style/SpaceInsideArrayPercentLiteral:
+Layout/SpaceInsideArrayPercentLiteral:
   Enabled: true
 
-Style/SpaceInsideBrackets:
+Layout/SpaceInsideBrackets:
   Enabled: true
 
-Style/SpaceInsideParens:
+Layout/SpaceInsideParens:
   Enabled: true
 
-Style/SpaceInsideRangeLiteral:
+Layout/SpaceInsideRangeLiteral:
   Enabled: true
 
 Style/StabbyLambdaParentheses:
@@ -312,11 +312,11 @@ Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
 
-Style/Tab:
+Layout/Tab:
   Enabled: true
 
-Style/TrailingBlankLines:
+Layout/TrailingBlankLines:
   Enabled: true
 
-Style/TrailingWhitespace:
+Layout/TrailingWhitespace:
   Enabled: true
