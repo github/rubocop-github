@@ -101,7 +101,7 @@ Style/Semicolon:
   Exclude:
     - 'app/views/**/*.erb'
 
-Style/SpaceInsideParens:
+Layout/SpaceInsideParens:
   Exclude:
     - 'app/views/**/*.erb'
 
@@ -109,10 +109,10 @@ Style/StringLiterals:
   Exclude:
     - 'app/views/**/*.erb'
 
-Style/TrailingBlankLines:
+Layout/TrailingBlankLines:
   Exclude:
     - 'app/views/**/*.erb'
 
-Style/TrailingWhitespace:
+Layout/TrailingWhitespace:
   Exclude:
     - 'app/views/**/*.erb'
