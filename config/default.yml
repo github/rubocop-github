@@ -194,7 +194,7 @@ Security/Eval:
 Style/ArrayJoin:
   Enabled: true
 
-Style/AsciiIdentifiers:
+Naming/AsciiIdentifiers:
   Enabled: true
 
 Style/BeginBlock:
@@ -212,7 +212,7 @@ Style/CaseEquality:
 Style/CharacterLiteral:
   Enabled: true
 
-Style/ClassAndModuleCamelCase:
+Naming/ClassAndModuleCamelCase:
   Enabled: true
 
 Style/ClassMethods:
@@ -230,7 +230,7 @@ Style/EndBlock:
 Layout/EndOfLine:
   Enabled: true
 
-Style/FileName:
+Naming/FileName:
   Enabled: true
 
 Style/FlipFlop:
@@ -254,7 +254,7 @@ Style/MethodCallWithoutArgsParentheses:
 Style/MethodDefParentheses:
   Enabled: true
 
-Style/MethodName:
+Naming/MethodName:
   Enabled: true
 
 Style/MultilineIfThen:
