@@ -64,7 +64,7 @@ Style/HashSyntax:
   Enabled: true
   EnforcedStyle: ruby19
 
-Lint/LiteralInCondition:
+Lint/LiteralAsCondition:
   Enabled: true
 
 Lint/LiteralInInterpolation:
