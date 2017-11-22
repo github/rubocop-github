@@ -9,7 +9,7 @@ module RuboCop
         MSG = "Prefer `render` partial shorthand"
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil :render (hash $...))
+          (send nil? :render (hash $...))
         PATTERN
 
         def_node_matcher :partial_key?, <<-PATTERN
@@ -26,9 +26,9 @@ module RuboCop
             locals_key = option_pairs.map { |pair| locals_key?(pair) }.compact.first
 
             if option_pairs.length == 1 && partial_key
-              add_offense(node, :expression, "Use `render #{partial_key.source}` instead")
+              add_offense(node, location: :expression, message: "Use `render #{partial_key.source}` instead")
             elsif option_pairs.length == 2 && partial_key && locals_key
-              add_offense(node, :expression, "Use `render #{partial_key.source}, #{locals_key.source}` instead")
+              add_offense(node, location: :expression, message: "Use `render #{partial_key.source}, #{locals_key.source}` instead")
             end
           end
         end

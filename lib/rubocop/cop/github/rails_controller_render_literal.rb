@@ -9,19 +9,19 @@ module RuboCop
         MSG = "render must be used with a string literal"
 
         def_node_matcher :literal?, <<-PATTERN
-          ({str sym true false nil} ...)
+          ({str sym true false nil?} ...)
         PATTERN
 
         def_node_matcher :render?, <<-PATTERN
-          (send nil :render ...)
+          (send nil? :render ...)
         PATTERN
 
         def_node_matcher :render_literal?, <<-PATTERN
-          (send nil :render ({str sym} $_) $...)
+          (send nil? :render ({str sym} $_) $...)
         PATTERN
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil :render (hash $...))
+          (send nil? :render (hash $...))
         PATTERN
 
         def_node_matcher :ignore_key?, <<-PATTERN
@@ -73,19 +73,19 @@ module RuboCop
 
             if template_node = option_pairs.map { |pair| template_key?(pair) }.compact.first
               if !literal?(template_node)
-                add_offense(node, :expression)
+                add_offense(node, location: :expression)
               end
             else
-              add_offense(node, :expression)
+              add_offense(node, location: :expression)
             end
 
             if layout_node = option_pairs.map { |pair| layout_key?(pair) }.compact.first
               if !literal?(layout_node)
-                add_offense(node, :expression)
+                add_offense(node, location: :expression)
               end
             end
           else
-            add_offense(node, :expression)
+            add_offense(node, location: :expression)
           end
         end
       end

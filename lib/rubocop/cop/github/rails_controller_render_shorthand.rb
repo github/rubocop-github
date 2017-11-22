@@ -9,7 +9,7 @@ module RuboCop
         MSG = "Prefer `render` template shorthand"
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil :render (hash $...))
+          (send nil? :render (hash $...))
         PATTERN
 
         def_node_matcher :action_key?, <<-PATTERN
@@ -40,7 +40,7 @@ module RuboCop
                 @autocorrect[node] = lambda do |corrector|
                   corrector.replace(node.source_range, corrected_source)
                 end
-                add_offense(node, :expression, "Use `#{corrected_source}` instead")
+                add_offense(node, location: :expression, message: "Use `#{corrected_source}` instead")
               end
             end
           end

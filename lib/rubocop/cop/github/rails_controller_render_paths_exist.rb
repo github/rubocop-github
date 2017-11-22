@@ -7,15 +7,15 @@ module RuboCop
     module GitHub
       class RailsControllerRenderPathsExist < Cop
         def_node_matcher :render?, <<-PATTERN
-          (send nil :render $...)
+          (send nil? :render $...)
         PATTERN
 
         def_node_matcher :render_str?, <<-PATTERN
-          (send nil :render $({str sym} $_) ...)
+          (send nil? :render $({str sym} $_) ...)
         PATTERN
 
         def_node_matcher :render_options?, <<-PATTERN
-          (send nil :render (hash $...))
+          (send nil? :render (hash $...))
         PATTERN
 
         def_node_matcher :render_key?, <<-PATTERN
@@ -28,7 +28,7 @@ module RuboCop
           if args = render_str?(node)
             node, path = args
             unless resolve_template(path.to_s)
-              add_offense(node, :expression, "Template could not be found")
+              add_offense(node, location: :expression, message: "Template could not be found")
             end
           elsif pairs = render_options?(node)
             if pair = pairs.detect { |p| render_key?(p) }
@@ -37,11 +37,11 @@ module RuboCop
               case key
               when :action, :template
                 unless resolve_template(path.to_s)
-                  add_offense(node, :expression, "Template could not be found")
+                  add_offense(node, location: :expression, message: "Template could not be found")
                 end
               when :partial
                 unless resolve_partial(path.to_s)
-                  add_offense(node, :expression, "Partial template could not be found")
+                  add_offense(node, location: :expression, message: "Partial template could not be found")
                 end
               end
             end

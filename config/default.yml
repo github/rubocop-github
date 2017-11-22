@@ -9,6 +9,57 @@ Bundler/DuplicatedGem:
 Bundler/OrderedGems:
   Enabled: true
 
+Layout/BlockEndNewline:
+  Enabled: true
+
+Layout/EndOfLine:
+  Enabled: true
+
+Layout/InitialIndentation:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAfterMethodName:
+  Enabled: true
+
+Layout/SpaceAfterNot:
+  Enabled: true
+
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+
+Layout/SpaceAroundBlockParameters:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+
+Layout/SpaceInsideBrackets:
+  Enabled: true
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+Layout/SpaceInsideRangeLiteral:
+  Enabled: true
+
+Layout/Tab:
+  Enabled: true
+
+Layout/TrailingBlankLines:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
 Lint/BlockAlignment:
   Enabled: true
 
@@ -42,14 +93,14 @@ Lint/ElseLayout:
 Lint/EmptyEnsure:
   Enabled: true
 
-Lint/EndInMethod:
-  Enabled: true
-
 Lint/EmptyInterpolation:
   Enabled: true
 
 Lint/EndAlignment:
   Enabled: false
+
+Lint/EndInMethod:
+  Enabled: true
 
 Lint/EnsureReturn:
   Enabled: true
@@ -60,14 +111,7 @@ Lint/FloatOutOfRange:
 Lint/FormatParameterMismatch:
   Enabled: true
 
-Style/HashSyntax:
-  Enabled: true
-  EnforcedStyle: ruby19
-
-Lint/InvalidCharacterLiteral:
-  Enabled: true
-
-Lint/LiteralInCondition:
+Lint/LiteralAsCondition:
   Enabled: true
 
 Lint/LiteralInInterpolation:
@@ -142,6 +186,18 @@ Metrics/ParameterLists:
 Metrics/PerceivedComplexity:
   Enabled: false
 
+Naming/AsciiIdentifiers:
+  Enabled: true
+
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
+
+Naming/FileName:
+  Enabled: true
+
+Naming/MethodName:
+  Enabled: true
+
 Performance/CaseWhenSplat:
   Enabled: false
 
@@ -197,25 +253,16 @@ Security/Eval:
 Style/ArrayJoin:
   Enabled: true
 
-Style/AsciiIdentifiers:
-  Enabled: true
-
 Style/BeginBlock:
   Enabled: true
 
 Style/BlockComments:
   Enabled: true
 
-Layout/BlockEndNewline:
-  Enabled: true
-
 Style/CaseEquality:
   Enabled: true
 
 Style/CharacterLiteral:
-  Enabled: true
-
-Style/ClassAndModuleCamelCase:
   Enabled: true
 
 Style/ClassMethods:
@@ -230,12 +277,6 @@ Style/DefWithParentheses:
 Style/EndBlock:
   Enabled: true
 
-Layout/EndOfLine:
-  Enabled: true
-
-Style/FileName:
-  Enabled: true
-
 Style/FlipFlop:
   Enabled: true
 
@@ -245,8 +286,9 @@ Style/For:
 Style/FrozenStringLiteralComment:
   Enabled: true
 
-Layout/InitialIndentation:
+Style/HashSyntax:
   Enabled: true
+  EnforcedStyle: ruby19
 
 Style/LambdaCall:
   Enabled: true
@@ -255,9 +297,6 @@ Style/MethodCallWithoutArgsParentheses:
   Enabled: true
 
 Style/MethodDefParentheses:
-  Enabled: true
-
-Style/MethodName:
   Enabled: true
 
 Style/MultilineIfThen:
@@ -272,51 +311,9 @@ Style/Not:
 Style/OneLineConditional:
   Enabled: true
 
-Layout/SpaceAfterMethodName:
-  Enabled: true
-
-Layout/SpaceAfterColon:
-  Enabled: true
-
-Layout/SpaceAfterComma:
-  Enabled: true
-
-Layout/SpaceAfterNot:
-  Enabled: true
-
-Layout/SpaceAfterSemicolon:
-  Enabled: true
-
-Layout/SpaceAroundBlockParameters:
-  Enabled: true
-
-Layout/SpaceAroundEqualsInParameterDefault:
-  Enabled: true
-
-Layout/SpaceInsideArrayPercentLiteral:
-  Enabled: true
-
-Layout/SpaceInsideBrackets:
-  Enabled: true
-
-Layout/SpaceInsideParens:
-  Enabled: true
-
-Layout/SpaceInsideRangeLiteral:
-  Enabled: true
-
 Style/StabbyLambdaParentheses:
   Enabled: true
 
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
-
-Layout/Tab:
-  Enabled: true
-
-Layout/TrailingBlankLines:
-  Enabled: true
-
-Layout/TrailingWhitespace:
-  Enabled: true

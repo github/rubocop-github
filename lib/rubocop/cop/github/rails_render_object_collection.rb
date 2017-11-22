@@ -9,7 +9,7 @@ module RuboCop
         MSG = "Avoid `render object:`"
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil :render (hash $...) ...)
+          (send nil? :render (hash $...) ...)
         PATTERN
 
         def_node_matcher :partial_key?, <<-PATTERN
@@ -34,9 +34,9 @@ module RuboCop
                 if partial_name.children[0].is_a?(String)
                   suggestion = ", instead `render partial: #{partial_name.source}, locals: { #{File.basename(partial_name.children[0], '.html.erb')}: #{object_node.source} }`"
                 end
-                add_offense(node, :expression, "Avoid `render object:`#{suggestion}")
+                add_offense(node, location: :expression, message: "Avoid `render object:`#{suggestion}")
               when :collection, :spacer_template
-                add_offense(node, :expression, "Avoid `render collection:`")
+                add_offense(node, location: :expression, message: "Avoid `render collection:`")
               end
             end
           end
