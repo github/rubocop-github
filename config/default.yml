@@ -39,7 +39,13 @@ Layout/SpaceAroundBlockParameters:
 Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: true
 
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
 Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
   Enabled: true
 
 Layout/SpaceInsideBrackets:
