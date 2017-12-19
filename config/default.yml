@@ -42,9 +42,6 @@ Layout/SpaceAroundEqualsInParameterDefault:
 Layout/SpaceInsideArrayPercentLiteral:
   Enabled: true
 
-Layout/SpaceInsideBrackets:
-  Enabled: true
-
 Layout/SpaceInsideParens:
   Enabled: true
 
