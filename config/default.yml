@@ -42,6 +42,10 @@ Layout/SpaceAroundEqualsInParameterDefault:
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
 
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+  EnforcedStyle: no_space
+
 Layout/SpaceInsideArrayPercentLiteral:
   Enabled: true
 
@@ -55,6 +59,9 @@ Layout/SpaceInsideParens:
   Enabled: true
 
 Layout/SpaceInsideRangeLiteral:
+  Enabled: true
+
+Layout/SpaceInsideReferenceBrackets:
   Enabled: true
 
 Layout/Tab:
