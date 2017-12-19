@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "rubocop-github"
-  s.version = "0.6.0"
+  s.version = "0.7.0"
   s.summary = "RuboCop GitHub"
   s.description = "Code style checking for GitHub Ruby repositories "
   s.homepage = "https://github.com/github/rubocop-github"
