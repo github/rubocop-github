@@ -298,7 +298,7 @@ Style/FrozenStringLiteralComment:
 
 Style/HashSyntax:
   Enabled: true
-  EnforcedStyle: ruby19
+  EnforcedStyle: ruby19_no_mixed_keys
 
 Style/LambdaCall:
   Enabled: true
