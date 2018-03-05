@@ -229,7 +229,7 @@ end
 Avoid calling `send` and its cousins unless you really need it. Metaprogramming can be extremely powerful, but in most cases you can write code that captures your meaning by being explicit:
 
 ``` ruby
-# Bad 
+# avoid 
 unless [:base, :head].include?(base_or_head)
   raise ArgumentError, "base_or_head must be either :base or :head"
 end
@@ -237,7 +237,7 @@ end
 repository = pull.send("#{base_or_head}_repository")
 branch = pull.send("#{base_or_head}_ref_name")
 
-# Good
+# prefer
 case base_or_head
 when :base
   repository = pull.base_repository
@@ -249,7 +249,6 @@ else
   raise ArgumentError, "base_or_head must be either :base or :head"
 end
 ```
-
 ## Exceptions
 
 * Don't use exceptions for flow of control.
