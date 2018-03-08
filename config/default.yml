@@ -148,7 +148,7 @@ Lint/StringConversionInInterpolation:
 Lint/UnderscorePrefixedVariableName:
   Enabled: true
 
-Lint/UnneededDisable:
+Lint/UnneededCopDisableDirective:
   Enabled: true
 
 Lint/UnneededSplatExpansion:
