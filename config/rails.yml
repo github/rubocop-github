@@ -85,7 +85,7 @@ GitHub/RailsViewRenderShorthand:
 
 # Exclude Rails ERB files from incompatible cops
 
-Lint/BlockAlignment:
+Layout/BlockAlignment:
   Exclude:
     - 'app/views/**/*.erb'
 
