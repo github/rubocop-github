@@ -1,3 +1,4 @@
+
 # RuboCop GitHub
 
 This repository provides recommended RuboCop configuration and additional Cops for use on GitHub open source and internal Ruby projects.
