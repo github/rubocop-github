@@ -9,20 +9,8 @@ Bundler/DuplicatedGem:
 Bundler/OrderedGems:
   Enabled: true
 
-Layout/BlockAlignment:
-  Enabled: true
-
 Layout/BlockEndNewline:
   Enabled: true
-
-Layout/ConditionPosition:
-  Enabled: true
-
-Layout/DefEndAlignment:
-  Enabled: true
-
-Layout/EndAlignment:
-  Enabled: false
 
 Layout/EndOfLine:
   Enabled: true
@@ -82,10 +70,19 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Lint/BlockAlignment:
+  Enabled: true
+
 Lint/CircularArgumentReference:
   Enabled: true
 
+Lint/ConditionPosition:
+  Enabled: true
+
 Lint/Debugger:
+  Enabled: true
+
+Lint/DefEndAlignment:
   Enabled: true
 
 Lint/DeprecatedClassMethods:
@@ -108,6 +105,9 @@ Lint/EmptyEnsure:
 
 Lint/EmptyInterpolation:
   Enabled: true
+
+Lint/EndAlignment:
+  Enabled: false
 
 Lint/EndInMethod:
   Enabled: true
