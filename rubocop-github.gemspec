@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name = "rubocop-github"
   s.version = "0.10.0"
@@ -13,7 +15,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "actionview", "~> 5.0"
   s.add_development_dependency "minitest", "~> 5.10"
   s.add_development_dependency "rake", "~> 12.0"
-  s.add_development_dependency "erubis", "~> 2.7"
 
   s.required_ruby_version = ">= 2.1.0"
 

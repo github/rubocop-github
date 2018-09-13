@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "action_view"
 require "minitest"
 
@@ -21,7 +23,7 @@ class CopTest < MiniTest::Test
   end
 
   def erb_investigate(cop, src, filename = nil)
-    engine = ActionView::Template::Handlers::Erubis.new(src)
-    investigate(cop, engine.src, filename)
+    engine = ActionView::Template::Handlers::ERB::Erubi.new(src)
+    investigate(cop, engine.src.dup, filename)
   end
 end
