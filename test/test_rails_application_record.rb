@@ -36,4 +36,18 @@ class TestRailsApplicationRecord < CopTest
     assert_equal 1, cop.offenses.count
     assert_equal "Models should subclass from ApplicationRecord", cop.offenses.first.message
   end
+
+  def test_autocorrect
+    expected_source = <<-RUBY
+      class Repository < ApplicationRecord
+      end
+    RUBY
+
+    corrected_source = autocorrect_source <<-RUBY
+      class Repository < ActiveRecord::Base
+      end
+    RUBY
+
+    assert_equal expected_source, corrected_source
+  end
 end
