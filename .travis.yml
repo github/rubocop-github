@@ -2,6 +2,9 @@ sudo: false
 language: ruby
 cache: bundler
 
+git:
+  depth: 10
+
 rvm:
   - 2.3.6
   - 2.4.3
