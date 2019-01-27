@@ -115,6 +115,9 @@ Lint/EndInMethod:
 Lint/EnsureReturn:
   Enabled: true
 
+Lint/FlipFlop:
+  Enabled: true
+
 Lint/FloatOutOfRange:
   Enabled: true
 
@@ -282,9 +285,6 @@ Style/DefWithParentheses:
   Enabled: true
 
 Style/EndBlock:
-  Enabled: true
-
-Style/FlipFlop:
   Enabled: true
 
 Style/For:
