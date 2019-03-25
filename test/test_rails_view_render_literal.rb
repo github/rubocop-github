@@ -64,4 +64,12 @@ class TestRailsViewRenderLiteral < CopTest
 
     assert_equal 0, cop.offenses.count
   end
+
+  def test_render_template_literal_no_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render template: "products/listing" %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
 end
