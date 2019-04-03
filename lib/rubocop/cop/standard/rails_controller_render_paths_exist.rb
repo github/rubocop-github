@@ -4,7 +4,7 @@ require "rubocop"
 
 module RuboCop
   module Cop
-    module GitHub
+    module Standard
       class RailsControllerRenderPathsExist < Cop
         def_node_matcher :render?, <<-PATTERN
           (send nil? :render $...)

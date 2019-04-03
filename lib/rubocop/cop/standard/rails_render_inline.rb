@@ -4,7 +4,7 @@ require "rubocop"
 
 module RuboCop
   module Cop
-    module GitHub
+    module Standard
       class RailsRenderInline < Cop
         MSG = "Avoid `render inline:`"
 

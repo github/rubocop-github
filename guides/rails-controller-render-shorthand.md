@@ -1,4 +1,4 @@
-# GitHub/RailsControllerRenderShorthand
+# Standard/RailsControllerRenderShorthand
 
 Prefer `render "path/to/template"` shorthand in controllers.
 

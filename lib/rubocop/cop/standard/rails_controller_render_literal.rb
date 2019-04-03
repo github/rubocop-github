@@ -4,8 +4,8 @@ require "rubocop"
 
 module RuboCop
   module Cop
-    module GitHub
-      class RailsViewRenderLiteral < Cop
+    module Standard
+      class RailsControllerRenderLiteral < Cop
         MSG = "render must be used with a string literal"
 
         def_node_matcher :literal?, <<-PATTERN
@@ -13,7 +13,7 @@ module RuboCop
         PATTERN
 
         def_node_matcher :render?, <<-PATTERN
-          (send nil? :render $...)
+          (send nil? :render ...)
         PATTERN
 
         def_node_matcher :render_literal?, <<-PATTERN
@@ -21,22 +21,43 @@ module RuboCop
         PATTERN
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil? :render (hash $...) ...)
+          (send nil? :render (hash $...))
         PATTERN
 
         def_node_matcher :ignore_key?, <<-PATTERN
           (pair (sym {
+            :body
+            :file
+            :html
             :inline
+            :js
+            :json
+            :nothing
+            :plain
+            :text
+            :xml
           }) $_)
         PATTERN
 
-        def_node_matcher :partial_key?, <<-PATTERN
+        def_node_matcher :template_key?, <<-PATTERN
           (pair (sym {
-            :file
-            :template
-            :layout
+            :action
             :partial
+            :template
           }) $_)
+        PATTERN
+
+        def_node_matcher :layout_key?, <<-PATTERN
+          (pair (sym :layout) $_)
+        PATTERN
+
+        def_node_matcher :options_key?, <<-PATTERN
+          (pair (sym {
+            :content_type
+            :location
+            :status
+            :formats
+          }) ...)
         PATTERN
 
         def on_send(node)
@@ -44,16 +65,24 @@ module RuboCop
 
           if render_literal?(node)
           elsif option_pairs = render_with_options?(node)
+            option_pairs = option_pairs.reject { |pair| options_key?(pair) }
+
             if option_pairs.any? { |pair| ignore_key?(pair) }
               return
             end
 
-            if partial_node = option_pairs.map { |pair| partial_key?(pair) }.compact.first
-              if !literal?(partial_node)
+            if template_node = option_pairs.map { |pair| template_key?(pair) }.compact.first
+              if !literal?(template_node)
                 add_offense(node, location: :expression)
               end
             else
               add_offense(node, location: :expression)
+            end
+
+            if layout_node = option_pairs.map { |pair| layout_key?(pair) }.compact.first
+              if !literal?(layout_node)
+                add_offense(node, location: :expression)
+              end
             end
           else
             add_offense(node, location: :expression)

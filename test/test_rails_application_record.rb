@@ -2,11 +2,11 @@
 
 require_relative "./cop_test"
 require "minitest/autorun"
-require "rubocop/cop/github/rails_application_record"
+require "rubocop/cop/standard/rails_application_record"
 
 class TestRailsApplicationRecord < CopTest
   def cop_class
-    RuboCop::Cop::GitHub::RailsApplicationRecord
+    RuboCop::Cop::Standard::RailsApplicationRecord
   end
 
   def test_good_model

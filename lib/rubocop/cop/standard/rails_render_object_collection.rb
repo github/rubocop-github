@@ -4,7 +4,7 @@ require "rubocop"
 
 module RuboCop
   module Cop
-    module GitHub
+    module Standard
       class RailsRenderObjectCollection < Cop
         MSG = "Avoid `render object:`"
 

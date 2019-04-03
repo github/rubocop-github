@@ -4,7 +4,7 @@ require "rubocop"
 
 module RuboCop
   module Cop
-    module GitHub
+    module Standard
       class RailsControllerRenderActionSymbol < Cop
         MSG = "Prefer `render` with string instead of symbol"
 

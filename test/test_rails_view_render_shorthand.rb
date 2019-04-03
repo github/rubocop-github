@@ -2,11 +2,11 @@
 
 require_relative "./cop_test"
 require "minitest/autorun"
-require "rubocop/cop/github/rails_view_render_shorthand"
+require "rubocop/cop/standard/rails_view_render_shorthand"
 
 class TestRailsViewRenderShorthand < CopTest
   def cop_class
-    RuboCop::Cop::GitHub::RailsViewRenderShorthand
+    RuboCop::Cop::Standard::RailsViewRenderShorthand
   end
 
   def test_render_string_no_offense

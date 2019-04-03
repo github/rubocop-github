@@ -4,7 +4,7 @@ require "rubocop"
 
 module RuboCop
   module Cop
-    module GitHub
+    module Standard
       class RailsApplicationRecord < Cop
         MSG = "Models should subclass from ApplicationRecord"
 
