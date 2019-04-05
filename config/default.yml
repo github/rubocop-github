@@ -226,7 +226,7 @@ Performance/EndWith:
 Performance/FlatMap:
   Enabled: true
 
-Performance/LstripRstrip:
+Style/LstripRstrip:
   Enabled: true
 
 Performance/RangeInclude:
@@ -239,13 +239,13 @@ Performance/RedundantMerge:
   Enabled: true
   MaxKeyValuePairs: 1
 
-Performance/RedundantSortBy:
+Style/RedundantSortBy:
   Enabled: true
 
 Performance/ReverseEach:
   Enabled: true
 
-Performance/Sample:
+Style/Sample:
   Enabled: true
 
 Performance/Size:
@@ -284,7 +284,7 @@ Style/DefWithParentheses:
 Style/EndBlock:
   Enabled: true
 
-Style/FlipFlop:
+Lint/FlipFlop:
   Enabled: true
 
 Style/For:
