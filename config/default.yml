@@ -226,7 +226,7 @@ Performance/EndWith:
 Performance/FlatMap:
   Enabled: true
 
-Style/LstripRstrip:
+Style/Strip:
   Enabled: true
 
 Performance/RangeInclude:
