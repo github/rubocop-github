@@ -229,9 +229,6 @@ Performance/EndWith:
 Performance/FlatMap:
   Enabled: true
 
-Performance/LstripRstrip:
-  Enabled: true
-
 Performance/RangeInclude:
   Enabled: false
 
@@ -324,3 +321,6 @@ Style/StabbyLambdaParentheses:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/Strip:
+  Enabled: true
