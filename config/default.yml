@@ -1,4 +1,5 @@
 require: rubocop/cop/standard
+require: rubocop-performance
 
 AllCops:
   DisabledByDefault: true
@@ -320,7 +321,7 @@ Style/StabbyLambdaParentheses:
 
 Style/StringLiterals:
   Enabled: true
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 
 Style/Strip:
   Enabled: true
