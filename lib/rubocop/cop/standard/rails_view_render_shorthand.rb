@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "rubocop"
+require 'rubocop'
 
 module RuboCop
   module Cop
     module Standard
       class RailsViewRenderShorthand < Cop
-        MSG = "Prefer `render` partial shorthand"
+        MSG = 'Prefer `render` partial shorthand'
 
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? :render (hash $...))

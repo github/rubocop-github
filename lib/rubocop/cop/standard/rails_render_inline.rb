@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "rubocop"
+require 'rubocop'
 
 module RuboCop
   module Cop
     module Standard
       class RailsRenderInline < Cop
-        MSG = "Avoid `render inline:`"
+        MSG = 'Avoid `render inline:`'
 
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? :render (hash $...))

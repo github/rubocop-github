@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "rubocop"
+require 'rubocop'
 
 module RuboCop
   module Cop
     module Standard
       class RailsApplicationRecord < Cop
-        MSG = "Models should subclass from ApplicationRecord"
+        MSG = 'Models should subclass from ApplicationRecord'
 
         def_node_matcher :active_record_base_const?, <<-PATTERN
           (const (const nil? :ActiveRecord) :Base)

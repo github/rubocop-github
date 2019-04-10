@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "action_view"
-require "minitest"
+require 'action_view'
+require 'minitest'
 
 class CopTest < MiniTest::Test
   def cop_class
