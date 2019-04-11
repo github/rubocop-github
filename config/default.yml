@@ -115,6 +115,9 @@ Lint/EndInMethod:
 Lint/EnsureReturn:
   Enabled: true
 
+Lint/FlipFlop:
+  Enabled: true
+
 Lint/FloatOutOfRange:
   Enabled: true
 
@@ -226,9 +229,6 @@ Performance/EndWith:
 Performance/FlatMap:
   Enabled: true
 
-Style/Strip:
-  Enabled: true
-
 Performance/RangeInclude:
   Enabled: false
 
@@ -239,13 +239,7 @@ Performance/RedundantMerge:
   Enabled: true
   MaxKeyValuePairs: 1
 
-Style/RedundantSortBy:
-  Enabled: true
-
 Performance/ReverseEach:
-  Enabled: true
-
-Style/Sample:
   Enabled: true
 
 Performance/Size:
@@ -284,9 +278,6 @@ Style/DefWithParentheses:
 Style/EndBlock:
   Enabled: true
 
-Lint/FlipFlop:
-  Enabled: true
-
 Style/For:
   Enabled: true
 
@@ -318,9 +309,18 @@ Style/Not:
 Style/OneLineConditional:
   Enabled: true
 
+Style/RedundantSortBy:
+  Enabled: true
+
+Style/Sample:
+  Enabled: true
+
 Style/StabbyLambdaParentheses:
   Enabled: true
 
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/Strip:
+  Enabled: true
