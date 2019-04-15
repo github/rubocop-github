@@ -21,7 +21,7 @@ module RuboCop
         PATTERN
 
         def_node_matcher :render_const?, <<-PATTERN
-          (send nil? :render (const nil? ...))
+          (send nil? :render (const nil? ...) $...)
         PATTERN
 
         def_node_matcher :render_with_options?, <<-PATTERN

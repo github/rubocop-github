@@ -13,7 +13,7 @@ class TestRailsControllerRenderLiteral < CopTest
     investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
         def index
-          render MyClass
+          render MyClass, title: "foo", bar: "baz"
         end
       end
     RUBY
