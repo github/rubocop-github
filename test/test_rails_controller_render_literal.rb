@@ -9,6 +9,18 @@ class TestRailsControllerRenderLiteral < CopTest
     RuboCop::Cop::GitHub::RailsControllerRenderLiteral
   end
 
+  def test_render_string_literal_class_name_no_offense
+    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+      class ProductsController < ActionController::Base
+        def index
+          render MyClass
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_render_string_literal_action_name_no_offense
     investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
