@@ -240,13 +240,7 @@ Performance/RedundantMerge:
   Enabled: true
   MaxKeyValuePairs: 1
 
-Performance/RedundantSortBy:
-  Enabled: true
-
 Performance/ReverseEach:
-  Enabled: true
-
-Performance/Sample:
   Enabled: true
 
 Performance/Size:
@@ -314,6 +308,12 @@ Style/Not:
   Enabled: true
 
 Style/OneLineConditional:
+  Enabled: true
+
+Style/RedundantSortBy:
+  Enabled: true
+
+Style/Sample:
   Enabled: true
 
 Style/StabbyLambdaParentheses:
