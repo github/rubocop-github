@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "rubocop"
+require 'rubocop'
 
 module RuboCop
   module Cop
     module Standard
       class RailsViewRenderLiteral < Cop
-        MSG = "render must be used with a string literal"
+        MSG = 'render must be used with a string literal'
 
         def_node_matcher :literal?, <<-PATTERN
           ({str sym true false nil?} ...)

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "./cop_test"
-require "minitest/autorun"
-require "rubocop/cop/standard/rails_application_record"
+require_relative './cop_test'
+require 'minitest/autorun'
+require 'rubocop/cop/standard/rails_application_record'
 
 class TestRailsApplicationRecord < CopTest
   def cop_class
@@ -34,6 +34,6 @@ class TestRailsApplicationRecord < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal "Models should subclass from ApplicationRecord", cop.offenses.first.message
+    assert_equal 'Models should subclass from ApplicationRecord', cop.offenses.first.message
   end
 end

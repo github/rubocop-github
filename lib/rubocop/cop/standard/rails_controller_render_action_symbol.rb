@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "rubocop"
+require 'rubocop'
 
 module RuboCop
   module Cop
     module Standard
       class RailsControllerRenderActionSymbol < Cop
-        MSG = "Prefer `render` with string instead of symbol"
+        MSG = 'Prefer `render` with string instead of symbol'
 
         def_node_matcher :render_sym?, <<-PATTERN
           (send nil? :render $(sym _))

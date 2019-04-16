@@ -1,4 +1,5 @@
 require: rubocop/cop/standard
+require: rubocop-performance
 
 AllCops:
   DisabledByDefault: true
@@ -239,13 +240,7 @@ Performance/RedundantMerge:
   Enabled: true
   MaxKeyValuePairs: 1
 
-Performance/RedundantSortBy:
-  Enabled: true
-
 Performance/ReverseEach:
-  Enabled: true
-
-Performance/Sample:
   Enabled: true
 
 Performance/Size:
@@ -315,12 +310,18 @@ Style/Not:
 Style/OneLineConditional:
   Enabled: true
 
+Style/RedundantSortBy:
+  Enabled: true
+
+Style/Sample:
+  Enabled: true
+
 Style/StabbyLambdaParentheses:
   Enabled: true
 
 Style/StringLiterals:
   Enabled: true
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 
 Style/Strip:
   Enabled: true

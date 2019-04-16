@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "rubocop"
+require 'rubocop'
 
 module RuboCop
   module Cop
     module Standard
       class RailsRenderObjectCollection < Cop
-        MSG = "Avoid `render object:`"
+        MSG = 'Avoid `render object:`'
 
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? :render (hash $...) ...)
@@ -36,7 +36,7 @@ module RuboCop
                 end
                 add_offense(node, location: :expression, message: "Avoid `render object:`#{suggestion}")
               when :collection, :spacer_template
-                add_offense(node, location: :expression, message: "Avoid `render collection:`")
+                add_offense(node, location: :expression, message: 'Avoid `render collection:`')
               end
             end
           end
