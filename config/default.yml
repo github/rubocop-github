@@ -226,9 +226,6 @@ Performance/EndWith:
 Performance/FlatMap:
   Enabled: true
 
-Performance/LstripRstrip:
-  Enabled: true
-
 Performance/RangeInclude:
   Enabled: false
 
@@ -319,6 +316,9 @@ Style/OneLineConditional:
   Enabled: true
 
 Style/StabbyLambdaParentheses:
+  Enabled: true
+
+Style/Strip:
   Enabled: true
 
 Style/StringLiterals:

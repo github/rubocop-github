@@ -19,6 +19,11 @@ inherit_gem:
     - config/rails.yml
 ```
 
+## Testing
+
+`bundle install`
+`bundle exec rake test`
+
 ## The Cops
 
 All cops are located under [`lib/rubocop/cop/github`](lib/rubocop/cop/github), and contain examples/documentation.
