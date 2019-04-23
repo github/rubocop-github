@@ -318,6 +318,9 @@ Style/Sample:
 Style/StabbyLambdaParentheses:
   Enabled: true
 
+Style/Strip:
+  Enabled: true
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
