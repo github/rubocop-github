@@ -116,3 +116,7 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Exclude:
     - 'app/views/**/*.erb'
+
+Layout/InitialIndentation:
+  Exclude:
+    - 'app/views/**/*.erb'
