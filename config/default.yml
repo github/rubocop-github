@@ -1,4 +1,5 @@
 require: rubocop/cop/github
+require: rubocop-performance
 
 AllCops:
   DisabledByDefault: true
