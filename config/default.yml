@@ -1,5 +1,6 @@
-require: rubocop/cop/github
-require: rubocop-performance
+require: 
+  - rubocop/cop/github
+  - rubocop-performance
 
 AllCops:
   DisabledByDefault: true
