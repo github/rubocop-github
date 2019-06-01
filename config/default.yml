@@ -1,5 +1,6 @@
-require: rubocop/cop/standard
-require: rubocop-performance
+require:
+  - rubocop/cop/standard
+  - rubocop-performance
 
 AllCops:
   DisabledByDefault: true
