@@ -1,4 +1,6 @@
-require: rubocop/cop/github
+require: 
+  - rubocop/cop/github
+  - rubocop-performance
 
 AllCops:
   DisabledByDefault: true
@@ -113,6 +115,9 @@ Lint/EndInMethod:
   Enabled: true
 
 Lint/EnsureReturn:
+  Enabled: true
+
+Lint/FlipFlop:
   Enabled: true
 
 Lint/FloatOutOfRange:
@@ -236,13 +241,7 @@ Performance/RedundantMerge:
   Enabled: true
   MaxKeyValuePairs: 1
 
-Performance/RedundantSortBy:
-  Enabled: true
-
 Performance/ReverseEach:
-  Enabled: true
-
-Performance/Sample:
   Enabled: true
 
 Performance/Size:
@@ -281,9 +280,6 @@ Style/DefWithParentheses:
 Style/EndBlock:
   Enabled: true
 
-Style/FlipFlop:
-  Enabled: true
-
 Style/For:
   Enabled: true
 
@@ -315,12 +311,18 @@ Style/Not:
 Style/OneLineConditional:
   Enabled: true
 
-Style/StabbyLambdaParentheses:
+Style/RedundantSortBy:
   Enabled: true
 
-Style/Strip:
+Style/Sample:
+  Enabled: true
+
+Style/StabbyLambdaParentheses:
   Enabled: true
 
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/Strip:
+  Enabled: true
