@@ -43,12 +43,12 @@ class TestRailsViewRenderLiteral < CopTest
     ERB
 
     assert_equal 2, cop.offenses.count
-    assert_equal "render must be used with a string literal", cop.offenses[0].message
+    assert_equal "render must be used with a string literal or an instance of a Class", cop.offenses[0].message
   end
 
   def test_render_component_no_offense
     erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
-      <%= render Module::MyClass, title: "foo", bar: "baz" %>
+      <%= render Module::MyClass.new(, title: "foo", bar: "baz") %>
     ERB
 
     assert_equal 0, cop.offenses.count
@@ -56,7 +56,7 @@ class TestRailsViewRenderLiteral < CopTest
 
   def test_render_component_root_no_offense
     erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
-      <%= render MyClass, title: "foo", bar: "baz" %>
+      <%= render MyClass.new(title: "foo", bar: "baz") %>
     ERB
 
     assert_equal 0, cop.offenses.count
@@ -64,7 +64,7 @@ class TestRailsViewRenderLiteral < CopTest
 
   def test_render_component_block_no_offense
     erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
-      <%= render Module::MyClass, title: "foo", bar: "baz" do %>Content<% end %>
+      <%= render Module::MyClass.new(title: "foo", bar: "baz") do %>Content<% end %>
     ERB
 
     assert_equal 0, cop.offenses.count
@@ -78,7 +78,7 @@ class TestRailsViewRenderLiteral < CopTest
     ERB
 
     assert_equal 1, cop.offenses.count
-    assert_equal "render must be used with a string literal", cop.offenses[0].message
+    assert_equal "render must be used with a string literal or an instance of a Class", cop.offenses[0].message
   end
 
   def test_render_inline_no_offense
