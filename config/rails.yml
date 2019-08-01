@@ -120,3 +120,7 @@ Layout/TrailingWhitespace:
 Layout/InitialIndentation:
   Exclude:
     - 'app/views/**/*.erb'
+
+Lint/UselessAccessModifier:
+  ContextCreatingMethods:
+    - concerning
