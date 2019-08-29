@@ -20,6 +20,10 @@ module RuboCop
           (send nil? :render ({str sym} $_) $...)
         PATTERN
 
+        def_node_matcher :render_const?, <<-PATTERN
+          (send nil? :render (const _ _) ...)
+        PATTERN
+
         def_node_matcher :render_inst?, <<-PATTERN
           (send nil? :render (send _ :new ...) ...)
         PATTERN
@@ -67,7 +71,7 @@ module RuboCop
         def on_send(node)
           return unless render?(node)
 
-          if render_literal?(node) || render_inst?(node)
+          if render_literal?(node) || render_inst?(node) || render_const?(node)
           elsif option_pairs = render_with_options?(node)
             option_pairs = option_pairs.reject { |pair| options_key?(pair) }
 
