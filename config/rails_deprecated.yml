@@ -1,0 +1,7 @@
+inherit_from: _rails_shared.yml
+
+Rails:
+  Enabled: true
+
+Rails/FindEach:
+  Enabled: false

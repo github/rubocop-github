@@ -1,0 +1,4 @@
+inherit_from: _default_shared.yml
+
+require:
+  - rubocop-performance
