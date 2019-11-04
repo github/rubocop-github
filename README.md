@@ -13,10 +13,8 @@ gem "rubocop-standard"
 **.rubocop.yml**
 
 ``` yaml
-inherit_gem:
-  rubocop-standard:
-    - config/default.yml
-    - config/rails.yml
+require:
+  - rubocop-standard
 ```
 
 ## The Cops

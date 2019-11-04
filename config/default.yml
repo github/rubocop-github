@@ -1,9 +1,4 @@
-require:
-  - rubocop/cop/standard
-  - rubocop-performance
-
-AllCops:
-  DisabledByDefault: true
+require: rubocop/cop/standard
 
 Bundler/DuplicatedGem:
   Enabled: true
@@ -153,10 +148,10 @@ Lint/StringConversionInInterpolation:
 Lint/UnderscorePrefixedVariableName:
   Enabled: true
 
-Lint/UnneededCopDisableDirective:
+Lint/RedundantCopDisableDirective:
   Enabled: true
 
-Lint/UnneededSplatExpansion:
+Lint/RedundantSplatExpansion:
   Enabled: true
 
 Lint/UnreachableCode:

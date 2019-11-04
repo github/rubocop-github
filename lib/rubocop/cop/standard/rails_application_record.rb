@@ -17,11 +17,9 @@ module RuboCop
         PATTERN
 
         def on_class(node)
-          klass, superclass, _ = *node
+          klass, superclass, = *node
 
-          if active_record_base_const?(superclass) && !(application_record_const?(klass))
-            add_offense(superclass, location: :expression)
-          end
+          add_offense(superclass, location: :expression) if active_record_base_const?(superclass) && !application_record_const?(klass)
         end
       end
     end

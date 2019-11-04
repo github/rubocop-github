@@ -27,16 +27,12 @@ module RuboCop
 
           if args = render_str?(node)
             node, path = args
-            unless resolve_partial(path.to_s)
-              add_offense(node, location: :expression, message: 'Partial template could not be found')
-            end
+            add_offense(node, location: :expression, message: 'Partial template could not be found') unless resolve_partial(path.to_s)
           elsif pairs = render_options?(node)
             if pair = pairs.detect { |p| partial_key?(p) }
               node, path = partial_key?(pair)
 
-              unless resolve_partial(path.to_s)
-                add_offense(node, location: :expression, message: 'Partial template could not be found')
-              end
+              add_offense(node, location: :expression, message: 'Partial template could not be found') unless resolve_partial(path.to_s)
             end
           end
         end

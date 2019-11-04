@@ -9,6 +9,68 @@ class TestRailsControllerRenderLiteral < CopTest
     RuboCop::Cop::Standard::RailsControllerRenderLiteral
   end
 
+  def test_render_string_literal_class_name_no_offense
+    investigate cop, <<-RUBY, 'app/controllers/products_controller.rb'
+      class ProductsController < ActionController::Base
+        def index
+          render(MyClass, title: "foo", bar: "baz")
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_string_literal_class_instance_no_offense
+    investigate cop, <<-RUBY, 'app/controllers/products_controller.rb'
+      class ProductsController < ActionController::Base
+        def index
+          render(MyClass.new(title: "foo", bar: "baz"))
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_string_literal_module_class_name_no_offense
+    investigate cop, <<-RUBY, 'app/controllers/products_controller.rb'
+      class ProductsController < ActionController::Base
+        def index
+          render(Module::MyClass, title: "foo", bar: "baz")
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_string_literal_module_class_instance_no_offense
+    investigate cop, <<-RUBY, 'app/controllers/products_controller.rb'
+      class ProductsController < ActionController::Base
+        def index
+          render(Module::MyClass.new(title: "foo", bar: "baz"))
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_string_literal_module_class_name_block_no_offense
+    investigate cop, <<-RUBY, 'app/controllers/products_controller.rb'
+      class ProductsController < ActionController::Base
+        def index
+          render(Module::MyClass.new(title: "foo", bar: "baz")) do
+            "my block content"
+          end
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_render_string_literal_action_name_no_offense
     investigate cop, <<-RUBY, 'app/controllers/products_controller.rb'
       class ProductsController < ActionController::Base
@@ -212,7 +274,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_implicit_with_layout_offense
@@ -225,7 +287,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_implicit_with_status_offense
@@ -238,7 +300,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_variable_offense
@@ -251,7 +313,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_action_variable_offense
@@ -264,7 +326,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_template_variable_offense
@@ -277,7 +339,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_partial_variable_offense
@@ -290,7 +352,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_template_with_layout_variable_offense
@@ -303,7 +365,7 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 
   def test_render_template_variable_with_layout_offense
@@ -316,6 +378,6 @@ class TestRailsControllerRenderLiteral < CopTest
     RUBY
 
     assert_equal 1, cop.offenses.count
-    assert_equal 'render must be used with a string literal', cop.offenses[0].message
+    assert_equal 'render must be used with a string literal or an instance of a Class', cop.offenses[0].message
   end
 end

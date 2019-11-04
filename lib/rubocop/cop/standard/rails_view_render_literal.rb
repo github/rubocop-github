@@ -6,7 +6,7 @@ module RuboCop
   module Cop
     module Standard
       class RailsViewRenderLiteral < Cop
-        MSG = 'render must be used with a string literal'
+        MSG = 'render must be used with a string literal or an instance of a Class'
 
         def_node_matcher :literal?, <<-PATTERN
           ({str sym true false nil?} ...)
@@ -18,6 +18,14 @@ module RuboCop
 
         def_node_matcher :render_literal?, <<-PATTERN
           (send nil? :render ({str sym} $_) $...)
+        PATTERN
+
+        def_node_matcher :render_inst?, <<-PATTERN
+          (send nil? :render (send _ :new ...) ...)
+        PATTERN
+
+        def_node_matcher :render_const?, <<-PATTERN
+          (send nil? :render (const _ _) ...)
         PATTERN
 
         def_node_matcher :render_with_options?, <<-PATTERN
@@ -42,16 +50,12 @@ module RuboCop
         def on_send(node)
           return unless render?(node)
 
-          if render_literal?(node)
+          if render_literal?(node) || render_inst?(node) || render_const?(node)
           elsif option_pairs = render_with_options?(node)
-            if option_pairs.any? { |pair| ignore_key?(pair) }
-              return
-            end
+            return if option_pairs.any? { |pair| ignore_key?(pair) }
 
             if partial_node = option_pairs.map { |pair| partial_key?(pair) }.compact.first
-              if !literal?(partial_node)
-                add_offense(node, location: :expression)
-              end
+              add_offense(node, location: :expression) unless literal?(partial_node)
             else
               add_offense(node, location: :expression)
             end

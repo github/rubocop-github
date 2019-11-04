@@ -1,8 +1,5 @@
-Rails:
-  Enabled: true
-
-Rails/FindEach:
-  Enabled: false
+require:
+  - rubocop-rails
 
 Rails/OutputSafety:
   Enabled: true
@@ -20,99 +17,107 @@ Rails/ScopeArgs:
 Rails/UniqBeforePluck:
   Enabled: true
 
-Standard/RailsApplicationRecord:
+GitHub/RailsApplicationRecord:
   Enabled: true
 
-Standard/RailsControllerRenderActionSymbol:
+GitHub/RailsControllerRenderActionSymbol:
   Enabled: true
   Include:
-    - 'app/controllers/**/*.rb'
+    - "app/controllers/**/*.rb"
 
-Standard/RailsControllerRenderLiteral:
+GitHub/RailsControllerRenderLiteral:
   Enabled: true
-  StyleGuide: https://github.com/gjtorikian/rubocop-standard/blob/master/guides/rails-render-literal.md
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
   Include:
-    - 'app/controllers/**/*.rb'
+    - "app/controllers/**/*.rb"
 
-Standard/RailsControllerRenderPathsExist:
+GitHub/RailsControllerRenderPathsExist:
   Enabled: true
   ViewPath:
-    - 'app/views'
+    - "app/views"
   Include:
-    - 'app/controllers/**/*.rb'
+    - "app/controllers/**/*.rb"
 
-Standard/RailsControllerRenderShorthand:
+GitHub/RailsControllerRenderShorthand:
   Enabled: true
-  StyleGuide: https://github.com/gjtorikian/rubocop-standard/blob/master/guides/rails-controller-render-shorthand.md
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-shorthand.md
   Include:
-    - 'app/controllers/**/*.rb'
+    - "app/controllers/**/*.rb"
 
-Standard/RailsRenderInline:
+GitHub/RailsRenderInline:
   Enabled: true
-  StyleGuide: https://github.com/gjtorikian/rubocop-standard/blob/master/guides/rails-controller-render-inline.md
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-inline.md
   Include:
-    - 'app/controllers/**/*.rb'
-    - 'app/helpers/**/*.rb'
-    - 'app/view_models/**/*.rb'
-    - 'app/views/**/*.erb'
+    - "app/controllers/**/*.rb"
+    - "app/helpers/**/*.rb"
+    - "app/view_models/**/*.rb"
+    - "app/views/**/*.erb"
 
-Standard/RailsRenderObjectCollection:
+GitHub/RailsRenderObjectCollection:
   Enabled: false
 
-Standard/RailsViewRenderLiteral:
+GitHub/RailsViewRenderLiteral:
   Enabled: true
-  StyleGuide: https://github.com/gjtorikian/rubocop-standard/blob/master/guides/rails-render-literal.md
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
   Include:
-    - 'app/helpers/**/*.rb'
-    - 'app/view_models/**/*.rb'
-    - 'app/views/**/*.erb'
+    - "app/helpers/**/*.rb"
+    - "app/view_models/**/*.rb"
+    - "app/views/**/*.erb"
 
-Standard/RailsViewRenderPathsExist:
+GitHub/RailsViewRenderPathsExist:
   Enabled: true
   ViewPath:
-    - 'app/views'
+    - "app/views"
   Include:
-    - 'app/helpers/**/*.rb'
-    - 'app/view_models/**/*.rb'
-    - 'app/views/**/*.erb'
+    - "app/helpers/**/*.rb"
+    - "app/view_models/**/*.rb"
+    - "app/views/**/*.erb"
 
-Standard/RailsViewRenderShorthand:
+GitHub/RailsViewRenderShorthand:
   Enabled: true
   Include:
-    - 'app/helpers/**/*.rb'
-    - 'app/view_models/**/*.rb'
-    - 'app/views/**/*.erb'
+    - "app/helpers/**/*.rb"
+    - "app/view_models/**/*.rb"
+    - "app/views/**/*.erb"
 
 # Exclude Rails ERB files from incompatible cops
 
 Layout/BlockAlignment:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
 
 Style/For:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
 
 Style/OneLineConditional:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
 
 Style/Semicolon:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
 
 Layout/SpaceInsideParens:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
 
 Style/StringLiterals:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
 
 Layout/TrailingBlankLines:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
 
 Layout/TrailingWhitespace:
   Exclude:
-    - 'app/views/**/*.erb'
+    - "app/views/**/*.erb"
+
+Layout/InitialIndentation:
+  Exclude:
+    - "app/views/**/*.erb"
+
+Lint/UselessAccessModifier:
+  ContextCreatingMethods:
+    - concerning
