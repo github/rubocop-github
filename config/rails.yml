@@ -17,54 +17,54 @@ Rails/ScopeArgs:
 Rails/UniqBeforePluck:
   Enabled: true
 
-GitHub/RailsApplicationRecord:
+Standard/RailsApplicationRecord:
   Enabled: true
 
-GitHub/RailsControllerRenderActionSymbol:
+Standard/RailsControllerRenderActionSymbol:
   Enabled: true
   Include:
     - "app/controllers/**/*.rb"
 
-GitHub/RailsControllerRenderLiteral:
+Standard/RailsControllerRenderLiteral:
   Enabled: true
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
+  StyleGuide: https://Standard.com/Standard/rubocop-Standard/blob/master/guides/rails-render-literal.md
   Include:
     - "app/controllers/**/*.rb"
 
-GitHub/RailsControllerRenderPathsExist:
+Standard/RailsControllerRenderPathsExist:
   Enabled: true
   ViewPath:
     - "app/views"
   Include:
     - "app/controllers/**/*.rb"
 
-GitHub/RailsControllerRenderShorthand:
+Standard/RailsControllerRenderShorthand:
   Enabled: true
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-shorthand.md
+  StyleGuide: https://Standard.com/Standard/rubocop-Standard/blob/master/guides/rails-controller-render-shorthand.md
   Include:
     - "app/controllers/**/*.rb"
 
-GitHub/RailsRenderInline:
+Standard/RailsRenderInline:
   Enabled: true
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-inline.md
+  StyleGuide: https://Standard.com/Standard/rubocop-Standard/blob/master/guides/rails-controller-render-inline.md
   Include:
     - "app/controllers/**/*.rb"
     - "app/helpers/**/*.rb"
     - "app/view_models/**/*.rb"
     - "app/views/**/*.erb"
 
-GitHub/RailsRenderObjectCollection:
+Standard/RailsRenderObjectCollection:
   Enabled: false
 
-GitHub/RailsViewRenderLiteral:
+Standard/RailsViewRenderLiteral:
   Enabled: true
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
+  StyleGuide: https://Standard.com/Standard/rubocop-Standard/blob/master/guides/rails-render-literal.md
   Include:
     - "app/helpers/**/*.rb"
     - "app/view_models/**/*.rb"
     - "app/views/**/*.erb"
 
-GitHub/RailsViewRenderPathsExist:
+Standard/RailsViewRenderPathsExist:
   Enabled: true
   ViewPath:
     - "app/views"
@@ -73,7 +73,7 @@ GitHub/RailsViewRenderPathsExist:
     - "app/view_models/**/*.rb"
     - "app/views/**/*.erb"
 
-GitHub/RailsViewRenderShorthand:
+Standard/RailsViewRenderShorthand:
   Enabled: true
   Include:
     - "app/helpers/**/*.rb"
