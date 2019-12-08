@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'rubocop-standard'
-  s.version = '2.0.1'
+  s.version = '2.1.0'
   s.authors = ['Garen Torikian']
   s.email = ['gjtorikian@gmail.com']
   s.summary = 'RuboCop Standard'
@@ -19,6 +19,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'actionview', '~> 5.0'
   s.add_development_dependency 'minitest', '~> 5.10'
   s.add_development_dependency 'rake', '~> 12.0'
-
-  s.required_ruby_version = '>= 2.1.0'
 end

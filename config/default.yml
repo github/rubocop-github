@@ -73,7 +73,7 @@ Layout/SpaceInsideReferenceBrackets:
 Layout/Tab:
   Enabled: true
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: true
 
 Layout/TrailingWhitespace:
@@ -88,10 +88,10 @@ Lint/Debugger:
 Lint/DeprecatedClassMethods:
   Enabled: true
 
-Lint/DuplicateMethods:
+Lint/DuplicateHashKey:
   Enabled: true
 
-Lint/DuplicatedKey:
+Lint/DuplicateMethods:
   Enabled: true
 
 Lint/EachWithObjectArgument:
@@ -136,13 +136,13 @@ Lint/NextWithoutAccumulator:
 Lint/RandOne:
   Enabled: true
 
+Lint/RedundantStringCoercion:
+  Enabled: true
+
 Lint/RequireParentheses:
   Enabled: true
 
 Lint/RescueException:
-  Enabled: true
-
-Lint/StringConversionInInterpolation:
   Enabled: true
 
 Lint/UnderscorePrefixedVariableName:
