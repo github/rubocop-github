@@ -1,4 +1,6 @@
-require: rubocop/cop/standard
+require:
+  - rubocop/cop/standard
+  - rubocop-performance
 
 Bundler/DuplicatedGem:
   Enabled: true
