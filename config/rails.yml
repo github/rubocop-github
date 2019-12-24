@@ -1,5 +1,6 @@
 require:
   - rubocop-rails
+  - rubocop/cop/standard/rails
 
 Rails/OutputSafety:
   Enabled: true

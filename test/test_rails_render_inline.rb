@@ -2,7 +2,7 @@
 
 require_relative './cop_test'
 require 'minitest/autorun'
-require 'rubocop/cop/standard/rails_render_inline'
+require 'rubocop/cop/standard/rails/rails_render_inline'
 
 class TestRailsRenderInline < CopTest
   def cop_class

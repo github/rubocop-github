@@ -21,11 +21,11 @@ module RuboCop
         PATTERN
 
         def on_send(node)
-          if sym_node = render_sym?(node)
+          if (sym_node = render_sym?(node))
             add_offense(sym_node, location: :expression)
-          elsif option_pairs = render_with_options?(node)
+          elsif (option_pairs = render_with_options?(node))
             option_pairs.each do |pair|
-              if sym_node = action_key?(pair)
+              if (sym_node = action_key?(pair))
                 add_offense(sym_node, location: :expression)
               end
             end

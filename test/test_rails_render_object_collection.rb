@@ -2,7 +2,7 @@
 
 require_relative './cop_test'
 require 'minitest/autorun'
-require 'rubocop/cop/standard/rails_render_object_collection'
+require 'rubocop/cop/standard/rails/rails_render_object_collection'
 
 class TestRailsRenderObjectCollection < CopTest
   def cop_class

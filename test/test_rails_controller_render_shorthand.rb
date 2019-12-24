@@ -2,7 +2,7 @@
 
 require_relative './cop_test'
 require 'minitest/autorun'
-require 'rubocop/cop/standard/rails_controller_render_shorthand'
+require 'rubocop/cop/standard/rails/rails_controller_render_shorthand'
 
 class TestRailsControllerRenderShorthand < CopTest
   def cop_class

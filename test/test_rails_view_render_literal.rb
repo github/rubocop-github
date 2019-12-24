@@ -2,7 +2,7 @@
 
 require_relative './cop_test'
 require 'minitest/autorun'
-require 'rubocop/cop/standard/rails_view_render_literal'
+require 'rubocop/cop/standard/rails/rails_view_render_literal'
 
 class TestRailsViewRenderLiteral < CopTest
   def cop_class

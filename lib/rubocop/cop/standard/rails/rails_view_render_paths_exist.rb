@@ -25,11 +25,11 @@ module RuboCop
         def on_send(node)
           return unless cop_config['ViewPath']
 
-          if args = render_str?(node)
+          if (args = render_str?(node))
             node, path = args
             add_offense(node, location: :expression, message: 'Partial template could not be found') unless resolve_partial(path.to_s)
-          elsif pairs = render_options?(node)
-            if pair = pairs.detect { |p| partial_key?(p) }
+          elsif (pairs = render_options?(node))
+            if (pair = pairs.detect { |p| partial_key?(p) })
               node, path = partial_key?(pair)
 
               add_offense(node, location: :expression, message: 'Partial template could not be found') unless resolve_partial(path.to_s)
@@ -43,7 +43,7 @@ module RuboCop
           path = parts.join(File::SEPARATOR)
 
           cop_config['ViewPath'].each do |view_path|
-            if m = Dir[File.join(config.path_relative_to_config(view_path), path) + '*'].first
+            if (m = Dir[File.join(config.path_relative_to_config(view_path), path) + '*'].first)
               return m
             end
           end

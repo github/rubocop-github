@@ -29,20 +29,20 @@ module RuboCop
         end
 
         def on_send(node)
-          if option_pairs = render_with_options?(node)
-            option_pairs.each do |pair|
-              next unless value_node = action_key?(pair)
+          return unless (option_pairs = render_with_options?(node))
 
-              comma = option_pairs.length > 1 ? ', ' : ''
-              corrected_source = node.source
-                                     .sub(/#{pair.source}(,\s*)?/, '')
-                                     .sub('render ', "render \"#{str(value_node)}\"#{comma}")
+          option_pairs.each do |pair|
+            next unless (value_node = action_key?(pair))
 
-              @autocorrect[node] = lambda do |corrector|
-                corrector.replace(node.source_range, corrected_source)
-              end
-              add_offense(node, location: :expression, message: "Use `#{corrected_source}` instead")
+            comma = option_pairs.length > 1 ? ', ' : ''
+            corrected_source = node.source
+                                   .sub(/#{pair.source}(,\s*)?/, '')
+                                   .sub('render ', "render \"#{str(value_node)}\"#{comma}")
+
+            @autocorrect[node] = lambda do |corrector|
+              corrector.replace(node.source_range, corrected_source)
             end
+            add_offense(node, location: :expression, message: "Use `#{corrected_source}` instead")
           end
         end
       end

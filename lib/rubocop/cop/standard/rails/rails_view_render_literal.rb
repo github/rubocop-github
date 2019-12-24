@@ -51,10 +51,10 @@ module RuboCop
           return unless render?(node)
 
           if render_literal?(node) || render_inst?(node) || render_const?(node)
-          elsif option_pairs = render_with_options?(node)
+          elsif (option_pairs = render_with_options?(node))
             return if option_pairs.any? { |pair| ignore_key?(pair) }
 
-            if partial_node = option_pairs.map { |pair| partial_key?(pair) }.compact.first
+            if (partial_node = option_pairs.map { |pair| partial_key?(pair) }.compact.first)
               add_offense(node, location: :expression) unless literal?(partial_node)
             else
               add_offense(node, location: :expression)

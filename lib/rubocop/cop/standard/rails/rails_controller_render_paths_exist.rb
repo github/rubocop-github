@@ -25,11 +25,11 @@ module RuboCop
         def on_send(node)
           return unless cop_config['ViewPath']
 
-          if args = render_str?(node)
+          if (args = render_str?(node))
             node, path = args
             add_offense(node, location: :expression, message: 'Template could not be found') unless resolve_template(path.to_s)
-          elsif pairs = render_options?(node)
-            if pair = pairs.detect { |p| render_key?(p) }
+          elsif (pairs = render_options?(node))
+            if (pair = pairs.detect { |p| render_key?(p) })
               key, node, path = render_key?(pair)
 
               case key
@@ -44,7 +44,7 @@ module RuboCop
 
         def resolve_template(path)
           cop_config['ViewPath'].each do |view_path|
-            if m = Dir[File.join(config.path_relative_to_config(view_path), path) + '*'].first
+            if (m = Dir[File.join(config.path_relative_to_config(view_path), path) + '*'].first)
               return m
             end
           end

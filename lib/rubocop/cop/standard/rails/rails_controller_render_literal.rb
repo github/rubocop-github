@@ -72,18 +72,18 @@ module RuboCop
           return unless render?(node)
 
           if render_literal?(node) || render_inst?(node) || render_const?(node)
-          elsif option_pairs = render_with_options?(node)
+          elsif (option_pairs = render_with_options?(node))
             option_pairs = option_pairs.reject { |pair| options_key?(pair) }
 
             return if option_pairs.any? { |pair| ignore_key?(pair) }
 
-            if template_node = option_pairs.map { |pair| template_key?(pair) }.compact.first
+            if (template_node = option_pairs.map { |pair| template_key?(pair) }.compact.first)
               add_offense(node, location: :expression) unless literal?(template_node)
             else
               add_offense(node, location: :expression)
             end
 
-            if layout_node = option_pairs.map { |pair| layout_key?(pair) }.compact.first
+            if (layout_node = option_pairs.map { |pair| layout_key?(pair) }.compact.first)
               add_offense(node, location: :expression) unless literal?(layout_node)
             end
           else
