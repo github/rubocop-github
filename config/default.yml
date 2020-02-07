@@ -249,6 +249,9 @@ Performance/StartWith:
 Security/Eval:
   Enabled: true
 
+Style/AccessModifierDeclarations:
+  Enabled: true
+
 Style/ArrayJoin:
   Enabled: true
 
