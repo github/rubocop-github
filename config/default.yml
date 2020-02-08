@@ -250,7 +250,7 @@ Security/Eval:
   Enabled: true
 
 Style/AccessModifierDeclarations:
-  Enabled: true
+  Enabled: false
 
 Style/ArrayJoin:
   Enabled: true
