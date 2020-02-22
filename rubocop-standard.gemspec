@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'rubocop-standard'
-  s.version = '3.1.2'
+  s.version = '3.2.0'
   s.authors = ['Garen Torikian']
   s.email = ['gjtorikian@gmail.com']
   s.summary = 'RuboCop Standard'
