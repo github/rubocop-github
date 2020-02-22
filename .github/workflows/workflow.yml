@@ -1,0 +1,38 @@
+name: Unit Tests
+
+on:
+  push:
+    branches:
+      - master
+    pull_request:
+      - master
+
+jobs:
+  ubuntu:
+    name: Ruby ${{ matrix.ruby }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        [2.3, 2.4, 2.5, 2.6]
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Cache Ruby dependencies
+        uses: actions/cache@v1
+        with:
+          path: ./vendor/bundle
+          key: cache-${{ runner.os }}-${{ matrix.ruby }}-${{ github.sha }}
+          restore-keys: |
+            cache-${{ runner.os }}-${{ matrix.ruby }}-
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Install dependencies
+        run: |
+          bundle install --path=vendor/bundle --without=development --jobs 4 --retry 3
+      - name: Test
+        run: |
+          bundle exec rake
