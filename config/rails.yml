@@ -57,14 +57,6 @@ Standard/RailsRenderInline:
 Standard/RailsRenderObjectCollection:
   Enabled: false
 
-Standard/RailsViewRenderLiteral:
-  Enabled: true
-  StyleGuide: https://Standard.com/Standard/rubocop-Standard/blob/master/guides/rails-render-literal.md
-  Include:
-    - "app/helpers/**/*.rb"
-    - "app/view_models/**/*.rb"
-    - "app/views/**/*.erb"
-
 Standard/RailsViewRenderPathsExist:
   Enabled: true
   ViewPath:
