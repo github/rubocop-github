@@ -26,12 +26,6 @@ Standard/RailsControllerRenderActionSymbol:
   Include:
     - "app/controllers/**/*.rb"
 
-Standard/RailsControllerRenderLiteral:
-  Enabled: true
-  StyleGuide: https://Standard.com/Standard/rubocop-Standard/blob/master/guides/rails-render-literal.md
-  Include:
-    - "app/controllers/**/*.rb"
-
 Standard/RailsControllerRenderPathsExist:
   Enabled: true
   ViewPath:
