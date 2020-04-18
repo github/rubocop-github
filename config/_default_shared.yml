@@ -32,6 +32,9 @@ Layout/IndentationStyle:
 Layout/InitialIndentation:
   Enabled: true
 
+Layout/LineLength:
+  Enabled: false
+
 Layout/SpaceAfterColon:
   Enabled: true
 
@@ -178,9 +181,6 @@ Metrics/ClassLength:
   Enabled: false
 
 Metrics/CyclomaticComplexity:
-  Enabled: false
-
-Metrics/LineLength:
   Enabled: false
 
 Metrics/MethodLength:
