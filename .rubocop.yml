@@ -1,5 +1,8 @@
 inherit_from: ./config/default.yml
 
+require:
+  - rubocop-performance
+
 Naming/FileName:
   Enabled: true
   Exclude:
