@@ -25,6 +25,9 @@ Layout/EndAlignment:
 Layout/EndOfLine:
   Enabled: true
 
+Layout/IndentationStyle:
+  Enabled: true
+
 Layout/InitialIndentation:
   Enabled: true
 
@@ -72,9 +75,6 @@ Layout/SpaceInsideRangeLiteral:
   Enabled: true
 
 Layout/SpaceInsideReferenceBrackets:
-  Enabled: true
-
-Layout/Tab:
   Enabled: true
 
 Layout/TrailingEmptyLines:
