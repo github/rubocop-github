@@ -103,7 +103,7 @@ Style/StringLiterals:
   Exclude:
     - 'app/views/**/*.erb'
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Exclude:
     - 'app/views/**/*.erb'
 
