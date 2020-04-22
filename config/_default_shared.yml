@@ -152,10 +152,10 @@ Lint/StringConversionInInterpolation:
 Lint/UnderscorePrefixedVariableName:
   Enabled: true
 
-Lint/UnneededCopDisableDirective:
+Lint/RedundantCopDisableDirective:
   Enabled: true
 
-Lint/UnneededSplatExpansion:
+Lint/RedundantSplatExpansion:
   Enabled: true
 
 Lint/UnreachableCode:
