@@ -1,4 +1,6 @@
-require: rubocop/cop/github
+require:
+  - rubocop/cop/github
+  - rubocop-performance
 
 # These cops are compatible across supported versions of rubocop
 
@@ -109,9 +111,6 @@ Lint/EmptyEnsure:
   Enabled: true
 
 Lint/EmptyInterpolation:
-  Enabled: true
-
-Lint/EndInMethod:
   Enabled: true
 
 Lint/EnsureReturn:
