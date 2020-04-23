@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb", "guides/*.md"]
 
-  s.add_dependency "rubocop", "~> 0.59"
+  s.add_dependency "rubocop", "<=0.75.0"
   # TODO: If you use this gem in "edge" mode, it requires both
   # rubocop-performance and rubocop-rails but it's not currently possible to
   # add these to the gemspec because both of them require a ver recent version
