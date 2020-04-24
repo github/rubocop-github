@@ -1,4 +1,6 @@
-require: rubocop/cop/github
+require:
+  - rubocop/cop/github
+  - rubocop-performance
 
 # These cops are compatible across supported versions of rubocop
 
@@ -75,7 +77,7 @@ Layout/SpaceInsideReferenceBrackets:
 Layout/Tab:
   Enabled: true
 
-Layout/TrailingEmptyLines:
+Layout/TrailingBlankLines:
   Enabled: true
 
 Layout/TrailingWhitespace:
@@ -93,7 +95,7 @@ Lint/DeprecatedClassMethods:
 Lint/DuplicateMethods:
   Enabled: true
 
-Lint/DuplicateHashKey:
+Lint/DuplicatedKey:
   Enabled: true
 
 Lint/EachWithObjectArgument:
@@ -144,16 +146,16 @@ Lint/RequireParentheses:
 Lint/RescueException:
   Enabled: true
 
-Lint/RedundantStringCoercion:
+Lint/StringConversionInInterpolation:
   Enabled: true
 
 Lint/UnderscorePrefixedVariableName:
   Enabled: true
 
-Lint/RedundantCopDisableDirective:
+Lint/UnneededCopDisableDirective:
   Enabled: true
 
-Lint/RedundantSplatExpansion:
+Lint/UnneededSplatExpansion:
   Enabled: true
 
 Lint/UnreachableCode:
