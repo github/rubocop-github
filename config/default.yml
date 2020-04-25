@@ -55,6 +55,9 @@ Layout/SpaceAroundBlockParameters:
 Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: true
 
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
 
@@ -137,6 +140,9 @@ Lint/NextWithoutAccumulator:
 Lint/RandOne:
   Enabled: true
 
+Lint/RaiseException:
+  Enabled: true
+
 Lint/RedundantStringCoercion:
   Enabled: true
 
@@ -144,6 +150,9 @@ Lint/RequireParentheses:
   Enabled: true
 
 Lint/RescueException:
+  Enabled: true
+
+Lint/StructNewOverride:
   Enabled: true
 
 Lint/UnderscorePrefixedVariableName:
@@ -277,6 +286,9 @@ Style/Documentation:
   Enabled: false
 
 Style/EndBlock:
+  Enabled: true
+
+Style/ExponentialNotation:
   Enabled: true
 
 Style/For:
