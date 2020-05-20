@@ -72,7 +72,7 @@ class TestRailsViewRenderLiteral < CopTest
 
   def test_render_component_collection_no_offense
     erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
-      <%= render MyClass.collection(title: "foo", bar: "baz") %>
+      <%= render MyClass.with_collection(title: "foo", bar: "baz") %>
     ERB
 
     assert_equal 0, cop.offenses.count
@@ -80,7 +80,7 @@ class TestRailsViewRenderLiteral < CopTest
 
   def test_render_component_module_collection_no_offense
     erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
-      <%= render Foo::MyClass.collection(title: "foo", bar: "baz") %>
+      <%= render Foo::MyClass.with_collection(title: "foo", bar: "baz") %>
     ERB
 
     assert_equal 0, cop.offenses.count

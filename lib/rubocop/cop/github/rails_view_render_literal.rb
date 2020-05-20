@@ -25,7 +25,7 @@ module RuboCop
         PATTERN
 
         def_node_matcher :render_collection?, <<-PATTERN
-          (send nil? :render (send _ :collection ...) ...)
+          (send nil? :render (send _ :with_collection ...) ...)
         PATTERN
 
         def_node_matcher :render_with_options?, <<-PATTERN
