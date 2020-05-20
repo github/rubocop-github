@@ -70,6 +70,22 @@ class TestRailsViewRenderLiteral < CopTest
     assert_equal 0, cop.offenses.count
   end
 
+  def test_render_component_collection_no_offense
+    erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
+      <%= render MyClass.collection(title: "foo", bar: "baz") %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_component_module_collection_no_offense
+    erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
+      <%= render Foo::MyClass.collection(title: "foo", bar: "baz") %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_render_layout_variable_literal_no_offense
     erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
       <%= render layout: magic_string do %>
