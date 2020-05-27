@@ -19,6 +19,9 @@ Layout/ConditionPosition:
 Layout/DefEndAlignment:
   Enabled: true
 
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
 Layout/EndAlignment:
   Enabled: false
 
@@ -335,6 +338,9 @@ Style/RedundantSortBy:
   Enabled: true
 
 Style/Sample:
+  Enabled: true
+
+Style/SlicingWithRange:
   Enabled: true
 
 Style/StabbyLambdaParentheses:
