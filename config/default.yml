@@ -98,6 +98,9 @@ Lint/Debugger:
 Lint/DeprecatedClassMethods:
   Enabled: true
 
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
 Lint/DuplicateHashKey:
   Enabled: true
 
