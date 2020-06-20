@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = 'rubocop-standard'
-  s.version = '5.0.0'
+  s.version = '5.0.1'
   s.authors = ['Garen Torikian']
   s.email = ['gjtorikian@gmail.com']
   s.summary = 'RuboCop Standard'
-  s.description = 'Just enables all the RuboCop recommendations'
+  s.description = 'Enables all the RuboCop recommendations (with the overly aggressive ones disabled).'
   s.homepage = 'https://github.com/gjtorikian/rubocop-standard'
   s.license = 'MIT'
 
