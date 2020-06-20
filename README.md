@@ -1,22 +1,18 @@
-# RuboCop Standard [![Build Status](https://travis-ci.org/github/rubocop-standard.svg?branch=master)](https://travis-ci.org/github/rubocop-standard)
+# RuboCop Standard
 
-This repository provides recommended RuboCop configuration and additional Cops for use, based initially on GitHub open source and internal Ruby projects.
+This repository enables all the recommended RuboCop configurations.
 
 ## Installation
 
-**Gemfile**
+### Gemfile
 
 ``` ruby
 gem "rubocop-standard"
 ```
 
-**.rubocop.yml**
+### .rubocop.yml
 
 ``` yaml
 require:
   - rubocop-standard
 ```
-
-## The Cops
-
-All cops are located under [`lib/rubocop/cop/standard`](lib/rubocop/cop/standard), and contain examples/documentation.
