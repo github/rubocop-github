@@ -163,7 +163,7 @@ Lint/RedundantSplatExpansion:
 Lint/UnreachableCode:
   Enabled: true
 
-Lint/UselessComparison:
+Lint/BinaryOperatorWithIdenticalOperands:
   Enabled: true
 
 Lint/UselessSetterCall:
