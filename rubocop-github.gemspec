@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "rubocop-github"
-  s.version = "0.16.0"
+  s.version = "0.16.1"
   s.summary = "RuboCop GitHub"
   s.description = "Code style checking for GitHub Ruby repositories "
   s.homepage = "https://github.com/github/rubocop-github"
@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb", "guides/*.md"]
 
-  s.add_dependency "rubocop", "<=0.82.0"
-  s.add_dependency "rubocop-performance", "~> 1.0"
-  s.add_dependency "rubocop-rails", "~> 2.0"
+  s.add_dependency "rubocop", "<= 0.89.0"
+  s.add_dependency "rubocop-performance", "<= 1.7.1"
+  s.add_dependency "rubocop-rails", "<= 2.7.1"
 
   s.add_development_dependency "actionview", "~> 5.0"
   s.add_development_dependency "minitest", "~> 5.10"
