@@ -2,7 +2,7 @@
 
 * Use soft-tabs with a two space indent.
 
-* Keep each line of code to a readable length. Unless you have a reason to, keep lines to fewer than 100 characters.
+* Keep each line of code to a readable length. Unless you have a reason to, keep lines to a maximum of 118 characters. Why 118? That's the width at which the pull request diff UI needs horizontal scrolling (making pull requests harder to review).
 
 * Never leave trailing whitespace.
 
