@@ -9,7 +9,7 @@ module RuboCop
         MSG = "Avoid `render inline:`"
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil? :render (hash $...))
+          (send nil? {:render :render_to_string} (hash $...))
         PATTERN
 
         def_node_matcher :inline_key?, <<-PATTERN

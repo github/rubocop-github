@@ -13,23 +13,23 @@ module RuboCop
         PATTERN
 
         def_node_matcher :render?, <<-PATTERN
-          (send nil? :render $...)
+          (send nil? {:render :render_to_string} $...)
         PATTERN
 
         def_node_matcher :render_literal?, <<-PATTERN
-          (send nil? :render ({str sym} $_) $...)
+          (send nil? {:render :render_to_string} ({str sym} $_) $...)
         PATTERN
 
         def_node_matcher :render_inst?, <<-PATTERN
-          (send nil? :render (send _ :new ...) ...)
+          (send nil? {:render :render_to_string} (send _ :new ...) ...)
         PATTERN
 
         def_node_matcher :render_collection?, <<-PATTERN
-          (send nil? :render (send _ :with_collection ...) ...)
+          (send nil? {:render :render_to_string} (send _ :with_collection ...) ...)
         PATTERN
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil? :render (hash $...) ...)
+          (send nil? {:render :render_to_string} (hash $...) ...)
         PATTERN
 
         def_node_matcher :ignore_key?, <<-PATTERN

@@ -9,7 +9,7 @@ module RuboCop
         MSG = "Prefer `render` template shorthand"
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil? :render (hash $...))
+          (send nil? {:render :render_to_string} (hash $...))
         PATTERN
 
         def_node_matcher :action_key?, <<-PATTERN

@@ -9,7 +9,7 @@ module RuboCop
         MSG = "Avoid `render object:`"
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil? :render (hash $...) ...)
+          (send nil? {:render :render_to_string} (hash $...) ...)
         PATTERN
 
         def_node_matcher :partial_key?, <<-PATTERN
