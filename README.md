@@ -1,4 +1,4 @@
-# RuboCop GitHub [![Build Status](https://travis-ci.org/github/rubocop-github.svg?branch=master)](https://travis-ci.org/github/rubocop-github)
+# RuboCop GitHub ![CI](https://github.com/github/rubocop-github/workflows/CI/badge.svg?event=push)
 
 This repository provides recommended RuboCop configuration and additional Cops for use on GitHub open source and internal Ruby projects.
 
