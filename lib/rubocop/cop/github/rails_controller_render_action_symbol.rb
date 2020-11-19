@@ -9,11 +9,11 @@ module RuboCop
         MSG = "Prefer `render` with string instead of symbol"
 
         def_node_matcher :render_sym?, <<-PATTERN
-          (send nil? :render $(sym _))
+          (send nil? {:render :render_to_string} $(sym _))
         PATTERN
 
         def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil? :render (hash $...))
+          (send nil? {:render :render_to_string} (hash $...))
         PATTERN
 
         def_node_matcher :action_key?, <<-PATTERN

@@ -316,6 +316,19 @@ class TestRailsControllerRenderLiteral < CopTest
     assert_equal "render must be used with a string literal or an instance of a Class", cop.offenses[0].message
   end
 
+  def test_render_to_string_variable_offense
+    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+      class ProductsController < ActionController::Base
+        def index
+          render_to_string(magic_string)
+        end
+      end
+    RUBY
+
+    assert_equal 1, cop.offenses.count
+    assert_equal "render must be used with a string literal or an instance of a Class", cop.offenses[0].message
+  end
+
   def test_render_action_variable_offense
     investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
