@@ -17,12 +17,6 @@ module RuboCop
           }) $_)
         PATTERN
 
-        def_node_matcher :locals_key?, <<-PATTERN
-          (pair (sym {
-            :locals
-          }) $_)
-        PATTERN
-
         def_node_matcher :partial_key?, <<-PATTERN
           (pair (sym {
             :file
@@ -31,10 +25,6 @@ module RuboCop
             :partial
           }) $_)
         PATTERN
-
-        def hash_with_literal_keys?(hash)
-          hash.pairs.all? { |pair| literal?(pair.key) }
-        end
 
         def on_send(node)
           return unless render?(node)

@@ -36,6 +36,14 @@ module RuboCop
           (send nil? {:render :render_to_string} (send _ :with_collection ...) ...)
         PATTERN
 
+        def_node_matcher :locals_key?, <<-PATTERN
+          (pair (sym :locals) $_)
+        PATTERN
+
+        def hash_with_literal_keys?(hash)
+          hash.pairs.all? { |pair| literal?(pair.key) }
+        end
+
         def render_view_component?(node)
           render_view_component_instance?(node) ||
             render_view_component_collection?(node)

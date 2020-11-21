@@ -54,7 +54,9 @@ module RuboCop
         def on_send(node)
           return unless render?(node)
 
-          if render_literal?(node) || render_view_component?(node) || render_const?(node)
+          return if render_view_component?(node) || render_const?(node)
+
+          if render_literal?(node)
           elsif option_pairs = render_with_options?(node)
             option_pairs = option_pairs.reject { |pair| options_key?(pair) }
 
@@ -65,18 +67,40 @@ module RuboCop
             if template_node = option_pairs.map { |pair| template_key?(pair) }.compact.first
               if !literal?(template_node)
                 add_offense(node, location: :expression)
+                return
               end
             else
               add_offense(node, location: :expression)
+              return
             end
 
             if layout_node = option_pairs.map { |pair| layout_key?(pair) }.compact.first
               if !literal?(layout_node)
                 add_offense(node, location: :expression)
+                return
               end
             end
           else
             add_offense(node, location: :expression)
+            return
+          end
+
+          if render_literal?(node)
+            option_hash = node.arguments[1]
+            if option_hash && !option_hash.hash_type?
+              add_offense(node, location: :expression)
+              return
+            end
+            option_pairs = option_hash && option_hash.pairs
+          else
+            option_pairs = node.arguments[0].pairs
+          end
+
+          if option_pairs
+            locals = option_pairs.map { |pair| locals_key?(pair) }.compact.first
+            if locals && (!locals.hash_type? || !hash_with_literal_keys?(locals))
+              add_offense(node, location: :expression)
+            end
           end
         end
       end
