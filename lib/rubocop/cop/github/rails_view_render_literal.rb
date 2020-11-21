@@ -1,36 +1,15 @@
 # frozen_string_literal: true
 
 require "rubocop"
+require "rubocop/cop/github/render_literal_helpers"
 
 module RuboCop
   module Cop
     module GitHub
       class RailsViewRenderLiteral < Cop
+        include RenderLiteralHelpers
+
         MSG = "render must be used with a literal template and use literals for locals keys"
-
-        def_node_matcher :literal?, <<-PATTERN
-          ({str sym true false nil?} ...)
-        PATTERN
-
-        def_node_matcher :render?, <<-PATTERN
-          (send nil? {:render :render_to_string} $...)
-        PATTERN
-
-        def_node_matcher :render_literal?, <<-PATTERN
-          (send nil? {:render :render_to_string} ({str sym} $_) $...)
-        PATTERN
-
-        def_node_matcher :render_view_component?, <<-PATTERN
-          (send nil? {:render :render_to_string} (send _ :new ...) ...)
-        PATTERN
-
-        def_node_matcher :render_view_component_collection?, <<-PATTERN
-          (send nil? {:render :render_to_string} (send _ :with_collection ...) ...)
-        PATTERN
-
-        def_node_matcher :render_with_options?, <<-PATTERN
-          (send nil? {:render :render_to_string} (hash $...) ...)
-        PATTERN
 
         def_node_matcher :ignore_key?, <<-PATTERN
           (pair (sym {
@@ -61,7 +40,7 @@ module RuboCop
           return unless render?(node)
 
           # Ignore "component"-style renders
-          return if render_view_component?(node) || render_view_component_collection?(node)
+          return if render_view_component?(node)
 
           if render_literal?(node)
           elsif option_pairs = render_with_options?(node)

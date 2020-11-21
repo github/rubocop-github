@@ -1,0 +1,46 @@
+# frozen_string_literal: true
+#
+require "rubocop"
+
+module RuboCop
+  module Cop
+    module GitHub
+      module RenderLiteralHelpers
+        extend NodePattern::Macros
+
+        def_node_matcher :literal?, <<-PATTERN
+          ({str sym true false nil?} ...)
+        PATTERN
+
+        def_node_matcher :render?, <<-PATTERN
+          (send nil? {:render :render_to_string} ...)
+        PATTERN
+
+        def_node_matcher :render_literal?, <<-PATTERN
+          (send nil? {:render :render_to_string} ({str sym} $_) $...)
+        PATTERN
+
+        def_node_matcher :render_inst?, <<-PATTERN
+          (send nil? {:render :render_to_string} (send _ :new ...) ...)
+        PATTERN
+
+        def_node_matcher :render_with_options?, <<-PATTERN
+          (send nil? {:render :render_to_string} (hash $...) ...)
+        PATTERN
+
+        def_node_matcher :render_view_component_instance?, <<-PATTERN
+          (send nil? {:render :render_to_string} (send _ :new ...) ...)
+        PATTERN
+
+        def_node_matcher :render_view_component_collection?, <<-PATTERN
+          (send nil? {:render :render_to_string} (send _ :with_collection ...) ...)
+        PATTERN
+
+        def render_view_component?(node)
+          render_view_component_instance?(node) ||
+            render_view_component_collection?(node)
+        end
+      end
+    end
+  end
+end
