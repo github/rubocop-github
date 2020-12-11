@@ -59,9 +59,6 @@ module RuboCop
         #  https://ruby-doc.org/stdlib-2.7.0/libdoc/digest/rdoc/Digest.html
         #  https://ruby-doc.org/stdlib-2.7.0/libdoc/openssl/rdoc/OpenSSL/Digest.html
         DEFAULT_ALLOWED = %w[
-          RIPEMD160
-          RMD160
-          SHA224
           SHA256
           SHA384
           SHA512
