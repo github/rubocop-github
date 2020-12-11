@@ -362,4 +362,16 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
     assert_equal 0, cop.offenses.count
   end
+
+  def test_allow_other_digest_types
+    cop = make_cop "Allowed" => %w[UUID]
+    investigate(cop, <<-RUBY)
+      class Something
+        def uuid
+          Digest::UUID.create
+        end
+      end
+    RUBY
+    assert_equal 0, cop.offenses.count
+  end
 end
