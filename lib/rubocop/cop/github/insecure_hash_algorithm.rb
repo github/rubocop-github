@@ -37,10 +37,23 @@ module RuboCop
           (send _ :Digest #insecure_algorithm?)
         PATTERN
 
+        # Matches calls like "OpenSSL::HMAC.new(secret, hash)"
+        def_node_matcher :openssl_hmac_new?, <<-PATTERN
+          (send (const (const _ :OpenSSL) :HMAC) :new ...)
+        PATTERN
+
+        # Matches calls like "OpenSSL::HMAC.new(secret, 'sha1')"
+        def_node_matcher :openssl_hmac_new_insecure?, <<-PATTERN
+          (send (const (const _ :OpenSSL) :HMAC) :new _ #insecure_algorithm?)
+        PATTERN
+
         def insecure_algorithm?(val)
           return false if val == :Digest # Don't match "Digest::Digest".
-          case str_val(val).downcase
+          case alg_name(val)
           when *allowed_hash_functions
+            false
+          when Symbol
+            # can't figure this one out, it's nil or a var or const.
             false
           else
             true
@@ -68,11 +81,15 @@ module RuboCop
           @allowed_algorithms ||= cop_config.fetch("Allowed", DEFAULT_ALLOWED).map(&:downcase)
         end
 
-        def str_val(val)
-          return "" if val.nil?
-          return val.to_s unless val.is_a?(RuboCop::AST::Node)
-          return val.children.first.to_s if val.type == :sym || val.type == :str
-          raise "Unexpected: #{val.inspect}"
+        def alg_name(val)
+          return :nil if val.nil?
+          return val.to_s.downcase unless val.is_a?(RuboCop::AST::Node)
+          case val.type
+          when :sym, :str
+            val.children.first.to_s.downcase
+          else
+            val.type
+          end
         end
 
         def on_const(const_node)
@@ -83,6 +100,10 @@ module RuboCop
 
         def on_send(send_node)
           case
+          when openssl_hmac_new?(send_node)
+            if openssl_hmac_new_insecure?(send_node)
+              add_offense(send_node, message: MSG)
+            end
           when insecure_digest?(send_node)
             add_offense(send_node, message: MSG)
           when insecure_hash_lookup?(send_node)

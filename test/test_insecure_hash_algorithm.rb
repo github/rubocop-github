@@ -29,6 +29,37 @@ class TestInsecureHashAlgorithm < CopTest
     assert_equal 0, cop.offenses.count
   end
 
+  def test_openssl_hmac_new_sha256_indirect
+    investigate(cop, <<-RUBY)
+      class Something
+        HASH = OpenSSL::Digest::SHA256
+
+        attr :secret
+
+        def secret_hmac
+          OpenSSL::HMAC.new(self.secret, HASH)
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_openssl_hmac_new_sha1
+    investigate(cop, <<-RUBY)
+      class Something
+        attr :secret
+
+        def secret_hmac
+          OpenSSL::HMAC.new(self.secret, 'sha1')
+        end
+      end
+    RUBY
+
+    assert_equal 1, cop.offenses.count
+    assert_equal cop_class::MSG, cop.offenses.first.message
+  end
+
   def test_digest_method_md5_str
     investigate(cop, <<-RUBY)
       class Something
