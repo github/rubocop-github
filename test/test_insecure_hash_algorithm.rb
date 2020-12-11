@@ -9,8 +9,8 @@ class TestInsecureHashAlgorithm < CopTest
     RuboCop::Cop::GitHub::InsecureHashAlgorithm
   end
 
-  def make_cop(config_hash)
-    config = RuboCop::Config.new({"GitHub/InsecureHashAlgorithm" => config_hash})
+  def make_cop(allowed:)
+    config = RuboCop::Config.new({"GitHub/InsecureHashAlgorithm" => {"Allowed" => allowed}})
     cop_class.new(config)
   end
 
@@ -343,8 +343,86 @@ class TestInsecureHashAlgorithm < CopTest
     assert_equal 0, cop.offenses.count
   end
 
+  def test_uuid_from_hash
+    investigate(cop, <<-RUBY)
+      class Something
+        def uuid
+          # I want to demonstrate that uuid_from_hash isn't a trigger,
+          # even though I don't know if it's even valid to use SHA256.
+          Digest::UUID.uuid_from_hash(Digest::SHA256, 'abc', 'def')
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_uuid_v3
+    investigate(cop, <<-RUBY)
+      class Something
+        def uuid
+          Digest::UUID.uuid_v3('anything', 'anything')
+        end
+      end
+    RUBY
+
+    assert_equal 1, cop.offenses.count
+    assert_equal cop_class::UUID_V3_MSG, cop.offenses.first.message
+  end
+
+  def test_uuid_v3_with_md5_allowed
+    cop = make_cop(allowed: %w[MD5])
+    investigate(cop, <<-RUBY)
+      class Something
+        def uuid
+          Digest::UUID.uuid_v3('anything', 'anything')
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_uuid_v4
+    investigate(cop, <<-RUBY)
+      class Something
+        def uuid
+          Digest::UUID.uuid_v4
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_uuid_v5
+    investigate(cop, <<-RUBY)
+      class Something
+        def uuid
+          Digest::UUID.uuid_v5('anything', 'anything')
+        end
+      end
+    RUBY
+
+    assert_equal 1, cop.offenses.count
+    assert_equal cop_class::UUID_V5_MSG, cop.offenses.first.message
+  end
+
+  def test_uuid_v5_with_sha1_allowed
+    cop = make_cop(allowed: %w[SHA1])
+    investigate(cop, <<-RUBY)
+      class Something
+        def uuid
+          Digest::UUID.uuid_v5('anything', 'anything')
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_allow_sha512_only
-    cop = make_cop "Allowed" => %w[SHA512]
+    cop = make_cop(allowed: %w[SHA512])
     investigate(cop, <<-RUBY)
       class Something
         HASH = Digest::SHA256
@@ -354,22 +432,10 @@ class TestInsecureHashAlgorithm < CopTest
   end
 
   def test_allow_lots_of_hashes
-    cop = make_cop "Allowed" => %w[SHA1 SHA256 SHA384 SHA512]
+    cop = make_cop(allowed: %w[SHA1 SHA256 SHA384 SHA512])
     investigate(cop, <<-RUBY)
       class Something
         HASH = Digest::SHA1
-      end
-    RUBY
-    assert_equal 0, cop.offenses.count
-  end
-
-  def test_allow_other_digest_types
-    cop = make_cop "Allowed" => %w[UUID]
-    investigate(cop, <<-RUBY)
-      class Something
-        def uuid
-          Digest::UUID.create
-        end
       end
     RUBY
     assert_equal 0, cop.offenses.count

@@ -7,6 +7,8 @@ module RuboCop
     module GitHub
       class InsecureHashAlgorithm < Cop
         MSG = "This hash function is not allowed"
+        UUID_V3_MSG = "uuid_v3 uses MD5, which is not allowed"
+        UUID_V5_MSG = "uuid_v5 uses SHA1, which is not allowed"
 
         # Matches constants like these:
         #   Digest::MD5
@@ -45,6 +47,19 @@ module RuboCop
         # Matches calls like "OpenSSL::HMAC.new(secret, 'sha1')"
         def_node_matcher :openssl_hmac_new_insecure?, <<-PATTERN
           (send (const (const _ :OpenSSL) :HMAC) :new _ #insecure_algorithm?)
+        PATTERN
+
+        # Matches Rails's Digest::UUID.
+        def_node_matcher :digest_uuid?, <<-PATTERN
+          (const (const _ :Digest) :UUID)
+        PATTERN
+
+        def_node_matcher :uuid_v3?, <<-PATTERN
+          (send (const _ :UUID) :uuid_v3 ...)
+        PATTERN
+
+        def_node_matcher :uuid_v5?, <<-PATTERN
+          (send (const _ :UUID) :uuid_v5 ...)
         PATTERN
 
         def insecure_algorithm?(val)
@@ -93,13 +108,21 @@ module RuboCop
         end
 
         def on_const(const_node)
-          if insecure_const?(const_node)
+          if insecure_const?(const_node) && !digest_uuid?(const_node)
             add_offense(const_node, message: MSG)
           end
         end
 
         def on_send(send_node)
           case
+          when uuid_v3?(send_node)
+            unless allowed_hash_functions.include?("md5")
+              add_offense(send_node, message: UUID_V3_MSG)
+            end
+          when uuid_v5?(send_node)
+            unless allowed_hash_functions.include?("sha1")
+              add_offense(send_node, message: UUID_V5_MSG)
+            end
           when openssl_hmac_new?(send_node)
             if openssl_hmac_new_insecure?(send_node)
               add_offense(send_node, message: MSG)
