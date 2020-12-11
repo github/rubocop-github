@@ -8,21 +8,49 @@ module RuboCop
       class InsecureHashAlgorithm < Cop
         MSG = "This hash algorithm is old and insecure, use SHA-256 instead"
 
+        # Matches constants like these:
+        #   Digest::MD5
+        #   OpenSSL::Digest::MD5
         def_node_matcher :insecure_const?, <<-PATTERN
           (const (const _ :Digest) #insecure_algorithm?)
         PATTERN
 
-        def_node_matcher :insecure_call?, <<-PATTERN
-          (send (const _ {:Digest :HMAC}) _ (str #insecure_algorithm?) ...)
+        # Matches calls like these:
+        #   Digest.new('md5')
+        #   Digest.hexdigest('md5', 'str')
+        #   OpenSSL::Digest.new('md5')
+        #   OpenSSL::Digest.hexdigest('md5', 'str')
+        #   OpenSSL::Digest::Digest.new('md5')
+        #   OpenSSL::Digest::Digest.hexdigest('md5', 'str')
+        #   OpenSSL::Digest::Digest.new(:MD5)
+        #   OpenSSL::Digest::Digest.hexdigest(:MD5, 'str')
+        def_node_matcher :insecure_digest?, <<-PATTERN
+          (send
+            (const _ {:Digest :HMAC})
+            _
+            #insecure_algorithm?
+            ...)
+        PATTERN
+
+        # Matches calls like "Digest(:MD5)".
+        def_node_matcher :insecure_hash_lookup?, <<-PATTERN
+          (send _ :Digest #insecure_algorithm?)
         PATTERN
 
         def insecure_algorithm?(val)
-          case val.to_s.downcase
+          case str_val(val).downcase
           when "md5", "sha1"
             true
           else
             false
           end
+        end
+
+        def str_val(val)
+          return "" if val.nil?
+          return val.to_s unless val.is_a?(RuboCop::AST::Node)
+          return val.children.first.to_s if val.type == :sym || val.type == :str
+          raise "Unexpected: #{val.inspect}"
         end
 
         def on_const(const_node)
@@ -32,7 +60,10 @@ module RuboCop
         end
 
         def on_send(send_node)
-          if insecure_call?(send_node)
+          case
+          when insecure_digest?(send_node)
+            add_offense(send_node, message: MSG)
+          when insecure_hash_lookup?(send_node)
             add_offense(send_node, message: MSG)
           end
         end

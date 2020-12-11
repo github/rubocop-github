@@ -9,6 +9,75 @@ class TestInsecureHashAlgorithm < CopTest
     RuboCop::Cop::GitHub::InsecureHashAlgorithm
   end
 
+  def test_benign_apis
+    investigate(cop, <<-RUBY)
+      class Something
+        def hexencode_the_string_md5
+          Digest.hexencode('anything')
+        end
+        def bubblebabble_the_string_md5
+          Digest.bubblebabble('anything')
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_digest_method_md5_str
+    investigate(cop, <<-RUBY)
+      class Something
+        def h
+          Digest('md5')
+        end
+      end
+    RUBY
+
+    assert_equal 1, cop.offenses.count
+    assert_equal cop_class::MSG, cop.offenses.first.message
+  end
+
+  def test_digest_method_md5_symbol
+    investigate(cop, <<-RUBY)
+      class Something
+        def h
+          Digest(:MD5)
+        end
+      end
+    RUBY
+
+    assert_equal 1, cop.offenses.count
+    assert_equal cop_class::MSG, cop.offenses.first.message
+  end
+
+  def test_digest_method_sha256_str
+    investigate(cop, <<-RUBY)
+      class Something
+        def h
+          Digest('sha256')
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_digest_method_sha256_symbol
+    investigate(cop, <<-RUBY)
+      class Something
+        def h
+          Digest('sha256')
+        end
+
+        def h
+          Digest(:SHA256)
+        end
+      end
+    RUBY
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_alias_for_digest_md5
     investigate(cop, <<-RUBY)
       class Something
