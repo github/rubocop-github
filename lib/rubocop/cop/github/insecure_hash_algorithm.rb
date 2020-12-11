@@ -27,7 +27,7 @@ module RuboCop
         def_node_matcher :insecure_digest?, <<-PATTERN
           (send
             (const _ {:Digest :HMAC})
-            _
+            #not_just_encoding?
             #insecure_algorithm?
             ...)
         PATTERN
@@ -38,12 +38,21 @@ module RuboCop
         PATTERN
 
         def insecure_algorithm?(val)
+          return false if val == :Digest # Don't match "Digest::Digest".
           case str_val(val).downcase
-          when "md5", "sha1"
-            true
-          else
+          when "ripemd160", "rmd160", "sha224", "sha256", "sha384", "sha512"
             false
+          else
+            true
           end
+        end
+
+        def not_just_encoding?(val)
+          !just_encoding?(val)
+        end
+
+        def just_encoding?(val)
+          val == :hexencode || val == :bubblebabble
         end
 
         def str_val(val)
