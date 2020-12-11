@@ -9,7 +9,7 @@ AllCops:
     - db/migrate/*.rb
     - node_modules/**/*
     - tmp/**/*
-    - vendor/gems/**/*
+    - vendor/**/*
 
 Layout/LineLength:
   Enabled: false
