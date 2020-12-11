@@ -42,6 +42,9 @@ Metrics/ParameterLists:
 Metrics/PerceivedComplexity:
   Enabled: false
 
+Rake/Desc:
+  Enabled: false
+
 Style/ClassAndModuleChildren:
   Enabled: false
 
