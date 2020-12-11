@@ -9,6 +9,11 @@ class TestInsecureHashAlgorithm < CopTest
     RuboCop::Cop::GitHub::InsecureHashAlgorithm
   end
 
+  def make_cop(config_hash)
+    config = RuboCop::Config.new({"GitHub/InsecureHashAlgorithm" => config_hash})
+    cop_class.new(config)
+  end
+
   def test_benign_apis
     investigate(cop, <<-RUBY)
       class Something
@@ -304,6 +309,26 @@ class TestInsecureHashAlgorithm < CopTest
       end
     RUBY
 
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_allow_sha512_only
+    cop = make_cop "Allowed" => %w[SHA512]
+    investigate(cop, <<-RUBY)
+      class Something
+        HASH = Digest::SHA256
+      end
+    RUBY
+    assert_equal 1, cop.offenses.count
+  end
+
+  def test_allow_lots_of_hashes
+    cop = make_cop "Allowed" => %w[SHA1 SHA256 SHA384 SHA512]
+    investigate(cop, <<-RUBY)
+      class Something
+        HASH = Digest::SHA1
+      end
+    RUBY
     assert_equal 0, cop.offenses.count
   end
 end

@@ -6,7 +6,7 @@ module RuboCop
   module Cop
     module GitHub
       class InsecureHashAlgorithm < Cop
-        MSG = "This hash algorithm is old and insecure, use SHA-256 instead"
+        MSG = "This hash function is not allowed"
 
         # Matches constants like these:
         #   Digest::MD5
@@ -40,7 +40,7 @@ module RuboCop
         def insecure_algorithm?(val)
           return false if val == :Digest # Don't match "Digest::Digest".
           case str_val(val).downcase
-          when "ripemd160", "rmd160", "sha224", "sha256", "sha384", "sha512"
+          when *allowed_hash_functions
             false
           else
             true
@@ -53,6 +53,22 @@ module RuboCop
 
         def just_encoding?(val)
           val == :hexencode || val == :bubblebabble
+        end
+
+        # Built-in hash functions are listed in these docs:
+        #  https://ruby-doc.org/stdlib-2.7.0/libdoc/digest/rdoc/Digest.html
+        #  https://ruby-doc.org/stdlib-2.7.0/libdoc/openssl/rdoc/OpenSSL/Digest.html
+        DEFAULT_ALLOWED = %w[
+          RIPEMD160
+          RMD160
+          SHA224
+          SHA256
+          SHA384
+          SHA512
+        ].freeze
+
+        def allowed_hash_functions
+          @allowed_algorithms ||= cop_config.fetch("Allowed", DEFAULT_ALLOWED).map(&:downcase)
         end
 
         def str_val(val)
