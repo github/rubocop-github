@@ -43,7 +43,7 @@ class TestRailsViewRenderLiteral < CopTest
     ERB
 
     assert_equal 2, cop.offenses.count
-    assert_equal "render must be used with a string literal or an instance of a Class", cop.offenses[0].message
+    assert_equal "render must be used with a literal template and use literals for locals keys", cop.offenses[0].message
   end
 
   def test_render_component_no_offense
@@ -94,7 +94,7 @@ class TestRailsViewRenderLiteral < CopTest
     ERB
 
     assert_equal 1, cop.offenses.count
-    assert_equal "render must be used with a string literal or an instance of a Class", cop.offenses[0].message
+    assert_equal "render must be used with a literal template and use literals for locals keys", cop.offenses[0].message
   end
 
   def test_render_inline_no_offense
@@ -111,5 +111,53 @@ class TestRailsViewRenderLiteral < CopTest
     ERB
 
     assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_literal_static_locals_no_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render "products/product", product: product %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_literal_dynamic_locals_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render "products/product", locals %>
+    ERB
+
+    assert_equal 1, cop.offenses.count
+  end
+
+  def test_render_literal_dynamic_local_key_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render "products/product", { product_key => product } %>
+    ERB
+
+    assert_equal 1, cop.offenses.count
+  end
+
+  def test_render_options_static_locals_no_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render partial: "products/product", locals: { product: product } %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
+
+  def test_render_options_dynamic_locals_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render partial: "products/product", locals: locals %>
+    ERB
+
+    assert_equal 1, cop.offenses.count
+  end
+
+  def test_render_options_dynamic_local_key_offense
+    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render partial: "products/product", locals: { product_key => product } %>
+    ERB
+
+    assert_equal 1, cop.offenses.count
   end
 end
