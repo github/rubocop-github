@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "rubocop/cop/github/insecure_hash_algorithm"
 require "rubocop/cop/github/rails_application_record"
 require "rubocop/cop/github/rails_controller_render_action_symbol"
 require "rubocop/cop/github/rails_controller_render_literal"
