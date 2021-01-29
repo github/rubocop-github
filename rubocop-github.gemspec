@@ -10,15 +10,15 @@ Gem::Specification.new do |s|
 
   s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb", "guides/*.md"]
 
-  s.add_dependency "rubocop", "<= 0.89.0"
+  s.add_dependency "rubocop", "<= 1.6.1"
   s.add_dependency "rubocop-performance", "<= 1.7.1"
   s.add_dependency "rubocop-rails", "<= 2.7.1"
 
   s.add_development_dependency "actionview", "~> 5.0"
-  s.add_development_dependency "minitest", "~> 5.10"
+  s.add_development_dependency "minitest", "~> 5.14"
   s.add_development_dependency "rake", "~> 12.0"
 
-  s.required_ruby_version = ">= 2.1.0"
+  s.required_ruby_version = ">= 2.5.0"
 
   s.email = "engineering@github.com"
   s.authors = "GitHub"
