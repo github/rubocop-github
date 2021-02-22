@@ -308,44 +308,43 @@ end
 Use the Ruby 1.9 syntax for hash literals when all the keys are symbols:
 
 ``` ruby
-# good
-user = {
-  login: "defunkt",
-  name: "Chris Wanstrath"
-}
-
 # bad
 user = {
   :login => "defunkt",
   :name => "Chris Wanstrath"
 }
 
+# good
+user = {
+  login: "defunkt",
+  name: "Chris Wanstrath"
+}
 ```
 
 Use the 1.9 syntax when calling a method with Hash options arguments or named arguments:
 
 ``` ruby
-# good
-user = User.create(login: "jane")
-link_to("Account", controller: "users", action: "show", id: user)
-
 # bad
 user = User.create(:login => "jane")
 link_to("Account", :controller => "users", :action => "show", :id => user)
+
+# good
+user = User.create(login: "jane")
+link_to("Account", controller: "users", action: "show", id: user)
 ```
 
 If you have a hash with mixed key types, use the legacy hashrocket style to avoid mixing styles within the same hash:
 
 ``` ruby
-# good
-hsh = {
-  :user_id => 55,
-  "followers-count" => 1000
-}
-
 # bad
 hsh = {
   user_id: 55,
+  "followers-count" => 1000
+}
+
+# good
+hsh = {
+  :user_id => 55,
   "followers-count" => 1000
 }
 ```
