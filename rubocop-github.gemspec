@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb", "guides/*.md"]
 
   s.add_dependency "rubocop", "<= 1.13.0"
-  s.add_dependency "rubocop-performance", "<= 1.7.1"
+  s.add_dependency "rubocop-performance", "<= 1.11.0"
   s.add_dependency "rubocop-rails", "<= 2.7.1"
 
   s.add_development_dependency "actionview", "~> 5.0"
