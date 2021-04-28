@@ -6,7 +6,7 @@ require "rubocop/cop/github/render_literal_helpers"
 module RuboCop
   module Cop
     module GitHub
-      class RailsViewRenderLiteral < Cop
+      class RailsViewRenderLiteral < Base
         include RenderLiteralHelpers
 
         MSG = "render must be used with a literal template and use literals for locals keys"
@@ -40,15 +40,15 @@ module RuboCop
 
             if partial_node = option_pairs.map { |pair| partial_key?(pair) }.compact.first
               if !literal?(partial_node)
-                add_offense(node, location: :expression)
+                add_offense(node)
                 return
               end
             else
-              add_offense(node, location: :expression)
+              add_offense(node)
               return
             end
           else
-            add_offense(node, location: :expression)
+            add_offense(node)
             return
           end
 
@@ -61,10 +61,10 @@ module RuboCop
           if locals
             if locals.hash_type?
               if !hash_with_literal_keys?(locals)
-                add_offense(node, location: :expression)
+                add_offense(node)
               end
             else
-              add_offense(node, location: :expression)
+              add_offense(node)
             end
           end
         end

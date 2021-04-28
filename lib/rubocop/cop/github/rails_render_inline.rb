@@ -5,7 +5,7 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsRenderInline < Cop
+      class RailsRenderInline < Base
         MSG = "Avoid `render inline:`"
 
         def_node_matcher :render_with_options?, <<-PATTERN
@@ -19,7 +19,7 @@ module RuboCop
         def on_send(node)
           if option_pairs = render_with_options?(node)
             if option_pairs.detect { |pair| inline_key?(pair) }
-              add_offense(node, location: :expression)
+              add_offense(node)
             end
           end
         end

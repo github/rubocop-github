@@ -5,7 +5,7 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsApplicationRecord < Cop
+      class RailsApplicationRecord < Base
         MSG = "Models should subclass from ApplicationRecord"
 
         def_node_matcher :active_record_base_const?, <<-PATTERN
@@ -20,7 +20,7 @@ module RuboCop
           klass, superclass, _ = *node
 
           if active_record_base_const?(superclass) && !(application_record_const?(klass))
-            add_offense(superclass, location: :expression)
+            add_offense(superclass)
           end
         end
       end

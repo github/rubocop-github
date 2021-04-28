@@ -5,7 +5,9 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsControllerRenderActionSymbol < Cop
+      class RailsControllerRenderActionSymbol < Base
+        extend AutoCorrector
+
         MSG = "Prefer `render` with string instead of symbol"
 
         def_node_matcher :render_sym?, <<-PATTERN
@@ -22,18 +24,22 @@ module RuboCop
 
         def on_send(node)
           if sym_node = render_sym?(node)
-            add_offense(sym_node, location: :expression)
+            add_offense(sym_node) do |corrector|
+              register_offense(sym_node, node)
+            end
           elsif option_pairs = render_with_options?(node)
             option_pairs.each do |pair|
               if sym_node = action_key?(pair)
-                add_offense(sym_node, location: :expression)
+                register_offense(sym_node, node)
               end
             end
           end
         end
 
-        def autocorrect(node)
-          lambda do |corrector|
+        private
+
+        def register_offense(sym_node, node)
+          add_offense(sym_node) do |corrector|
             corrector.replace(node.source_range, "\"#{node.children[0]}\"")
           end
         end
