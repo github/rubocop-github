@@ -5,7 +5,7 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsViewRenderPathsExist < Cop
+      class RailsViewRenderPathsExist < Base
         def_node_matcher :render?, <<-PATTERN
           (send nil? {:render :render_to_string} $...)
         PATTERN
@@ -28,14 +28,14 @@ module RuboCop
           if args = render_str?(node)
             node, path = args
             unless resolve_partial(path.to_s)
-              add_offense(node, location: :expression, message: "Partial template could not be found")
+              add_offense(node, message: "Partial template could not be found")
             end
           elsif pairs = render_options?(node)
             if pair = pairs.detect { |p| partial_key?(p) }
               node, path = partial_key?(pair)
 
               unless resolve_partial(path.to_s)
-                add_offense(node, location: :expression, message: "Partial template could not be found")
+                add_offense(node, message: "Partial template could not be found")
               end
             end
           end

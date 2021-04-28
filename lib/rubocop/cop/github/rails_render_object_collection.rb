@@ -5,7 +5,7 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsRenderObjectCollection < Cop
+      class RailsRenderObjectCollection < Base
         MSG = "Avoid `render object:`"
 
         def_node_matcher :render_with_options?, <<-PATTERN
@@ -34,9 +34,9 @@ module RuboCop
                 if partial_name.children[0].is_a?(String)
                   suggestion = ", instead `render partial: #{partial_name.source}, locals: { #{File.basename(partial_name.children[0], '.html.erb')}: #{object_node.source} }`"
                 end
-                add_offense(node, location: :expression, message: "Avoid `render object:`#{suggestion}")
+                add_offense(node, message: "Avoid `render object:`#{suggestion}")
               when :collection, :spacer_template
-                add_offense(node, location: :expression, message: "Avoid `render collection:`")
+                add_offense(node, message: "Avoid `render collection:`")
               end
             end
           end
