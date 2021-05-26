@@ -403,19 +403,19 @@ STATES = %w(draft open closed)
 
 ``` ruby
 # bad (no interpolation needed)
-%(<div class="text">Some text</div>)
-# should be "<div class=\"text\">Some text</div>"
+%(Some text)
+# should be "Some text"
 
 # bad (no double-quotes)
 %(This is #{quality} style)
 # should be "This is #{quality} style"
 
 # bad (multiple lines)
-%(<div>\n<span class="big">#{exclamation}</span>\n</div>)
+%(one\ntwo\nthree)
 # should be a heredoc.
 
 # good (requires interpolation, has quotes, single line)
-%(<tr><td class="name">#{name}</td>)
+%(Hi, my name is "#{name}")
 ```
 
 * Use `%r` only for regular expressions matching *more than* one '/' character.
@@ -518,11 +518,11 @@ name = "Bozhidar"
 
 ``` ruby
 # good and also fast
-html = ""
-html << "<h1>Page title</h1>"
+text = ""
+text << Page title"
 
 paragraphs.each do |paragraph|
-  html << "<p>#{paragraph}</p>"
+  text << "\n#{paragraph}\n"
 end
 ```
 
