@@ -28,6 +28,10 @@ module RuboCop
           (send nil? {:render :render_to_string} (send _ :new ...) ...)
         PATTERN
 
+        def_node_matcher :render_view_component_instance_with_content?, <<-PATTERN
+          (send nil? {:render :render_to_string} (send (send _ :new ...) `:with_content ...))
+        PATTERN
+
         def_node_matcher :render_view_component_collection?, <<-PATTERN
           (send nil? {:render :render_to_string} (send _ :with_collection ...) ...)
         PATTERN
@@ -41,7 +45,8 @@ module RuboCop
         end
 
         def render_view_component?(node)
-          render_view_component_instance?(node) ||
+          render_view_component_instance_with_content?(node) ||
+            render_view_component_instance?(node) ||
             render_view_component_collection?(node)
         end
       end
