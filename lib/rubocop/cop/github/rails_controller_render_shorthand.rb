@@ -5,7 +5,9 @@ require "rubocop"
 module RuboCop
   module Cop
     module GitHub
-      class RailsControllerRenderShorthand < Cop
+      class RailsControllerRenderShorthand < Base
+        extend AutoCorrector
+
         MSG = "Prefer `render` template shorthand"
 
         def_node_matcher :render_with_options?, <<-PATTERN
@@ -20,14 +22,6 @@ module RuboCop
           ({str sym} $_)
         PATTERN
 
-        def investigate(*)
-          @autocorrect = {}
-        end
-
-        def autocorrect(node)
-          @autocorrect[node]
-        end
-
         def on_send(node)
           if option_pairs = render_with_options?(node)
             option_pairs.each do |pair|
@@ -37,10 +31,9 @@ module RuboCop
                   .sub(/#{pair.source}(,\s*)?/, "")
                   .sub("render ", "render \"#{str(value_node)}\"#{comma}")
 
-                @autocorrect[node] = lambda do |corrector|
+                add_offense(node, message: "Use `#{corrected_source}` instead") do |corrector|
                   corrector.replace(node.source_range, corrected_source)
                 end
-                add_offense(node, location: :expression, message: "Use `#{corrected_source}` instead")
               end
             end
           end

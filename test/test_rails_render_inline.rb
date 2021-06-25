@@ -10,7 +10,7 @@ class TestRailsRenderInline < CopTest
   end
 
   def test_render_string_no_offense
-    investigate cop, <<-RUBY, "app/controllers/foo_controller.rb"
+    offenses = investigate cop, <<-RUBY, "app/controllers/foo_controller.rb"
       class FooController < ActionController::Base
         def index
           render template: "index"
@@ -22,11 +22,11 @@ class TestRailsRenderInline < CopTest
       end
     RUBY
 
-    assert_equal 0, cop.offenses.count
+    assert_equal 0, offenses.count
   end
 
   def test_render_inline_offense
-    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+    offenses = investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
         def index
           render inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>"
@@ -34,12 +34,12 @@ class TestRailsRenderInline < CopTest
       end
     RUBY
 
-    assert_equal 1, cop.offenses.count
-    assert_equal "Avoid `render inline:`", cop.offenses[0].message
+    assert_equal 1, offenses.count
+    assert_equal "Avoid `render inline:`", offenses[0].message
   end
 
   def test_render_status_with_inline_offense
-    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+    offenses = investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
         def index
           render status: 200, inline: "<% products.each do |p| %><p><%= p.name %></p><% end %>"
@@ -47,16 +47,16 @@ class TestRailsRenderInline < CopTest
       end
     RUBY
 
-    assert_equal 1, cop.offenses.count
-    assert_equal "Avoid `render inline:`", cop.offenses[0].message
+    assert_equal 1, offenses.count
+    assert_equal "Avoid `render inline:`", offenses[0].message
   end
 
   def test_erb_render_inline_offense
-    erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+    offenses = erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
       <%= render inline: template %>
     ERB
 
-    assert_equal 1, cop.offenses.count
-    assert_equal "Avoid `render inline:`", cop.offenses[0].message
+    assert_equal 1, offenses.count
+    assert_equal "Avoid `render inline:`", offenses[0].message
   end
 end

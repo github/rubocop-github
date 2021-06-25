@@ -10,7 +10,7 @@ class TestRailsControllerRenderShorthand < CopTest
   end
 
   def test_render_string_no_offense
-    investigate cop, <<-RUBY, "app/controllers/foo_controller.rb"
+    offenses = investigate cop, <<-RUBY, "app/controllers/foo_controller.rb"
       class FooController < ActionController::Base
         def index
           render "index"
@@ -22,11 +22,11 @@ class TestRailsControllerRenderShorthand < CopTest
       end
     RUBY
 
-    assert_equal 0, cop.offenses.count
+    assert_equal 0, offenses.count
   end
 
   def test_render_partial_no_offense
-    investigate cop, <<-RUBY, "app/controllers/books_controller.rb"
+    offenses = investigate cop, <<-RUBY, "app/controllers/books_controller.rb"
       class BooksController < ActionController::Base
         def show
           render partial: "books/show"
@@ -34,11 +34,11 @@ class TestRailsControllerRenderShorthand < CopTest
       end
     RUBY
 
-    assert_equal 0, cop.offenses.count
+    assert_equal 0, offenses.count
   end
 
   def test_render_action_offense
-    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+    offenses = investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
         def edit
           render action: :edit
@@ -54,14 +54,14 @@ class TestRailsControllerRenderShorthand < CopTest
       end
     RUBY
 
-    assert_equal 3, cop.offenses.count
-    assert_equal "Use `render \"edit\"` instead", cop.offenses[0].message
-    assert_equal "Use `render \"new\"` instead", cop.offenses[1].message
-    assert_equal "Use `render \"confirm.html.erb\"` instead", cop.offenses[2].message
+    assert_equal 3, offenses.count
+    assert_equal "Use `render \"edit\"` instead", offenses[0].message
+    assert_equal "Use `render \"new\"` instead", offenses[1].message
+    assert_equal "Use `render \"confirm.html.erb\"` instead", offenses[2].message
   end
 
   def test_render_template_offense
-    investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+    offenses = investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base
         def new
           render template: "books/new"
@@ -77,9 +77,9 @@ class TestRailsControllerRenderShorthand < CopTest
       end
     RUBY
 
-    assert_equal 3, cop.offenses.count
-    assert_equal "Use `render \"books/new\"` instead", cop.offenses[0].message
-    assert_equal "Use `render \"books/show\", locals: { book: @book }` instead", cop.offenses[1].message
-    assert_equal "Use `render \"books/edit.html.erb\", status: :ok, layout: \"application\"` instead", cop.offenses[2].message
+    assert_equal 3, offenses.count
+    assert_equal "Use `render \"books/new\"` instead", offenses[0].message
+    assert_equal "Use `render \"books/show\", locals: { book: @book }` instead", offenses[1].message
+    assert_equal "Use `render \"books/edit.html.erb\", status: :ok, layout: \"application\"` instead", offenses[2].message
   end
 end
