@@ -45,13 +45,16 @@ Metrics/PerceivedComplexity:
 Rake/Desc:
   Enabled: false
 
-Style/ClassAndModuleChildren:
-  Enabled: false
-
 Style/AccessModifierDeclarations:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
   Enabled: false
 
 Style/StringLiterals:
