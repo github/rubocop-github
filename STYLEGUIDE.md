@@ -370,7 +370,7 @@ def remove_member(user, skip_membership_check: false)
 end
 
 # Elsewhere, now with more clarity:
-remove_member user, skip_membership_check: true
+remove_member(user, skip_membership_check: true)
 ```
 
 ## Naming
