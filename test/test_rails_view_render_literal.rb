@@ -62,6 +62,14 @@ class TestRailsViewRenderLiteral < CopTest
     assert_equal 0, cop.offenses.count
   end
 
+  def test_render_component_instance_with_content_no_offense
+    erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
+      <%= render MyClass.new(title: "foo", bar: "baz").with_content("foo") %>
+    ERB
+
+    assert_equal 0, cop.offenses.count
+  end
+
   def test_render_component_instance_block_no_offense
     erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
       <%= render Module::MyClass.new(title: "foo", bar: "baz") do %>Content<% end %>
