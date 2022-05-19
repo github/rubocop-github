@@ -16,3 +16,9 @@ AllCops:
     - node_modules/**/*
     - tmp/**/*
     - vendor/**/*
+
+Layout/LineLength:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false
