@@ -10,6 +10,7 @@ inherit_mode:
     - Exclude
 
 AllCops:
+  NewCops: enable
   Exclude:
     - bin/**/*
     - node_modules/**/*
