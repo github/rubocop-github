@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
+$LOAD_PATH.push(File.expand_path("lib", __dir__))
+require "rubocop-standard/version"
+
 Gem::Specification.new do |s|
   s.name = "rubocop-standard"
-  s.version = "7.0.3"
+  s.version = RubocopStandard::VERSION
   s.authors = ["Garen Torikian"]
   s.email = ["gjtorikian@gmail.com"]
   s.summary = "Enhanced RuboCop configurations"
@@ -11,7 +14,7 @@ Gem::Specification.new do |s|
   s.license = "MIT"
 
   s.files = Dir["README.md", "LICENSE.txt", "config/*.yml"]
-  s.required_ruby_version = ">= 3.0", "< 4.0.0"
+  s.required_ruby_version = Gem::Requirement.new(">= 2.7", "< 4.0")
 
   s.add_dependency("rubocop")
 
