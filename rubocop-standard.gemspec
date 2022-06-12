@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.license = "MIT"
 
   s.files = Dir["README.md", "LICENSE.txt", "config/*.yml"]
-  s.required_ruby_version = Gem::Requirement.new(">= 2.7", "< 4.0")
+  s.required_ruby_version =">= 2.7", "< 4.0"
 
   s.add_dependency("rubocop")
 
