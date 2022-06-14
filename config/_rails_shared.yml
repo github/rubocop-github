@@ -115,6 +115,10 @@ Layout/InitialIndentation:
   Exclude:
     - 'app/views/**/*.erb'
 
+Layout/IndentationWidth:
+  Exclude:
+    - 'app/views/**/*.erb'
+
 Lint/UselessAccessModifier:
   ContextCreatingMethods:
     - concerning
