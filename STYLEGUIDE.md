@@ -387,7 +387,8 @@ remove_member(user, skip_membership_check: true)
 
 * The names of potentially "dangerous" methods (i.e. methods that modify `self` or the
   arguments, `exit!`, etc.) should end with an exclamation mark. Bang methods
-  should only exist if a non-bang method exists. ([More on this](http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist)).
+  should only exist if a non-bang counterpart (method name which does NOT end with !) 
+  also exists.
 
 ## Percent Literals
 
