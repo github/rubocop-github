@@ -36,6 +36,10 @@ Layout/IndentationStyle:
   EnforcedStyle: spaces
   IndentationWidth: 2
 
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
 Layout/InitialIndentation:
   Enabled: true
 
