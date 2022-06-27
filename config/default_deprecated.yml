@@ -1,4 +1,0 @@
-inherit_from: _default_shared.yml
-
-AllCops:
-  DisabledByDefault: true
