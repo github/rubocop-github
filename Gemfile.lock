@@ -9,18 +9,17 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    actionview (6.1.6)
-      activesupport (= 6.1.6)
+    actionview (7.0.3)
+      activesupport (= 7.0.3)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activesupport (6.1.6)
+    activesupport (7.0.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     ast (2.4.2)
     builder (3.2.4)
     concurrent-ruby (1.1.10)
@@ -70,14 +69,13 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.2.0)
-    zeitwerk (2.6.0)
 
 PLATFORMS
   x86_64-darwin-19
   x86_64-darwin-20
 
 DEPENDENCIES
-  actionview (~> 6.1)
+  actionview
   minitest
   rake
   rubocop-github!
