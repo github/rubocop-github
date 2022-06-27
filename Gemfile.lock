@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubocop-github (0.17.0)
+    rubocop-github (0.18.0)
       rubocop (>= 1.0.0)
       rubocop-performance
       rubocop-rails
