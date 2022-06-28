@@ -17,8 +17,8 @@ gem "rubocop-rails", require: false
 ``` yaml
 inherit_gem:
   rubocop-github:
-    - config/default_edge.yml
-    - config/rails_edge.yml
+    - config/default.yml
+    - config/rails.yml
 ```
 
 ### Legacy usage
