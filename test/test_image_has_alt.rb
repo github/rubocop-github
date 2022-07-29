@@ -2,7 +2,7 @@
 
 require_relative "./cop_test"
 require "minitest/autorun"
-require "rubocop/cop/github/rails_image_has_alt"
+require "rubocop/cop/github/accessibility/image_has_alt"
 
 class TestImageHasAlt < CopTest
   def cop_class
