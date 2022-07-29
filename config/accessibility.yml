@@ -1,0 +1,6 @@
+require:
+  - rubocop/cop/github/accessibility
+
+GitHub/Accessibility/ImageHasAlt:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/image-has-alt.md

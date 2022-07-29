@@ -19,6 +19,7 @@ inherit_gem:
   rubocop-github:
     - config/default.yml
     - config/rails.yml
+    - config/accessibility.yml
 ```
 
 ### Legacy usage
@@ -33,4 +34,4 @@ If you are using a rubocop version < 1.0.0, you can use rubocop-github version
 
 ## The Cops
 
-All cops are located under [`lib/rubocop/cop/github`](lib/rubocop/cop/github), and contain examples/documentation.
+All cops are located under [`lib/rubocop/cop/github`](lib/rubocop/cop/github) and [`lib/rubocop/cop/github/accessibility`](lib/rubocop/cop/github/accessibility), and contain examples/documentation.
