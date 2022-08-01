@@ -4,6 +4,9 @@ require:
 GitHub/Accessibility/ImageHasAlt:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/image-has-alt.md
+GitHub/Accessibility/LinkHasHref:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/link-has-href.md
 GitHub/Accessibility/NoPositiveTabindex:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/no-positive-tabindex.md
