@@ -6,7 +6,9 @@ Links should go somewhere, you probably want to use a `<button>` instead.
 
 ## Resources
 
-- TBD
+- [`<a>`: The Anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
+- [Primer: Links](https://primer.style/design/accessibility/links)
+- [HTML Spec: The a element](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element)
 
 ## Examples
 ### **Incorrect** code for this rule 👎
