@@ -4,3 +4,6 @@ require:
 GitHub/Accessibility/ImageHasAlt:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/image-has-alt.md
+GitHub/Accessibility/NoRedundantImageAlt:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/no-redundant-image-alt.md
