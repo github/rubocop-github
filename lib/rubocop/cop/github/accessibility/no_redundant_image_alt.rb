@@ -14,9 +14,7 @@ module RuboCop
           def_node_search :redundant_alt?, "(pair (sym :alt) (str #contains_redundant_alt_text?))"
 
           def on_send(node)
-            receiver, method_name, _= *node
-
-            if receiver.nil? && method_name == :image_tag
+            if node.receiver.nil? && node.method?(:image_tag)
               if redundant_alt?(node)
                 add_offense(node.loc.selector)
               end

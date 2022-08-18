@@ -13,9 +13,7 @@ module RuboCop
           def_node_search :has_alt_attribute?, "(sym :alt)"
 
           def on_send(node)
-            receiver, method_name, _= *node
-
-            if receiver.nil? && method_name == :image_tag
+            if node.receiver.nil? && node.method?(:image_tag)
               alt = has_alt_attribute?(node)
               add_offense(node.loc.selector) if alt.nil?
             end

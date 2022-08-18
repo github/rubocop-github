@@ -7,15 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 5
-InternalAffairs/NodeDestructuring:
-  Exclude:
-    - 'lib/rubocop/cop/github/accessibility/image_has_alt.rb'
-    - 'lib/rubocop/cop/github/accessibility/link_has_href.rb'
-    - 'lib/rubocop/cop/github/accessibility/no_positive_tabindex.rb'
-    - 'lib/rubocop/cop/github/accessibility/no_redundant_image_alt.rb'
-    - 'lib/rubocop/cop/github/rails_application_record.rb'
-
-# Offense count: 5
 InternalAffairs/UndefinedConfig:
   Exclude:
     - 'lib/rubocop/cop/github/insecure_hash_algorithm.rb'
