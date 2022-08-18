@@ -1,4 +1,78 @@
-inherit_from: ./config/default.yml
+inherit_from:
+  - .rubocop_todo.yml
+  - ./config/default.yml
+
+require:
+  - rubocop/cop/internal_affairs
+
+InternalAffairs/CopDescription:
+  Enabled: true
+
+InternalAffairs/EmptyLineBetweenExpectOffenseAndCorrection:
+  Enabled: true
+
+InternalAffairs/ExampleDescription:
+  Enabled: true
+
+InternalAffairs/InheritDeprecatedCopClass:
+  Enabled: true
+
+InternalAffairs/LocationLineEqualityComparison:
+  Enabled: true
+
+InternalAffairs/MethodNameEndWith:
+  Enabled: true
+
+InternalAffairs/MethodNameEqual:
+  Enabled: true
+
+InternalAffairs/NodeDestructuring:
+  Enabled: true
+
+InternalAffairs/NodeMatcherDirective:
+  Enabled: true
+
+InternalAffairs/NodeTypePredicate:
+  Enabled: true
+
+InternalAffairs/NumblockHandler:
+  Enabled: true
+
+InternalAffairs/OffenseLocationKeyword:
+  Enabled: true
+
+InternalAffairs/RedundantContextConfigParameter:
+  Enabled: true
+
+InternalAffairs/RedundantDescribedClassAsSubject:
+  Enabled: true
+
+InternalAffairs/RedundantLetRuboCopConfigNew:
+  Enabled: true
+
+InternalAffairs/RedundantLocationArgument:
+  Enabled: true
+
+InternalAffairs/RedundantMessageArgument:
+  Enabled: true
+
+InternalAffairs/RedundantMethodDispatchNode:
+  Enabled: true
+
+InternalAffairs/SingleLineComparison:
+  Enabled: true
+
+InternalAffairs/StyleDetectedApiUse:
+  Enabled: true
+
+InternalAffairs/UndefinedConfig:
+  Enabled: true
+
+InternalAffairs/UselessMessageAssertion:
+  Enabled: true
+
+InternalAffairs/UselessRestrictOnSend:
+  Enabled: true
 
 Naming/FileName:
   Enabled: true
