@@ -117,7 +117,7 @@ module RuboCop
 
         def on_const(const_node)
           if insecure_const?(const_node) && !digest_uuid?(const_node)
-            add_offense(const_node, message: MSG)
+            add_offense(const_node)
           end
         end
 
@@ -133,12 +133,12 @@ module RuboCop
             end
           when openssl_hmac_new?(send_node)
             if openssl_hmac_new_insecure?(send_node)
-              add_offense(send_node, message: MSG)
+              add_offense(send_node)
             end
           when insecure_digest?(send_node)
-            add_offense(send_node, message: MSG)
+            add_offense(send_node)
           when insecure_hash_lookup?(send_node)
-            add_offense(send_node, message: MSG)
+            add_offense(send_node)
           end
         end
       end

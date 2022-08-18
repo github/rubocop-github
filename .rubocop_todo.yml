@@ -15,12 +15,6 @@ InternalAffairs/NodeDestructuring:
     - 'lib/rubocop/cop/github/accessibility/no_redundant_image_alt.rb'
     - 'lib/rubocop/cop/github/rails_application_record.rb'
 
-# Offense count: 4
-# This cop supports safe autocorrection (--autocorrect).
-InternalAffairs/RedundantMessageArgument:
-  Exclude:
-    - 'lib/rubocop/cop/github/insecure_hash_algorithm.rb'
-
 # Offense count: 5
 InternalAffairs/UndefinedConfig:
   Exclude:
