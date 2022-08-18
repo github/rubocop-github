@@ -15,13 +15,6 @@ InternalAffairs/NodeDestructuring:
     - 'lib/rubocop/cop/github/accessibility/no_redundant_image_alt.rb'
     - 'lib/rubocop/cop/github/rails_application_record.rb'
 
-# Offense count: 3
-# This cop supports safe autocorrection (--autocorrect).
-InternalAffairs/NodeTypePredicate:
-  Exclude:
-    - 'lib/rubocop/cop/github/accessibility/link_has_href.rb'
-    - 'lib/rubocop/cop/github/accessibility/no_positive_tabindex.rb'
-
 # Offense count: 4
 # This cop supports safe autocorrection (--autocorrect).
 InternalAffairs/RedundantMessageArgument:
