@@ -1,5 +1,4 @@
 inherit_from:
-  - .rubocop_todo.yml
   - ./config/default.yml
 
 require:
@@ -63,9 +62,6 @@ InternalAffairs/SingleLineComparison:
   Enabled: true
 
 InternalAffairs/StyleDetectedApiUse:
-  Enabled: true
-
-InternalAffairs/UndefinedConfig:
   Enabled: true
 
 InternalAffairs/UselessMessageAssertion:
