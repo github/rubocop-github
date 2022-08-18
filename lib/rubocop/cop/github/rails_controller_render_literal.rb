@@ -11,6 +11,7 @@ module RuboCop
 
         MSG = "render must be used with a string literal or an instance of a Class"
 
+        # @!method ignore_key?(node)
         def_node_matcher :ignore_key?, <<-PATTERN
           (pair (sym {
             :body
@@ -26,6 +27,7 @@ module RuboCop
           }) $_)
         PATTERN
 
+        # @!method template_key?(node)
         def_node_matcher :template_key?, <<-PATTERN
           (pair (sym {
             :action
@@ -34,10 +36,12 @@ module RuboCop
           }) $_)
         PATTERN
 
+        # @!method layout_key?(node)
         def_node_matcher :layout_key?, <<-PATTERN
           (pair (sym :layout) $_)
         PATTERN
 
+        # @!method options_key?(node)
         def_node_matcher :options_key?, <<-PATTERN
           (pair (sym {
             :content_type
@@ -47,6 +51,7 @@ module RuboCop
           }) ...)
         PATTERN
 
+        # @!method render_const?(node)
         def_node_matcher :render_const?, <<-PATTERN
           (send nil? {:render :render_to_string} (const _ _) ...)
         PATTERN

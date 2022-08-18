@@ -8,10 +8,12 @@ module RuboCop
       class RailsRenderInline < Base
         MSG = "Avoid `render inline:`"
 
+        # @!method render_with_options?(node)
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? {:render :render_to_string} (hash $...))
         PATTERN
 
+        # @!method inline_key?(node)
         def_node_matcher :inline_key?, <<-PATTERN
           (pair (sym :inline) $_)
         PATTERN

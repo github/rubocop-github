@@ -8,14 +8,17 @@ module RuboCop
       class RailsViewRenderShorthand < Base
         MSG = "Prefer `render` partial shorthand"
 
+        # @!method render_with_options?(node)
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? {:render :render_to_string} (hash $...))
         PATTERN
 
+        # @!method partial_key?(node)
         def_node_matcher :partial_key?, <<-PATTERN
           (pair (sym :partial) $(str _))
         PATTERN
 
+        # @!method locals_key?(node)
         def_node_matcher :locals_key?, <<-PATTERN
           (pair (sym :locals) $_)
         PATTERN

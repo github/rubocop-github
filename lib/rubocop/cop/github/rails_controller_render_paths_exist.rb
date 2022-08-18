@@ -6,18 +6,22 @@ module RuboCop
   module Cop
     module GitHub
       class RailsControllerRenderPathsExist < Base
+        # @!method render?(node)
         def_node_matcher :render?, <<-PATTERN
           (send nil? {:render :render_to_string} $...)
         PATTERN
 
+        # @!method render_str?(node)
         def_node_matcher :render_str?, <<-PATTERN
           (send nil? {:render :render_to_string} $({str sym} $_) ...)
         PATTERN
 
+        # @!method render_options?(node)
         def_node_matcher :render_options?, <<-PATTERN
           (send nil? {:render :render_to_string} (hash $...))
         PATTERN
 
+        # @!method render_key?(node)
         def_node_matcher :render_key?, <<-PATTERN
           (pair (sym ${:action :partial :template}) $({str sym} $_))
         PATTERN

@@ -10,6 +10,7 @@ module RuboCop
           MSG = "Alt prop should not contain `image` or `picture` as screen readers already announce the element as an image"
           REDUNDANT_ALT_WORDS = %w(image picture)
 
+          # @!method redundant_alt?(node)
           def_node_search :redundant_alt?, "(pair (sym :alt) (str #contains_redundant_alt_text?))"
 
           def on_send(node)

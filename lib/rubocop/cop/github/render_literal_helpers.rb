@@ -8,34 +8,42 @@ module RuboCop
       module RenderLiteralHelpers
         extend NodePattern::Macros
 
+        # @!method literal?(node)
         def_node_matcher :literal?, <<-PATTERN
           ({str sym true false nil?} ...)
         PATTERN
 
+        # @!method render?(node)
         def_node_matcher :render?, <<-PATTERN
           (send nil? {:render :render_to_string} ...)
         PATTERN
 
+        # @!method render_literal?(node)
         def_node_matcher :render_literal?, <<-PATTERN
           (send nil? {:render :render_to_string} ({str sym} $_) $...)
         PATTERN
 
+        # @!method render_with_options?(node)
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? {:render :render_to_string} (hash $...) ...)
         PATTERN
 
+        # @!method render_view_component_instance?(node)
         def_node_matcher :render_view_component_instance?, <<-PATTERN
           (send nil? {:render :render_to_string} (send _ :new ...) ...)
         PATTERN
 
+        # @!method render_view_component_instance_with_content?(node)
         def_node_matcher :render_view_component_instance_with_content?, <<-PATTERN
           (send nil? {:render :render_to_string} (send (send _ :new ...) `:with_content ...))
         PATTERN
 
+        # @!method render_view_component_collection?(node)
         def_node_matcher :render_view_component_collection?, <<-PATTERN
           (send nil? {:render :render_to_string} (send _ :with_collection ...) ...)
         PATTERN
 
+        # @!method locals_key?(node)
         def_node_matcher :locals_key?, <<-PATTERN
           (pair (sym :locals) $_)
         PATTERN

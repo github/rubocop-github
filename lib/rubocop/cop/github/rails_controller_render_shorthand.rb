@@ -10,14 +10,17 @@ module RuboCop
 
         MSG = "Prefer `render` template shorthand"
 
+        # @!method render_with_options?(node)
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? {:render :render_to_string} (hash $...))
         PATTERN
 
+        # @!method action_key?(node)
         def_node_matcher :action_key?, <<-PATTERN
           (pair (sym {:action :template}) $({str sym} _))
         PATTERN
 
+        # @!method str(node)
         def_node_matcher :str, <<-PATTERN
           ({str sym} $_)
         PATTERN

@@ -9,6 +9,7 @@ module RuboCop
         class ImageHasAlt < Base
           MSG = "Images should have an alt prop with meaningful text or an empty string for decorative images"
 
+          # @!method has_alt_attribute?(node)
           def_node_search :has_alt_attribute?, "(sym :alt)"
 
           def on_send(node)

@@ -8,14 +8,17 @@ module RuboCop
       class RailsRenderObjectCollection < Base
         MSG = "Avoid `render object:`"
 
+        # @!method render_with_options?(node)
         def_node_matcher :render_with_options?, <<-PATTERN
           (send nil? {:render :render_to_string} (hash $...) ...)
         PATTERN
 
+        # @!method partial_key?(node)
         def_node_matcher :partial_key?, <<-PATTERN
           (pair (sym :partial) $_)
         PATTERN
 
+        # @!method object_key?(node)
         def_node_matcher :object_key?, <<-PATTERN
           (pair (sym ${:object :collection :spacer_template}) $_)
         PATTERN

@@ -15,25 +15,6 @@ InternalAffairs/NodeDestructuring:
     - 'lib/rubocop/cop/github/accessibility/no_redundant_image_alt.rb'
     - 'lib/rubocop/cop/github/rails_application_record.rb'
 
-# Offense count: 49
-# This cop supports safe autocorrection (--autocorrect).
-InternalAffairs/NodeMatcherDirective:
-  Exclude:
-    - 'lib/rubocop/cop/github/accessibility/image_has_alt.rb'
-    - 'lib/rubocop/cop/github/accessibility/no_redundant_image_alt.rb'
-    - 'lib/rubocop/cop/github/insecure_hash_algorithm.rb'
-    - 'lib/rubocop/cop/github/rails_application_record.rb'
-    - 'lib/rubocop/cop/github/rails_controller_render_action_symbol.rb'
-    - 'lib/rubocop/cop/github/rails_controller_render_literal.rb'
-    - 'lib/rubocop/cop/github/rails_controller_render_paths_exist.rb'
-    - 'lib/rubocop/cop/github/rails_controller_render_shorthand.rb'
-    - 'lib/rubocop/cop/github/rails_render_inline.rb'
-    - 'lib/rubocop/cop/github/rails_render_object_collection.rb'
-    - 'lib/rubocop/cop/github/rails_view_render_literal.rb'
-    - 'lib/rubocop/cop/github/rails_view_render_paths_exist.rb'
-    - 'lib/rubocop/cop/github/rails_view_render_shorthand.rb'
-    - 'lib/rubocop/cop/github/render_literal_helpers.rb'
-
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).
 InternalAffairs/NodeTypePredicate:

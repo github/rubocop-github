@@ -11,12 +11,14 @@ module RuboCop
 
         MSG = "render must be used with a literal template and use literals for locals keys"
 
+        # @!method ignore_key?(node)
         def_node_matcher :ignore_key?, <<-PATTERN
           (pair (sym {
             :inline
           }) $_)
         PATTERN
 
+        # @!method partial_key?(node)
         def_node_matcher :partial_key?, <<-PATTERN
           (pair (sym {
             :file
