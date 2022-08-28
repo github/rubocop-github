@@ -1,5 +1,7 @@
 # Ruby Style Guide
 
+This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
+
 ## Table of Contents
 1. [Coding Style](#coding-style)
 2. [Classes](#classes)
@@ -795,3 +797,5 @@ result = hash.map { |_, v| v + 1 }
   Instead, use `is_a?` or `kind_of?` if you must.
 
   Refactoring is even better. It's worth looking hard at any code that explicitly checks types.
+
+[rubocop-guide]: https://github.com/rubocop-hq/ruby-style-guide
