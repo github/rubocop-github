@@ -3,53 +3,30 @@
 This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
 
 ## Table of Contents
-1. [Coding Style](#coding-style)
-2. [Classes](#classes)
-3. [Collections](#collections)
-4. [Documentation](#documentation)
-5. [Dynamic Dispatch](#dynamic-dispatch)
-6. [Exceptions](#exceptions)
-7. [Hashes](#hashes)
-8. [Keyword Arguments](#keyword-arguments)
-9. [Naming](#naming)
-10. [Percent Literals](#percent-literals)
-11. [Regular Expressions](#regular-expressions)
-12. [Requires](#requires)
-13. [Strings](#strings)
-14. [Syntax](#syntax)
+1. [Layout](#layout)
+   1. [Indentation](#indentation)
+   2. [Inline](#inline)
+   3. [Newlines](#newlines)
+2. [Maximum Line Length](#line-length)
+3. [Classes](#classes)
+4. [Collections](#collections)
+5. [Documentation](#documentation)
+6. [Dynamic Dispatch](#dynamic-dispatch)
+7. [Exceptions](#exceptions)
+8. [Hashes](#hashes)
+9. [Keyword Arguments](#keyword-arguments)
+10. [Naming](#naming)
+11. [Percent Literals](#percent-literals)
+12. [Regular Expressions](#regular-expressions)
+13. [Requires](#requires)
+14. [Strings](#strings)
+15. [Syntax](#syntax)
 
-## Coding Style
+## Layout
+
+### Indentation
 
 * Use soft-tabs with a two space indent.
-
-* Keep each line of code to a readable length. Unless you have a reason to, keep lines to a maximum of 118 characters. Why 118? That's the width at which the pull request diff UI needs horizontal scrolling (making pull requests harder to review).
-
-* Never leave trailing whitespace.
-
-* End each file with a [newline](https://github.com/bbatsov/ruby-style-guide#newline-eof).
-
-* Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`.
-
-``` ruby
-sum = 1 + 2
-a, b = 1, 2
-1 > 2 ? true : false; puts "Hi"
-[1, 2, 3].each { |e| puts e }
-```
-
-* No spaces after `(`, `[` or before `]`, `)`.
-
-``` ruby
-some(arg).other
-[1, 2, 3].length
-```
-
-* No spaces after `!`.
-
-``` ruby
-!array.include?(element)
-```
 
 * Indent `when` with the start of the `case` expression.
 
@@ -91,6 +68,37 @@ else
 end
 ```
 
+### Inline
+
+* Never leave trailing whitespace.
+
+* Use spaces around operators, after commas, colons and semicolons, around `{`
+  and before `}`.
+
+``` ruby
+sum = 1 + 2
+a, b = 1, 2
+1 > 2 ? true : false; puts "Hi"
+[1, 2, 3].each { |e| puts e }
+```
+
+* No spaces after `(`, `[` or before `]`, `)`.
+
+``` ruby
+some(arg).other
+[1, 2, 3].length
+```
+
+* No spaces after `!`.
+
+``` ruby
+!array.include?(element)
+```
+
+### Newlines
+
+* End each file with a [newline](https://github.com/bbatsov/ruby-style-guide#newline-eof).
+
 * Use empty lines between `def`s and to break up a method into logical
   paragraphs.
 
@@ -107,6 +115,10 @@ def some_method
   result
 end
 ```
+
+## Maximum Line Length
+
+* Keep each line of code to a readable length. Unless you have a reason to, keep lines to a maximum of 118 characters. Why 118? That's the width at which the pull request diff UI needs horizontal scrolling (making pull requests harder to review).
 
 ## Classes
 
