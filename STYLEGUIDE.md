@@ -23,8 +23,10 @@ This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
 15. [Methods](#methods)
     1. [Method definitions](#method-definitions)
     2. [Method calls](#method-calls)
-
-16. [Syntax](#syntax)
+16. [Conditional Expressions](#conditional-expressions)
+    1. [Conditional keywords](#conditional-keywords)
+    2. [Ternary operator](#ternary-operator)
+17. [Syntax](#syntax)
 
 ## Layout
 
@@ -595,25 +597,9 @@ f (3 + 2) + 1
 f(3 + 2) + 1
 ```
 
-## Syntax
+## Conditional Expressions
 
-* Never use `for`, unless you know exactly why. Most of the time iterators
-  should be used instead. `for` is implemented in terms of `each` (so
-  you're adding a level of indirection), but with a twist - `for`
-  doesn't introduce a new scope (unlike `each`) and variables defined
-  in its block will be visible outside it.
-
-``` ruby
-arr = [1, 2, 3]
-
-# bad
-for elem in arr do
-  puts elem
-end
-
-# good
-arr.each { |elem| puts elem }
-```
+### Conditional keywords
 
 * Never use `then` for multi-line `if/unless`.
 
@@ -629,37 +615,7 @@ if some_condition
 end
 ```
 
-* Avoid the ternary operator (`?:`) except in cases where all expressions are extremely
-  trivial. However, do use the ternary operator(`?:`) over `if/then/else/end` constructs
-  for single line conditionals.
-
-``` ruby
-# bad
-result = if some_condition then something else something_else end
-
-# good
-result = some_condition ? something : something_else
-```
-
-* Use one expression per branch in a ternary operator. This
-  also means that ternary operators must not be nested. Prefer
-  `if/else` constructs in these cases.
-
-``` ruby
-# bad
-some_condition ? (nested_condition ? nested_something : nested_something_else) : something_else
-
-# good
-if some_condition
-  nested_condition ? nested_something : nested_something_else
-else
-  something_else
-end
-```
-
 * The `and` and `or` keywords are banned. It's just not worth it. Always use `&&` and `||` instead.
-
-* Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
 
 * Favor modifier `if/unless` usage when you have a single-line
   body.
@@ -704,6 +660,58 @@ end
 if x > 10
   # body omitted
 end
+```
+
+### Ternary operator
+
+* Avoid the ternary operator (`?:`) except in cases where all expressions are extremely
+  trivial. However, do use the ternary operator(`?:`) over `if/then/else/end` constructs
+  for single line conditionals.
+
+``` ruby
+# bad
+result = if some_condition then something else something_else end
+
+# good
+result = some_condition ? something : something_else
+```
+
+* Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
+
+* Use one expression per branch in a ternary operator. This
+  also means that ternary operators must not be nested. Prefer
+  `if/else` constructs in these cases.
+
+``` ruby
+# bad
+some_condition ? (nested_condition ? nested_something : nested_something_else) : something_else
+
+# good
+if some_condition
+  nested_condition ? nested_something : nested_something_else
+else
+  something_else
+end
+```
+
+## Syntax
+
+* Never use `for`, unless you know exactly why. Most of the time iterators
+  should be used instead. `for` is implemented in terms of `each` (so
+  you're adding a level of indirection), but with a twist - `for`
+  doesn't introduce a new scope (unlike `each`) and variables defined
+  in its block will be visible outside it.
+
+``` ruby
+arr = [1, 2, 3]
+
+# bad
+for elem in arr do
+  puts elem
+end
+
+# good
+arr.each { |elem| puts elem }
 ```
 
 * Prefer `{...}` over `do...end` for single-line blocks.  Avoid using
