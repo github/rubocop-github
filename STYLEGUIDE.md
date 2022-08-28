@@ -1,5 +1,23 @@
 # Ruby Style Guide
 
+## Table of Contents
+1. [Coding Style](#coding-style)
+2. [Classes](#classes)
+3. [Collections](#collections)
+4. [Documentation](#documentation)
+5. [Dynamic Dispatch](#dynamic-dispatch)
+6. [Exceptions](#exceptions)
+7. [Hashes](#hashes)
+8. [Keyword Arguments](#keyword-arguments)
+9. [Naming](#naming)
+10. [Percent Literals](#percent-literals)
+11. [Regular Expressions](#regular-expressions)
+12. [Requires](#requires)
+13. [Strings](#strings)
+14. [Syntax](#syntax)
+
+## Coding Style
+
 * Use soft-tabs with a two space indent.
 
 * Keep each line of code to a readable length. Unless you have a reason to, keep lines to a maximum of 118 characters. Why 118? That's the width at which the pull request diff UI needs horizontal scrolling (making pull requests harder to review).
