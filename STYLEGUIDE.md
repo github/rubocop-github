@@ -33,8 +33,10 @@ This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
 ### Indentation
 
 * Use soft-tabs with a two space indent.
+  <a name="default-indentation"></a><sup>[[link](#default-indentation)]</sup>
 
 * Indent `when` with the start of the `case` expression.
+  <a name="indent-when-as-start-of-case"></a><sup>[[link](#indent-when-as-start-of-case)]</sup>
 
 ``` ruby
 # bad
@@ -77,9 +79,11 @@ end
 ### Inline
 
 * Never leave trailing whitespace.
+  <a name="trailing-whitespace"></a><sup>[[link](#trailing-whitespace)]</sup>
 
 * Use spaces around operators, after commas, colons and semicolons, around `{`
   and before `}`.
+  <a name="spaces-operators"></a><sup>[[link](#spaces-operators)]</sup>
 
 ``` ruby
 sum = 1 + 2
@@ -89,6 +93,7 @@ a, b = 1, 2
 ```
 
 * No spaces after `(`, `[` or before `]`, `)`.
+  <a name="no-spaces-braces"></a><sup>[[link](#no-spaces-braces)]</sup>
 
 ``` ruby
 some(arg).other
@@ -96,6 +101,7 @@ some(arg).other
 ```
 
 * No spaces after `!`.
+  <a name="no-spaces-bang"></a><sup>[[link](#no-spaces-bang)]</sup>
 
 ``` ruby
 !array.include?(element)
@@ -104,9 +110,11 @@ some(arg).other
 ### Newlines
 
 * End each file with a [newline](https://github.com/bbatsov/ruby-style-guide#newline-eof).
+  <a name="newline-eof"></a><sup>[[link](#newline-eof)]</sup>
 
 * Use empty lines between `def`s and to break up a method into logical
   paragraphs.
+  <a name="empty-lines-def"></a><sup>[[link](#empty-lines-def)]</sup>
 
 ``` ruby
 def some_method
@@ -125,11 +133,13 @@ end
 ## Maximum Line Length
 
 * Keep each line of code to a readable length. Unless you have a reason to, keep lines to a maximum of 118 characters. Why 118? That's the width at which the pull request diff UI needs horizontal scrolling (making pull requests harder to review).
+  <a name="line-length"></a><sup>[[link](#line-length)]</sup>
 
 ## Classes
 
 * Avoid the usage of class (`@@`) variables due to their unusual behavior
 in inheritance.
+  <a name="class-variables"></a><sup>[[link](#class-variables)]</sup>
 
 ``` ruby
 class Parent
@@ -153,6 +163,7 @@ Parent.print_class_var # => will print "child"
 
 * Use `def self.method` to define singleton methods. This makes the methods
   more resistant to refactoring changes.
+  <a name="singleton-methods"></a><sup>[[link](#singleton-methods)]</sup>
 
 ``` ruby
 class TestClass
@@ -169,6 +180,7 @@ class TestClass
 
 * Avoid `class << self` except when necessary, e.g. single accessors and aliased
   attributes.
+  <a name="class-method-definitions"></a><sup>[[link](#class-method-definitions)]</sup>
 
 ``` ruby
 class TestClass
@@ -201,6 +213,7 @@ end
 
 * Indent the `public`, `protected`, and `private` methods as much the
   method definitions they apply to. Leave one blank line above them.
+  <a name="access-modifier-identation"></a><sup>[[link](#access-modifier-identation)]</sup>
 
 ``` ruby
 class SomeClass
@@ -217,6 +230,7 @@ end
 
 * Avoid explicit use of `self` as the recipient of internal class or instance
   messages unless to specify a method shadowed by a variable.
+  <a name="self-messages"></a><sup>[[link](#self-messages)]</sup>
 
 ``` ruby
 class SomeClass
@@ -233,6 +247,7 @@ end
 
 * Prefer `%w` to the literal array syntax when you need an array of
 strings.
+  <a name="percent-w"></a><sup>[[link](#percent-w)]</sup>
 
 ``` ruby
 # bad
@@ -246,8 +261,10 @@ STATES = %w(draft open closed)
   implements a collection of unordered values with no duplicates. This
   is a hybrid of `Array`'s intuitive inter-operation facilities and
   `Hash`'s fast lookup.
+  <a name="prefer-set"></a><sup>[[link](#prefer-set)]</sup>
 
 * Use symbols instead of strings as hash keys.
+  <a name="symbols-as-keys"></a><sup>[[link](#symbols-as-keys)]</sup>
 
 ``` ruby
 # bad
@@ -260,6 +277,7 @@ hash = { one: 1, two: 2, three: 3 }
 ## Documentation
 
 Use [TomDoc](http://tomdoc.org) to the best of your ability. It's pretty sweet:
+<a name="tomdoc"></a><sup>[[link](#tomdoc)]</sup>
 
 ``` ruby
 # Public: Duplicate some text an arbitrary number of times.
@@ -281,6 +299,7 @@ end
 ## Dynamic Dispatch
 
 Avoid calling `send` and its cousins unless you really need it. Metaprogramming can be extremely powerful, but in most cases you can write code that captures your meaning by being explicit:
+<a name="avoid-send"></a><sup>[[link](#avoid-send)]</sup>
 
 ``` ruby
 # avoid 
@@ -306,6 +325,7 @@ end
 ## Exceptions
 
 * Don't use exceptions for flow of control.
+  <a name="exceptions-flow-control"></a><sup>[[link](#exceptions-flow-control)]</sup>
 
 ``` ruby
 # bad
@@ -324,6 +344,7 @@ end
 ```
 
 * Rescue specific exceptions, not `StandardError` or its superclasses.
+  <a name="specific-exceptions"></a><sup>[[link](#specific-exceptions)]</sup>
 
 ``` ruby
 # bad
@@ -344,6 +365,7 @@ end
 ## Hashes
 
 Use the Ruby 1.9 syntax for hash literals when all the keys are symbols:
+<a name="symbols-as-hash-keys"></a><sup>[[link](#symbols-as-hash-keys)]</sup>
 
 ``` ruby
 # bad
@@ -360,6 +382,7 @@ user = {
 ```
 
 Use the 1.9 syntax when calling a method with Hash options arguments or named arguments:
+<a name="symbols-as-hash-method-arguments"></a><sup>[[link](#symbols-as-hash-method-arguments)]</sup>
 
 ``` ruby
 # bad
@@ -372,6 +395,9 @@ link_to("Account", controller: "users", action: "show", id: user)
 ```
 
 If you have a hash with mixed key types, use the legacy hashrocket style to avoid mixing styles within the same hash:
+<a name="consistent-hash-syntax"></a><sup>[[link](#consistent-hash-syntax)]</sup>
+
+``` ruby
 
 ``` ruby
 # bad
@@ -390,6 +416,9 @@ hsh = {
 ## Keyword Arguments
 
 [Keyword arguments](http://magazine.rubyist.net/?Ruby200SpecialEn-kwarg) are recommended but not required when a method's arguments may otherwise be opaque or non-obvious when called. Additionally, prefer them over the old "Hash as pseudo-named args" style from pre-2.0 ruby.
+<a name="keyword-arguments"></a><sup>[[link](#keyword-arguments)]</sup>
+
+``` ruby
 
 So instead of this:
 ``` ruby
@@ -414,23 +443,29 @@ remove_member(user, skip_membership_check: true)
 ## Naming
 
 * Use `snake_case` for methods and variables.
+  <a name="snake-case-methods-vars"></a><sup>[[link](#snake-case-methods-vars)]</sup>
 
 * Use `CamelCase` for classes and modules.  (Keep acronyms like HTTP,
   RFC, XML uppercase.)
+  <a name="camelcase-classes-modules"></a><sup>[[link](#camelcase-classes-modules)]</sup>
 
 * Use `SCREAMING_SNAKE_CASE` for other constants.
+  <a name="screaming-snake-case-constants"></a><sup>[[link](#screaming-snake-case-constants)]</sup>
 
 * The names of predicate methods (methods that return a boolean value)
   should end in a question mark. (i.e. `Array#empty?`).
+  <a name="bool-methods-qmark"></a><sup>[[link](#bool-methods-qmark)]</sup>
 
 * The names of potentially "dangerous" methods (i.e. methods that modify `self` or the
   arguments, `exit!`, etc.) should end with an exclamation mark. Bang methods
   should only exist if a non-bang counterpart (method name which does NOT end with !) 
   also exists.
+  <a name="dangerous-method-bang"></a><sup>[[link](#dangerous-method-bang)]</sup>
 
 ## Percent Literals
 
 * Use `%w` freely.
+  <a name="use-percent-w-freely"></a><sup>[[link](#use-percent-w-freely)]</sup>
 
 ``` ruby
 STATES = %w(draft open closed)
@@ -438,6 +473,7 @@ STATES = %w(draft open closed)
 
 * Use `%()` for single-line strings which require both interpolation
   and embedded double-quotes. For multi-line strings, prefer heredocs.
+  <a name="percent-parens-single-line"></a><sup>[[link](#percent-parens-single-line)]</sup>
 
 ``` ruby
 # bad (no interpolation needed)
@@ -457,6 +493,7 @@ STATES = %w(draft open closed)
 ```
 
 * Use `%r` only for regular expressions matching *more than* one '/' character.
+  <a name="percent-r-regular-expressions"></a><sup>[[link](#percent-r-regular-expressions)]</sup>
 
 ``` ruby
 # bad
@@ -474,6 +511,7 @@ STATES = %w(draft open closed)
 
 * Avoid using $1-9 as it can be hard to track what they contain. Named groups
   can be used instead.
+  <a name="capture-with-named-groups"></a><sup>[[link](#capture-with-named-groups)]</sup>
 
 ``` ruby
 # bad
@@ -489,6 +527,7 @@ process meaningful_var
 
 * Be careful with `^` and `$` as they match start/end of line, not string endings.
   If you want to match the whole string use: `\A` and `\z`.
+  <a name="regex-begin-end-markers"></a><sup>[[link](#regex-begin-end-markers)]</sup>
 
 ``` ruby
 string = "some injection\nusername"
@@ -498,6 +537,7 @@ string[/\Ausername\z/] # don't match
 
 * Use `x` modifier for complex regexps. This makes them more readable and you
   can add some useful comments. Just be careful as spaces are ignored.
+  <a name="x-modifier-complex-regex"></a><sup>[[link](#x-modifier-complex-regex)]</sup>
 
 ``` ruby
 regexp = %r{
@@ -514,6 +554,7 @@ regexp = %r{
 Always `require` dependencies used directly in a script at the start of the same file.
 Resources that will get autoloaded on first use—such as Rails models, controllers, or
 helpers—don't need to be required.
+<a name="require-dependencies-directly"></a><sup>[[link](#require-dependencies-directly)]</sup>
 
 ``` ruby
 require "set"
@@ -529,6 +570,7 @@ documentation about the libraries that the current file uses.
 ## Strings
 
 * Prefer string interpolation instead of string concatenation:
+  <a name="string-interpolation"></a><sup>[[link](#string-interpolation)]</sup>
 
 ``` ruby
 # bad
@@ -541,6 +583,7 @@ email_with_name = "#{user.name} <#{user.email}>"
 * Use double-quoted strings. Interpolation and escaped characters
   will always work without a delimiter change, and `'` is a lot more
   common than `"` in string literals.
+  <a name="double-quotes"></a><sup>[[link](#double-quotes)]</sup>
 
 ``` ruby
 # bad
@@ -553,6 +596,7 @@ name = "Bozhidar"
 * Avoid using `String#+` when you need to construct large data chunks.
   Instead, use `String#<<`. Concatenation mutates the string instance in-place
   and is always faster than `String#+`, which creates a bunch of new string objects.
+  <a name="string-concatenation"></a><sup>[[link](#string-concatenation)]</sup>
 
 ``` ruby
 # good and also fast
@@ -570,6 +614,7 @@ end
 
 * Use `def` with parentheses when there are arguments. Omit the
   parentheses when the method doesn't accept any arguments.
+  <a name="method-parens-when-arguments"></a><sup>[[link](#method-parens-when-arguments)]</sup>
 
  ``` ruby
  def some_method
@@ -586,8 +631,10 @@ end
 * If the first argument to a method begins with an open parenthesis,
   always use parentheses in the method invocation. For example, write
   `f((3 + 2) + 1)`.
+  <a name="parens-no-spaces"></a><sup>[[link](#parens-no-spaces)]</sup>
 
 * Never put a space between a method name and the opening parenthesis.
+  <a name="no-spaces-method-parens"></a><sup>[[link](#no-spaces-method-parens)]</sup>
 
 ``` ruby
 # bad
@@ -602,6 +649,7 @@ f(3 + 2) + 1
 ### Conditional keywords
 
 * Never use `then` for multi-line `if/unless`.
+  <a name="no-then-for-multi-line-if-unless"></a><sup>[[link](#no-then-for-multi-line-if-unless)]</sup>
 
 ``` ruby
 # bad
@@ -616,9 +664,11 @@ end
 ```
 
 * The `and` and `or` keywords are banned. It's just not worth it. Always use `&&` and `||` instead.
+  <a name="no-and-or-or"></a><sup>[[link](#no-and-or-or)]</sup>
 
 * Favor modifier `if/unless` usage when you have a single-line
   body.
+  <a name="favor-modifier-if-unless"></a><sup>[[link](#favor-modifier-if-unless)]</sup>
 
 ``` ruby
 # bad
@@ -631,6 +681,7 @@ do_something if some_condition
 ```
 
 * Never use `unless` with `else`. Rewrite these with the positive case first.
+  <a name="no-else-with-unless"></a><sup>[[link](#no-else-with-unless)]</sup>
 
 ``` ruby
 # bad
@@ -649,6 +700,7 @@ end
 ```
 
 * Don't use parentheses around the condition of an `if/unless/while`.
+  <a name="no-parens-if-unless-while"></a><sup>[[link](#no-parens-if-unless-while)]</sup>
 
 ``` ruby
 # bad
@@ -667,6 +719,7 @@ end
 * Avoid the ternary operator (`?:`) except in cases where all expressions are extremely
   trivial. However, do use the ternary operator(`?:`) over `if/then/else/end` constructs
   for single line conditionals.
+  <a name="trivial-ternary"></a><sup>[[link](#trivial-ternary)]</sup>
 
 ``` ruby
 # bad
@@ -677,10 +730,12 @@ result = some_condition ? something : something_else
 ```
 
 * Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
+  <a name="no-multiline-ternary"></a><sup>[[link](#no-multiline-ternary)]</sup>
 
 * Use one expression per branch in a ternary operator. This
   also means that ternary operators must not be nested. Prefer
   `if/else` constructs in these cases.
+  <a name="one-expression-per-branch"></a><sup>[[link](#one-expression-per-branch)]</sup>
 
 ``` ruby
 # bad
@@ -701,6 +756,7 @@ end
   you're adding a level of indirection), but with a twist - `for`
   doesn't introduce a new scope (unlike `each`) and variables defined
   in its block will be visible outside it.
+  <a name="avoid-for"></a><sup>[[link](#avoid-for)]</sup>
 
 ``` ruby
 arr = [1, 2, 3]
@@ -719,6 +775,7 @@ arr.each { |elem| puts elem }
   ugly). Always use `do...end` for "control flow" and "method
   definitions" (e.g. in Rakefiles and certain DSLs).  Avoid `do...end`
   when chaining.
+  <a name="squiggly-braces"></a><sup>[[link](#squiggly-braces)]</sup>
 
 ``` ruby
 names = ["Bozhidar", "Steve", "Sarah"]
@@ -745,6 +802,7 @@ end.map { |name| name.upcase }
     nifty methods?
 
 * Avoid `return` where not required.
+  <a name="avoid-return"></a><sup>[[link](#avoid-return)]</sup>
 
 ``` ruby
 # bad
@@ -759,6 +817,7 @@ end
 ```
 
 * Use spaces around the `=` operator when assigning default values to method parameters:
+  <a name="spaces-around-equals"></a><sup>[[link](#spaces-around-equals)]</sup>
 
 ``` ruby
 # bad
@@ -776,6 +835,7 @@ While several Ruby books suggest the first style, the second is much more promin
 in practice (and arguably a bit more readable).
 
 * Using the return value of `=` (an assignment) is ok.
+  <a name="use-return-value-of-assignment"></a><sup>[[link](#use-return-value-of-assignment)]</sup>
 
 ``` ruby
 # bad
@@ -789,6 +849,7 @@ if (v = next_value) == "hello" ...
 ```
 
 * Use `||=` freely to initialize variables.
+  <a name="memoization-for-initialization"></a><sup>[[link](#memoize-away)]</sup>
 
 ``` ruby
 # set name to Bozhidar, only if it's nil or false
@@ -797,6 +858,7 @@ name ||= "Bozhidar"
 
 * Don't use `||=` to initialize boolean variables. (Consider what
   would happen if the current value happened to be `false`.)
+  <a name="no-memoization-for-boolean"></a><sup>[[link](#no-memoization-for-boolean)]</sup>
 
 ``` ruby
 # bad - would set enabled to true even if it was false
@@ -810,8 +872,10 @@ enabled = true if enabled.nil?
   etc. ). They are quite cryptic and their use in anything but
   one-liner scripts is discouraged. Prefer long form versions such as
   `$PROGRAM_NAME`.
+  <a name="no-cryptic-vars"></a><sup>[[link](#no-cryptic-vars)]</sup>
 
 * Use `_` for unused block parameters.
+  <a name="underscore-unused-vars"></a><sup>[[link](#underscore-unused-vars)]</sup>
 
 ``` ruby
 # bad
@@ -825,6 +889,7 @@ result = hash.map { |_, v| v + 1 }
   implementation detail to support Ruby features like `case`, and it's not commutative.
   For example, `String === "hi"` is true and `"hi" === String` is false.
   Instead, use `is_a?` or `kind_of?` if you must.
+  <a name="type-checking-is-a-kind-of"></a><sup>[[link](#type-checking-is-a-kind-of)]</sup>
 
   Refactoring is even better. It's worth looking hard at any code that explicitly checks types.
 
