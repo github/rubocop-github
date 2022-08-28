@@ -20,7 +20,11 @@ This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
 12. [Regular Expressions](#regular-expressions)
 13. [Requires](#requires)
 14. [Strings](#strings)
-15. [Syntax](#syntax)
+15. [Methods](#methods)
+    1. [Method definitions](#method-definitions)
+    2. [Method calls](#method-calls)
+
+16. [Syntax](#syntax)
 
 ## Layout
 
@@ -558,7 +562,9 @@ paragraphs.each do |paragraph|
 end
 ```
 
-## Syntax
+## Methods
+
+### Method definitions
 
 * Use `def` with parentheses when there are arguments. Omit the
   parentheses when the method doesn't accept any arguments.
@@ -572,6 +578,24 @@ end
    # body omitted
  end
  ```
+
+### Method calls
+
+* If the first argument to a method begins with an open parenthesis,
+  always use parentheses in the method invocation. For example, write
+  `f((3 + 2) + 1)`.
+
+* Never put a space between a method name and the opening parenthesis.
+
+``` ruby
+# bad
+f (3 + 2) + 1
+
+# good
+f(3 + 2) + 1
+```
+
+## Syntax
 
 * Never use `for`, unless you know exactly why. Most of the time iterators
   should be used instead. `for` is implemented in terms of `each` (so
@@ -778,20 +802,6 @@ enabled = true if enabled.nil?
   etc. ). They are quite cryptic and their use in anything but
   one-liner scripts is discouraged. Prefer long form versions such as
   `$PROGRAM_NAME`.
-
-* Never put a space between a method name and the opening parenthesis.
-
-``` ruby
-# bad
-f (3 + 2) + 1
-
-# good
-f(3 + 2) + 1
-```
-
-* If the first argument to a method begins with an open parenthesis,
-  always use parentheses in the method invocation. For example, write
-`f((3 + 2) + 1)`.
 
 * Use `_` for unused block parameters.
 
