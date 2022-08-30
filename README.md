@@ -29,8 +29,10 @@ If you are using a rubocop version < 1.0.0, you can use rubocop-github version
 
 ## Testing
 
-`bundle install`
-`bundle exec rake test`
+``` bash
+bundle install
+bundle exec rake test
+```
 
 ## The Cops
 
