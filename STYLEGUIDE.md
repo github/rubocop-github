@@ -797,9 +797,9 @@ names.select do |name|
 end.map { |name| name.upcase }
 ```
 
-    Some will argue that multiline chaining would look OK with the use of {...}, but they should
-    ask themselves - is this code really readable and can't the block's contents be extracted into
-    nifty methods?
+* Some will argue that multiline chaining would look OK with the use of `{...}`,
+ but they should ask themselves: is this code really readable and can't the block's 
+ contents be extracted into nifty methods?
 
 * Avoid `return` where not required.
   <a name="avoid-return"></a><sup>[[link](#avoid-return)]</sup>
