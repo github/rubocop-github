@@ -5,180 +5,40 @@ require:
 AllCops:
   EnabledByDefault: true
 
-Bundler/DuplicatedGem:
-  Enabled: true
+Gemspec/DependencyVersion:
+  Enabled: false
 
-Bundler/OrderedGems:
-  Enabled: true
+# TODO: This is too new to be written in the styleguide.
+Gemspec/RequireMFA:
+  Enabled: false
 
-GitHub/InsecureHashAlgorithm:
-  Enabled: true
-
-Layout/BlockAlignment:
-  Enabled: true
-
-Layout/BlockEndNewline:
-  Enabled: true
-
-Layout/ConditionPosition:
-  Enabled: true
-
-Layout/DefEndAlignment:
-  Enabled: true
+Gemspec/RequiredRubyVersion:
+  Enabled: false
 
 Layout/EndAlignment:
   Enabled: false
 
-Layout/EndOfLine:
-  Enabled: true
-
 Layout/IndentationStyle:
-  Enabled: true
   EnforcedStyle: spaces
   IndentationWidth: 2
 
 Layout/IndentationWidth:
-  Enabled: true
   Width: 2
-
-Layout/InitialIndentation:
-  Enabled: true
 
 Layout/LineLength:
   Enabled: false
 
-Layout/SpaceAfterColon:
-  Enabled: true
-
-Layout/SpaceAfterComma:
-  Enabled: true
-
-Layout/SpaceAfterMethodName:
-  Enabled: true
-
-Layout/SpaceAfterNot:
-  Enabled: true
-
-Layout/SpaceAfterSemicolon:
-  Enabled: true
-
-Layout/SpaceAroundBlockParameters:
-  Enabled: true
-
-Layout/SpaceAroundEqualsInParameterDefault:
-  Enabled: true
-
-Layout/SpaceBeforeBlockBraces:
-  Enabled: true
+Layout/SingleLineBlockChain:
+  Enabled: false
 
 Layout/SpaceInsideArrayLiteralBrackets:
-  Enabled: true
   EnforcedStyle: no_space
 
-Layout/SpaceInsideArrayPercentLiteral:
-  Enabled: true
+Lint/ConstantResolution:
+  Enabled: false
 
-Layout/SpaceInsideBlockBraces:
-  Enabled: true
-
-Layout/SpaceInsideParens:
-  Enabled: true
-
-Layout/SpaceInsideRangeLiteral:
-  Enabled: true
-
-Layout/SpaceInsideReferenceBrackets:
-  Enabled: true
-
-Layout/TrailingEmptyLines:
-  Enabled: true
-
-Layout/TrailingWhitespace:
-  Enabled: true
-
-Lint/CircularArgumentReference:
-  Enabled: true
-
-Lint/Debugger:
-  Enabled: true
-
-Lint/DeprecatedClassMethods:
-  Enabled: true
-
-Lint/DuplicateMethods:
-  Enabled: true
-
-Lint/DuplicateHashKey:
-  Enabled: true
-
-Lint/EachWithObjectArgument:
-  Enabled: true
-
-Lint/ElseLayout:
-  Enabled: true
-
-Lint/EmptyEnsure:
-  Enabled: true
-
-Lint/EmptyInterpolation:
-  Enabled: true
-
-Lint/EnsureReturn:
-  Enabled: true
-
-Lint/FlipFlop:
-  Enabled: true
-
-Lint/FloatOutOfRange:
-  Enabled: true
-
-Lint/FormatParameterMismatch:
-  Enabled: true
-
-Lint/LiteralAsCondition:
-  Enabled: true
-
-Lint/LiteralInInterpolation:
-  Enabled: true
-
-Lint/Loop:
-  Enabled: true
-
-Lint/NextWithoutAccumulator:
-  Enabled: true
-
-Lint/RandOne:
-  Enabled: true
-
-Lint/RequireParentheses:
-  Enabled: true
-
-Lint/RescueException:
-  Enabled: true
-
-Lint/RedundantStringCoercion:
-  Enabled: true
-
-Lint/UnderscorePrefixedVariableName:
-  Enabled: true
-
-Lint/RedundantCopDisableDirective:
-  Enabled: true
-
-Lint/RedundantSplatExpansion:
-  Enabled: true
-
-Lint/UnreachableCode:
-  Enabled: true
-
-Lint/BinaryOperatorWithIdenticalOperands:
-  Enabled: true
-
-Lint/UselessSetterCall:
-  Enabled: true
-
-Lint/Void:
-  Enabled: true
+Lint/NumberConversion:
+  Enabled: false
 
 Metrics/AbcSize:
   Enabled: false
@@ -207,128 +67,55 @@ Metrics/ParameterLists:
 Metrics/PerceivedComplexity:
   Enabled: false
 
-Naming/AsciiIdentifiers:
-  Enabled: true
-
-Naming/ClassAndModuleCamelCase:
-  Enabled: true
-
-Naming/FileName:
-  Enabled: true
-
-Naming/MethodName:
-  Enabled: true
-
 Performance/CaseWhenSplat:
   Enabled: false
 
-Performance/Count:
-  Enabled: true
-
-Performance/Detect:
-  Enabled: true
-
-Performance/DoubleStartEndWith:
-  Enabled: true
-
-Performance/EndWith:
-  Enabled: true
-
-Performance/FlatMap:
-  Enabled: true
-
-Performance/RangeInclude:
-  Enabled: false
-
-Performance/RedundantMatch:
+Performance/ChainArrayAllocation:
   Enabled: false
 
 Performance/RedundantMerge:
-  Enabled: true
   MaxKeyValuePairs: 1
 
-Performance/ReverseEach:
-  Enabled: true
+Style/CollectionMethods:
+  Enabled: false
 
-Performance/Size:
-  Enabled: true
-
-Performance/StartWith:
-  Enabled: true
-
-Security/Eval:
-  Enabled: true
-
-Style/ArrayJoin:
-  Enabled: true
-
-Style/BeginBlock:
-  Enabled: true
-
-Style/BlockComments:
-  Enabled: true
-
-Style/CaseEquality:
-  Enabled: true
-
-Style/CharacterLiteral:
-  Enabled: true
-
-Style/ClassMethods:
-  Enabled: true
+Style/ConstantVisibility:
+  Enabled: false
 
 Style/Copyright:
   Enabled: false
 
-Style/DefWithParentheses:
-  Enabled: true
+# TODO: The styleguide doesn't have an opinion on this yet.
+Style/Documentation:
+  Enabled: false
 
-Style/EndBlock:
-  Enabled: true
-
-Style/For:
-  Enabled: true
-
-Style/FrozenStringLiteralComment:
-  Enabled: true
+Style/DocumentationMethod:
+  Enabled: false
 
 Style/HashSyntax:
-  Enabled: true
   EnforcedStyle: ruby19_no_mixed_keys
 
-Style/LambdaCall:
-  Enabled: true
+Style/InlineComment:
+  Enabled: false
 
-Style/MethodCallWithoutArgsParentheses:
-  Enabled: true
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
 
-Style/MethodDefParentheses:
-  Enabled: true
+Style/MultilineBlockChain:
+  Enabled: false
 
-Style/MultilineIfThen:
-  Enabled: true
+Style/MissingElse:
+  Enabled: false
 
-Style/NilComparison:
-  Enabled: true
+Style/SoleNestedConditional:
+  Enabled: false
 
-Style/Not:
-  Enabled: true
-
-Style/OneLineConditional:
-  Enabled: true
-
-Style/RedundantSortBy:
-  Enabled: true
-
-Style/Sample:
-  Enabled: true
-
-Style/StabbyLambdaParentheses:
-  Enabled: true
-
-Style/Strip:
-  Enabled: true
+Style/StringHashKeys:
+  Enabled: false
 
 Style/StringLiterals:
-  Enabled: true
   EnforcedStyle: double_quotes
+
+# TODO: The styleguide doesn't have an opinion on this yet.
+Style/SymbolArray:
+  Enabled: false
