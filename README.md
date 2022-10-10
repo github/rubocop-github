@@ -21,7 +21,7 @@ inherit_gem:
     - config/rails.yml
 ```
 
-💭 Looking for `config/accessibility.yml` and the `GitHub/Accessibility` configs? [They have been moved](https://github.com/github/rubocop-rails-accessibility) to a new gem.
+💭 Looking for `config/accessibility.yml` and the `GitHub/Accessibility` configs? They have been moved to [a new gem](https://github.com/github/rubocop-rails-accessibility).
 
 ### Legacy usage
 
