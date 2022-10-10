@@ -7,7 +7,7 @@ module RuboCop
     module GitHub
       module Accessibility
         class LinkHasHref < Base
-          MSG = "Links should go somewhere, you probably want to use a `<button>` instead.".freeze
+          MSG = "Links should go somewhere, you probably want to use a `<button>` instead."
 
           def on_send(node)
             receiver, method_name, *args = *node

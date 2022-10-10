@@ -8,7 +8,7 @@ module RuboCop
       module Accessibility
         class NoRedundantImageAlt < Base
           MSG = "Alt prop should not contain `image` or `picture` as screen readers already announce the element as an image"
-          REDUNDANT_ALT_WORDS = %w(image picture)
+          REDUNDANT_ALT_WORDS = %w(image picture).freeze
 
           def_node_search :redundant_alt?, "(pair (sym :alt) (str #contains_redundant_alt_text?))"
 
