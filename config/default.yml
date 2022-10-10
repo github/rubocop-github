@@ -15,6 +15,9 @@ Gemspec/RequireMFA:
 Gemspec/RequiredRubyVersion:
   Enabled: false
 
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
 Layout/EndAlignment:
   Enabled: false
 
@@ -25,7 +28,13 @@ Layout/IndentationStyle:
 Layout/IndentationWidth:
   Width: 2
 
+# TODO: Enable this with line length of 118 (the GitHub UI's text wrapping length)
+# since it's specified in https://github.com/github/rubocop-github/blob/master/STYLEGUIDE.md#maximum-line-length.
 Layout/LineLength:
+  Enabled: false
+
+# TODO: The styleguide has no opinions on this yet.
+Layout/MultilineMethodCallIndentation:
   Enabled: false
 
 Layout/SingleLineBlockChain:
@@ -35,6 +44,9 @@ Layout/SpaceInsideArrayLiteralBrackets:
   EnforcedStyle: no_space
 
 Lint/ConstantResolution:
+  Enabled: false
+
+Lint/EmptyConditionalBody:
   Enabled: false
 
 Lint/NumberConversion:
@@ -92,6 +104,9 @@ Style/Documentation:
 Style/DocumentationMethod:
   Enabled: false
 
+Style/GuardClause:
+  Enabled: false
+
 Style/HashSyntax:
   EnforcedStyle: ruby19_no_mixed_keys
 
@@ -105,6 +120,12 @@ Style/MultilineBlockChain:
   Enabled: false
 
 Style/MissingElse:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/NumericPredicate:
   Enabled: false
 
 Style/SoleNestedConditional:
