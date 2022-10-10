@@ -47,6 +47,10 @@ Layout/SingleLineBlockChain:
 Layout/SpaceInsideArrayLiteralBrackets:
   EnforcedStyle: no_space
 
+# TODO: Absolutely we should enable this one, but it's very noisy right now.
+Lint/AssignmentInCondition:
+  Enabled: false
+
 Lint/ConstantResolution:
   Enabled: false
 
