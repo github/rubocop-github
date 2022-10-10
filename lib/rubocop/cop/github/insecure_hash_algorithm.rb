@@ -90,7 +90,7 @@ module RuboCop
         DEFAULT_ALLOWED = %w(SHA256 SHA384 SHA512).freeze
 
         def allowed_hash_functions
-          @allowed_algorithms ||= cop_config.fetch("Allowed", DEFAULT_ALLOWED).map(&:downcase)
+          @allowed_hash_functions ||= cop_config.fetch("Allowed", DEFAULT_ALLOWED).map(&:downcase)
         end
 
         def alg_name(val)
