@@ -114,6 +114,9 @@ Style/Documentation:
 Style/DocumentationMethod:
   Enabled: false
 
+Style/EmptyCaseCondition:
+  Enabled: false
+
 Style/GuardClause:
   Enabled: false
 

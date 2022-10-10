@@ -81,7 +81,7 @@ module RuboCop
         end
 
         def just_encoding?(val)
-          val == :hexencode || val == :bubblebabble
+          [:hexencode, :bubblebabble].include?(val)
         end
 
         # Built-in hash functions are listed in these docs:
