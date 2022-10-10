@@ -27,22 +27,16 @@ module RuboCop
 
           if args = render_str?(node)
             node, path = args
-            unless resolve_template(path.to_s)
-              add_offense(node, message: "Template could not be found")
-            end
+            add_offense(node, message: "Template could not be found") unless resolve_template(path.to_s)
           elsif pairs = render_options?(node)
             if pair = pairs.detect { |p| render_key?(p) }
               key, node, path = render_key?(pair)
 
               case key
               when :action, :template
-                unless resolve_template(path.to_s)
-                  add_offense(node, message: "Template could not be found")
-                end
+                add_offense(node, message: "Template could not be found") unless resolve_template(path.to_s)
               when :partial
-                unless resolve_partial(path.to_s)
-                  add_offense(node, message: "Partial template could not be found")
-                end
+                add_offense(node, message: "Partial template could not be found") unless resolve_partial(path.to_s)
               end
             end
           end
@@ -50,7 +44,7 @@ module RuboCop
 
         def resolve_template(path)
           cop_config["ViewPath"].each do |view_path|
-            if m = Dir[File.join(config.path_relative_to_config(view_path), path) + "*"].first
+            if m = Dir["#{File.join(config.path_relative_to_config(view_path), path)}*"].first
               return m
             end
           end

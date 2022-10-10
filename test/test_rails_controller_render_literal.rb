@@ -442,7 +442,6 @@ class TestRailsControllerRenderLiteral < CopTest
     assert_equal 1, offenses.count
   end
 
-
   def test_render_literal_dynamic_local_key_offense
     offenses = investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
       class ProductsController < ActionController::Base

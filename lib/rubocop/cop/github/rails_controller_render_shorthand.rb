@@ -28,8 +28,8 @@ module RuboCop
               if value_node = action_key?(pair)
                 comma = option_pairs.length > 1 ? ", " : ""
                 corrected_source = node.source
-                  .sub(/#{pair.source}(,\s*)?/, "")
-                  .sub("render ", "render \"#{str(value_node)}\"#{comma}")
+                                       .sub(/#{pair.source}(,\s*)?/, "")
+                                       .sub("render ", "render \"#{str(value_node)}\"#{comma}")
 
                 add_offense(node, message: "Use `#{corrected_source}` instead") do |corrector|
                   corrector.replace(node.source_range, corrected_source)
