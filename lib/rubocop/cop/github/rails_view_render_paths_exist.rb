@@ -47,7 +47,7 @@ module RuboCop
           path = parts.join(File::SEPARATOR)
 
           cop_config["ViewPath"].each do |view_path|
-            if m = Dir[File.join(config.path_relative_to_config(view_path), path) + "*"].first
+            if m = Dir["#{File.join(config.path_relative_to_config(view_path), path)}*"].first
               return m
             end
           end
