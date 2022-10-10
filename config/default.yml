@@ -3,7 +3,7 @@ require:
   - rubocop-performance
 
 AllCops:
-  DisabledByDefault: true
+  EnabledByDefault: true
 
 Bundler/DuplicatedGem:
   Enabled: true
