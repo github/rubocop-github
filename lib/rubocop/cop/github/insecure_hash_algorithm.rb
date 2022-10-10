@@ -86,11 +86,11 @@ module RuboCop
         # Built-in hash functions are listed in these docs:
         #  https://ruby-doc.org/stdlib-2.7.0/libdoc/digest/rdoc/Digest.html
         #  https://ruby-doc.org/stdlib-2.7.0/libdoc/openssl/rdoc/OpenSSL/Digest.html
-        DEFAULT_ALLOWED = %w[
+        DEFAULT_ALLOWED = %w(
           SHA256
           SHA384
           SHA512
-        ].freeze
+        ).freeze
 
         def allowed_hash_functions
           @allowed_algorithms ||= cop_config.fetch("Allowed", DEFAULT_ALLOWED).map(&:downcase)

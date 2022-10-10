@@ -371,7 +371,7 @@ class TestInsecureHashAlgorithm < CopTest
   end
 
   def test_uuid_v3_with_md5_allowed
-    cop = make_cop(allowed: %w[MD5])
+    cop = make_cop(allowed: %w(MD5))
     offenses = investigate(cop, <<-RUBY)
       class Something
         def uuid
@@ -409,7 +409,7 @@ class TestInsecureHashAlgorithm < CopTest
   end
 
   def test_uuid_v5_with_sha1_allowed
-    cop = make_cop(allowed: %w[SHA1])
+    cop = make_cop(allowed: %w(SHA1))
     offenses = investigate(cop, <<-RUBY)
       class Something
         def uuid
@@ -422,7 +422,7 @@ class TestInsecureHashAlgorithm < CopTest
   end
 
   def test_allow_sha512_only
-    cop = make_cop(allowed: %w[SHA512])
+    cop = make_cop(allowed: %w(SHA512))
     offenses = investigate(cop, <<-RUBY)
       class Something
         HASH = Digest::SHA256
@@ -432,7 +432,7 @@ class TestInsecureHashAlgorithm < CopTest
   end
 
   def test_allow_lots_of_hashes
-    cop = make_cop(allowed: %w[SHA1 SHA256 SHA384 SHA512])
+    cop = make_cop(allowed: %w(SHA1 SHA256 SHA384 SHA512))
     offenses = investigate(cop, <<-RUBY)
       class Something
         HASH = Digest::SHA1
