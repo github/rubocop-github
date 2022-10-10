@@ -2,9 +2,6 @@ require:
   - rubocop/cop/github
   - rubocop-performance
 
-AllCops:
-  EnabledByDefault: true
-
 Gemspec/DependencyVersion:
   Enabled: false
 
