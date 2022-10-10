@@ -50,10 +50,16 @@ Layout/SpaceInsideArrayLiteralBrackets:
 Lint/ConstantResolution:
   Enabled: false
 
+Lint/DuplicateBranch:
+  Enabled: false
+
 Lint/EmptyConditionalBody:
   Enabled: false
 
 Lint/NumberConversion:
+  Enabled: false
+
+Lint/UnusedBlockArgument:
   Enabled: false
 
 Metrics/AbcSize:
