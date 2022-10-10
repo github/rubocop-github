@@ -15,6 +15,10 @@ Gemspec/RequireMFA:
 Gemspec/RequiredRubyVersion:
   Enabled: false
 
+# TOOD: This seems arbitrary, but we don't have a styleguide opinion on it?
+Layout/ClassStructure:
+  Enabled: false
+
 Layout/EmptyLineAfterMagicComment:
   Enabled: false
 
@@ -128,6 +132,9 @@ Style/NegatedIf:
 Style/NumericPredicate:
   Enabled: false
 
+Style/Next:
+  Enabled: false
+
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     '%w': '()'
@@ -143,4 +150,8 @@ Style/StringLiterals:
 
 # TODO: The styleguide doesn't have an opinion on this yet.
 Style/SymbolArray:
+  Enabled: false
+
+# Disabled, there's a lot of `foo, _ = method_with_two_return_values` with a space in it.
+Style/TrailingUnderscoreVariable:
   Enabled: false
