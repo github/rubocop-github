@@ -2,9 +2,6 @@ require:
   - rubocop/cop/github
   - rubocop-performance
 
-AllCops:
-  DisabledByDefault: true
-
 Bundler/DuplicatedGem:
   Enabled: true
 
