@@ -10,7 +10,7 @@ module RuboCop
           MSG = "Positive tabindex is error-prone and often inaccessible."
 
           def on_send(node)
-            receiver, method_name, *args = *node
+            receiver, _method_name, *args = *node
             if receiver.nil?
               args.select do |arg|
                 arg.type == :hash
