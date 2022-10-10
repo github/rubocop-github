@@ -13,9 +13,7 @@ module RuboCop
             receiver, method_name, *args = *node
 
             if receiver.nil? && method_name == :link_to
-              if args.length == 1 || (args.length > 1 && args[1].type == :str && args[1].children.first == "#")
-                add_offense(node.loc.selector)
-              end
+              add_offense(node.loc.selector) if args.length == 1 || (args.length > 1 && args[1].type == :str && args[1].children.first == "#")
             end
           end
         end

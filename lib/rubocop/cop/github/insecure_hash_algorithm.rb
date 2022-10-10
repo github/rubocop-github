@@ -108,25 +108,17 @@ module RuboCop
         end
 
         def on_const(const_node)
-          if insecure_const?(const_node) && !digest_uuid?(const_node)
-            add_offense(const_node, message: MSG)
-          end
+          add_offense(const_node, message: MSG) if insecure_const?(const_node) && !digest_uuid?(const_node)
         end
 
         def on_send(send_node)
           case
           when uuid_v3?(send_node)
-            unless allowed_hash_functions.include?("md5")
-              add_offense(send_node, message: UUID_V3_MSG)
-            end
+            add_offense(send_node, message: UUID_V3_MSG) unless allowed_hash_functions.include?("md5")
           when uuid_v5?(send_node)
-            unless allowed_hash_functions.include?("sha1")
-              add_offense(send_node, message: UUID_V5_MSG)
-            end
+            add_offense(send_node, message: UUID_V5_MSG) unless allowed_hash_functions.include?("sha1")
           when openssl_hmac_new?(send_node)
-            if openssl_hmac_new_insecure?(send_node)
-              add_offense(send_node, message: MSG)
-            end
+            add_offense(send_node, message: MSG) if openssl_hmac_new_insecure?(send_node)
           when insecure_digest?(send_node)
             add_offense(send_node, message: MSG)
           when insecure_hash_lookup?(send_node)

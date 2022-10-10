@@ -16,9 +16,7 @@ module RuboCop
             receiver, method_name, _= *node
 
             if receiver.nil? && method_name == :image_tag
-              if redundant_alt?(node)
-                add_offense(node.loc.selector)
-              end
+              add_offense(node.loc.selector) if redundant_alt?(node)
             end
           end
 
@@ -27,9 +25,7 @@ module RuboCop
           def contains_redundant_alt_text?(string)
             return false if string.empty?
 
-            if (string.downcase.split & REDUNDANT_ALT_WORDS).any?
-              return true
-            end
+            return true if (string.downcase.split & REDUNDANT_ALT_WORDS).any?
           end
         end
       end

@@ -60,9 +60,7 @@ module RuboCop
           elsif option_pairs = render_with_options?(node)
             option_pairs = option_pairs.reject { |pair| options_key?(pair) }
 
-            if option_pairs.any? { |pair| ignore_key?(pair) }
-              return
-            end
+            return if option_pairs.any? { |pair| ignore_key?(pair) }
 
             if template_node = option_pairs.map { |pair| template_key?(pair) }.compact.first
               if !literal?(template_node)
@@ -98,9 +96,7 @@ module RuboCop
 
           if option_pairs
             locals = option_pairs.map { |pair| locals_key?(pair) }.compact.first
-            if locals && (!locals.hash_type? || !hash_with_literal_keys?(locals))
-              add_offense(node)
-            end
+            add_offense(node) if locals && (!locals.hash_type? || !hash_with_literal_keys?(locals))
           end
         end
       end
