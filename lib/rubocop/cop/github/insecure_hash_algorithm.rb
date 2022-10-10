@@ -64,6 +64,7 @@ module RuboCop
 
         def insecure_algorithm?(val)
           return false if val == :Digest # Don't match "Digest::Digest".
+
           case alg_name(val)
           when *allowed_hash_functions
             false
@@ -99,6 +100,7 @@ module RuboCop
         def alg_name(val)
           return :nil if val.nil?
           return val.to_s.downcase unless val.is_a?(RuboCop::AST::Node)
+
           case val.type
           when :sym, :str
             val.children.first.to_s.downcase

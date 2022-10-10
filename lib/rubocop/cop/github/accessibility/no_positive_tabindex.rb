@@ -18,6 +18,7 @@ module RuboCop
                 hash.each_pair do |key, value|
                   next if key.type == :dsym
                   next unless key.respond_to?(:value)
+
                   add_offense(hash) if key.value == :tabindex && value.source.to_i > 0
                 end
               end
