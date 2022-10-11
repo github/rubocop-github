@@ -37,4 +37,4 @@ bundle exec rake test
 
 ## The Cops
 
-All cops are located under [`lib/rubocop/cop/github`](lib/rubocop/cop/github) and [`lib/rubocop/cop/github/accessibility`](lib/rubocop/cop/github/accessibility), and contain examples/documentation.
+All cops are located under [`lib/rubocop/cop/github`](lib/rubocop/cop/github).
