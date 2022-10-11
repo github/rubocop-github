@@ -5,8 +5,17 @@ require:
 Bundler/DuplicatedGem:
   Enabled: true
 
+Bundler/GemComment:
+  Enabled: false
+
+Bundler/GemVersion:
+  Enabled: false
+
 Bundler/OrderedGems:
   Enabled: true
+
+Gemspec/DependencyVersion:
+  Enabled: false
 
 GitHub/InsecureHashAlgorithm:
   Enabled: true
@@ -17,17 +26,38 @@ Layout/BlockAlignment:
 Layout/BlockEndNewline:
   Enabled: true
 
+Layout/ClassStructure:
+  Enabled: false
+
 Layout/ConditionPosition:
   Enabled: true
 
 Layout/DefEndAlignment:
   Enabled: true
 
+Layout/EmptyLineAfterMultilineCondition:
+  Enabled: false
+
 Layout/EndAlignment:
   Enabled: false
 
 Layout/EndOfLine:
   Enabled: true
+
+Layout/FirstArrayElementLineBreak:
+  Enabled: false
+
+Layout/FirstHashElementLineBreak:
+  Enabled: false
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: false
+
+Layout/FirstMethodParameterLineBreak:
+  Enabled: false
+
+Layout/HeredocArgumentClosingParenthesis:
+  Enabled: false
 
 Layout/IndentationStyle:
   Enabled: true
@@ -42,6 +72,24 @@ Layout/InitialIndentation:
   Enabled: true
 
 Layout/LineLength:
+  Enabled: false
+
+Layout/MultilineArrayLineBreaks:
+  Enabled: false
+
+Layout/MultilineAssignmentLayout:
+  Enabled: false
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: false
+
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: false
+
+Layout/RedundantLineBreak:
+  Enabled: false
+
+Layout/SingleLineBlockChain:
   Enabled: false
 
 Layout/SpaceAfterColon:
@@ -96,6 +144,9 @@ Layout/TrailingWhitespace:
 Lint/CircularArgumentReference:
   Enabled: true
 
+Lint/ConstantResolution:
+  Enabled: false
+
 Lint/Debugger:
   Enabled: true
 
@@ -132,6 +183,9 @@ Lint/FloatOutOfRange:
 Lint/FormatParameterMismatch:
   Enabled: true
 
+Lint/HeredocMethodCallPosition:
+  Enabled: false
+
 Lint/LiteralAsCondition:
   Enabled: true
 
@@ -143,6 +197,9 @@ Lint/Loop:
 
 Lint/NextWithoutAccumulator:
   Enabled: true
+
+Lint/NumberConversion:
+  Enabled: false
 
 Lint/RandOne:
   Enabled: true
@@ -213,10 +270,19 @@ Naming/ClassAndModuleCamelCase:
 Naming/FileName:
   Enabled: true
 
+Naming/InclusiveLanguage:
+  Enabled: false
+
 Naming/MethodName:
   Enabled: true
 
+Performance/ArraySemiInfiniteRangeSlice:
+  Enabled: false
+
 Performance/CaseWhenSplat:
+  Enabled: false
+
+Performance/ChainArrayAllocation:
   Enabled: false
 
 Performance/Count:
@@ -234,6 +300,9 @@ Performance/EndWith:
 Performance/FlatMap:
   Enabled: true
 
+Performance/OpenStruct:
+  Enabled: false
+
 Performance/RangeInclude:
   Enabled: false
 
@@ -247,6 +316,9 @@ Performance/RedundantMerge:
 Performance/ReverseEach:
   Enabled: true
 
+Performance/SelectMap:
+  Enabled: false
+
 Performance/Size:
   Enabled: true
 
@@ -256,8 +328,17 @@ Performance/StartWith:
 Security/Eval:
   Enabled: true
 
+Style/ArrayCoercion:
+  Enabled: false
+
 Style/ArrayJoin:
   Enabled: true
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/AutoResourceCleanup:
+  Enabled: false
 
 Style/BeginBlock:
   Enabled: true
@@ -274,11 +355,32 @@ Style/CharacterLiteral:
 Style/ClassMethods:
   Enabled: true
 
+Style/ClassMethodsDefinitions:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: false
+
+Style/ConstantVisibility:
+  Enabled: false
+
 Style/Copyright:
+  Enabled: false
+
+Style/DateTime:
   Enabled: false
 
 Style/DefWithParentheses:
   Enabled: true
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
 
 Style/EndBlock:
   Enabled: true
@@ -289,6 +391,15 @@ Style/For:
 Style/FrozenStringLiteralComment:
   Enabled: true
 
+Style/ImplicitRuntimeError:
+  Enabled: false
+
+Style/InlineComment:
+  Enabled: false
+
+Style/IpAddresses:
+  Enabled: false
+
 Style/HashSyntax:
   Enabled: true
   EnforcedStyle: ruby19_no_mixed_keys
@@ -296,14 +407,23 @@ Style/HashSyntax:
 Style/LambdaCall:
   Enabled: true
 
+Style/MethodCalledOnDoEndBlock:
+  Enabled: false
+
 Style/MethodCallWithoutArgsParentheses:
   Enabled: true
 
 Style/MethodDefParentheses:
   Enabled: true
 
+Style/MissingElse:
+  Enabled: false
+
 Style/MultilineIfThen:
   Enabled: true
+
+Style/MultilineMethodSignature:
+  Enabled: false
 
 Style/NilComparison:
   Enabled: true
@@ -314,18 +434,45 @@ Style/Not:
 Style/OneLineConditional:
   Enabled: true
 
+Style/OptionHash:
+  Enabled: false
+
 Style/RedundantSortBy:
   Enabled: true
+
+Style/ReturnNil:
+  Enabled: false
 
 Style/Sample:
   Enabled: true
 
+Style/SingleLineBlockParams:
+  Enabled: false
+
 Style/StabbyLambdaParentheses:
   Enabled: true
+
+Style/StaticClass:
+  Enabled: false
 
 Style/Strip:
   Enabled: true
 
+Style/StringHashKeys:
+  Enabled: false
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/StringMethods:
+  Enabled: false
+
+Style/TopLevelMethodDefinition:
+  Enabled: false
+
+Style/TrailingCommaInBlockArgs:
+  Enabled: false
+
+Style/UnlessLogicalOperators:
+  Enabled: false
