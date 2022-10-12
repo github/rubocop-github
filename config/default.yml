@@ -35,6 +35,9 @@ Gemspec/OrderedDependencies:
 Gemspec/RequireMFA:
   Enabled: false
 
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
 Gemspec/RubyVersionGlobalsUsage:
   Enabled: false
 
@@ -357,6 +360,9 @@ Lint/AmbiguousRange:
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
+Lint/AssignmentInCondition:
+  Enabled: false
+
 Lint/BigDecimalNew:
   Enabled: false
 
@@ -422,6 +428,9 @@ Lint/EachWithObjectArgument:
 
 Lint/ElseLayout:
   Enabled: true
+
+Lint/EmptyConditionalBody:
+  Enabled: false
 
 Lint/EmptyEnsure:
   Enabled: true
@@ -676,6 +685,9 @@ Lint/UriRegexp:
   Enabled: false
 
 Lint/UselessAccessModifier:
+  Enabled: false
+
+Lint/UselessAssignment:
   Enabled: false
 
 Lint/UselessElseWithoutRescue:
@@ -1162,6 +1174,9 @@ Style/GlobalStdStream:
 Style/GlobalVars:
   Enabled: false
 
+Style/GuardClause:
+  Enabled: false
+
 Style/HashAsLastArrayItem:
   Enabled: false
 
@@ -1323,6 +1338,9 @@ Style/NestedParenthesizedCalls:
   Enabled: false
 
 Style/NestedTernaryOperator:
+  Enabled: false
+
+Style/Next:
   Enabled: false
 
 Style/NilComparison:
@@ -1512,6 +1530,9 @@ Style/SingleLineMethods:
   Enabled: false
 
 Style/SlicingWithRange:
+  Enabled: false
+
+Style/SoleNestedConditional:
   Enabled: false
 
 Style/SpecialGlobalVars:

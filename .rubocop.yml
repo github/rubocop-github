@@ -1,33 +1,6 @@
 inherit_from: ./config/default.yml
 
-AllCops:
-  SuggestExtensions: false
-
-Gemspec/RequiredRubyVersion:
-  Enabled: false
-
-Lint/AssignmentInCondition:
-  Enabled: false
-
-Lint/EmptyConditionalBody:
-  Enabled: false
-
-Lint/UselessAssignment:
-  Enabled: false
-
 Naming/FileName:
   Enabled: true
   Exclude:
     - "rubocop-github.gemspec"
-
-Style/Documentation:
-  Enabled: false
-
-Style/GuardClause:
-  Enabled: false
-
-Style/Next:
-  Enabled: false
-
-Style/SoleNestedConditional:
-  Enabled: false
