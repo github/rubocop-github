@@ -636,9 +636,6 @@ Lint/SuppressedException:
 Lint/SymbolConversion:
   Enabled: false
 
-Lint/Syntax:
-  Enabled: false
-
 Lint/ToEnumArguments:
   Enabled: false
 
