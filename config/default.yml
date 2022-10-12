@@ -429,6 +429,15 @@ Lint/EachWithObjectArgument:
 Lint/ElseLayout:
   Enabled: true
 
+Lint/EmptyBlock:
+  Enabled: false
+
+Lint/EmptyClass:
+  Enabled: false
+
+Lint/EmptyInPattern:
+  Enabled: false
+
 Lint/EmptyConditionalBody:
   Enabled: false
 
