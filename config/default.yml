@@ -177,12 +177,12 @@ Layout/HeredocIndentation:
   Enabled: false
 
 Layout/IndentationConsistency:
+  Enabled: false
+
+Layout/IndentationStyle:
   Enabled: true
   EnforcedStyle: spaces
   IndentationWidth: 2
-
-Layout/IndentationStyle:
-  Enabled: false
 
 Layout/IndentationWidth:
   Enabled: true
