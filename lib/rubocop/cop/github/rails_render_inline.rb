@@ -18,7 +18,9 @@ module RuboCop
 
         def on_send(node)
           if option_pairs = render_with_options?(node)
-            add_offense(node) if option_pairs.detect { |pair| inline_key?(pair) }
+            if option_pairs.detect { |pair| inline_key?(pair) }
+              add_offense(node)
+            end
           end
         end
       end

@@ -34,10 +34,12 @@ module RuboCop
 
           if render_literal?(node)
           elsif option_pairs = render_with_options?(node)
-            return if option_pairs.any? { |pair| ignore_key?(pair) }
+            if option_pairs.any? { |pair| ignore_key?(pair) }
+              return
+            end
 
             if partial_node = option_pairs.map { |pair| partial_key?(pair) }.compact.first
-              unless literal?(partial_node)
+              if !literal?(partial_node)
                 add_offense(node)
                 return
               end
@@ -58,7 +60,9 @@ module RuboCop
 
           if locals
             if locals.hash_type?
-              add_offense(node) unless hash_with_literal_keys?(locals)
+              if !hash_with_literal_keys?(locals)
+                add_offense(node)
+              end
             else
               add_offense(node)
             end

@@ -31,7 +31,9 @@ module RuboCop
 
               case object_sym
               when :object
-                suggestion = ", instead `render partial: #{partial_name.source}, locals: { #{File.basename(partial_name.children[0], '.html.erb')}: #{object_node.source} }`" if partial_name.children[0].is_a?(String)
+                if partial_name.children[0].is_a?(String)
+                  suggestion = ", instead `render partial: #{partial_name.source}, locals: { #{File.basename(partial_name.children[0], '.html.erb')}: #{object_node.source} }`"
+                end
                 add_offense(node, message: "Avoid `render object:`#{suggestion}")
               when :collection, :spacer_template
                 add_offense(node, message: "Avoid `render collection:`")

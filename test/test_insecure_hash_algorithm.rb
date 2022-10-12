@@ -10,7 +10,7 @@ class TestInsecureHashAlgorithm < CopTest
   end
 
   def make_cop(allowed:)
-    config = RuboCop::Config.new({ "GitHub/InsecureHashAlgorithm" => { "Allowed" => allowed } })
+    config = RuboCop::Config.new({"GitHub/InsecureHashAlgorithm" => {"Allowed" => allowed}})
     cop_class.new(config)
   end
 
