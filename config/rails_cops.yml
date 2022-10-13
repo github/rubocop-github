@@ -1,6 +1,3 @@
-GitHub/RailsApplicationRecord:
-  Enabled: pending
-
 GitHub/RailsControllerRenderActionSymbol:
   Enabled: pending
   Include:
@@ -24,15 +21,6 @@ GitHub/RailsControllerRenderShorthand:
   StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-shorthand.md
   Include:
     - 'app/controllers/**/*.rb'
-
-GitHub/RailsRenderInline:
-  Enabled: pending
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-inline.md
-  Include:
-    - 'app/controllers/**/*.rb'
-    - 'app/helpers/**/*.rb'
-    - 'app/view_models/**/*.rb'
-    - 'app/views/**/*.erb'
 
 GitHub/RailsRenderObjectCollection:
   Enabled: pending
