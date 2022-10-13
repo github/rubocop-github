@@ -418,9 +418,8 @@ hsh = {
 [Keyword arguments](http://magazine.rubyist.net/?Ruby200SpecialEn-kwarg) are recommended but not required when a method's arguments may otherwise be opaque or non-obvious when called. Additionally, prefer them over the old "Hash as pseudo-named args" style from pre-2.0 ruby.
 <a name="keyword-arguments"></a><sup>[[link](#keyword-arguments)]</sup>
 
-``` ruby
-
 So instead of this:
+
 ``` ruby
 def remove_member(user, skip_membership_check=false)
   # ...
@@ -430,7 +429,8 @@ end
 remove_member(user, true)
 ```
 
-Do this, which is much clearer.
+Do this, which is much clearer:
+
 ``` ruby
 def remove_member(user, skip_membership_check: false)
   # ...

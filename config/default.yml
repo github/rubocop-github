@@ -1,5 +1,5 @@
 require:
-  - rubocop/cop/github
+  - rubocop-github
   - rubocop-performance
 
 Bundler/DuplicatedGem:

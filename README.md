@@ -4,22 +4,32 @@ This repository provides recommended RuboCop configuration and additional Cops f
 
 ## Usage
 
-**Gemfile**
+Add `rubocop-github` to your Gemfile, along with its dependencies:
 
-``` ruby
-gem "rubocop-github"
-gem "rubocop-performance", require: false
-gem "rubocop-rails", require: false
-```
+  ```ruby
+  gem "rubocop-github", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  ```
 
-**.rubocop.yml**
+Inherit all of the stylistic rules and cops through an inheritance declaration in your `.rubocop.yml`:
 
-``` yaml
-inherit_gem:
-  rubocop-github:
-    - config/default.yml
-    - config/rails.yml
-```
+  ```yaml
+  # .rubocop.yml
+  inherit_from:
+    rubocop-github:
+      - config/default.yml # generic Ruby rules and cops
+      - config/rails.yml # Rails-specific rules and cops
+  ```
+
+Alternatively, only require the additional custom cops in your `.rubocop.yml` without inheriting/enabling the other stylistic rules:
+
+  ```yaml
+  # .rubocop.yml
+  require:
+    - rubocop-github  # generic Ruby cops only
+    - rubocop-github-rails # Rails-specific cops only
+  ```
 
 💭 Looking for `config/accessibility.yml` and the `GitHub/Accessibility` configs? They have been moved to [a new gem](https://github.com/github/rubocop-rails-accessibility).
 
@@ -39,4 +49,4 @@ bundle exec rake test
 
 ## The Cops
 
-All cops are located under [`lib/rubocop/cop/github`](lib/rubocop/cop/github) and [`lib/rubocop/cop/github/accessibility`](lib/rubocop/cop/github/accessibility), and contain examples/documentation.
+All cops are located under [`lib/rubocop/cop/github`](lib/rubocop/cop/github).
