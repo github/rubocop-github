@@ -1,6 +1,9 @@
-inherit_from: ./config/default.yml
+inherit_from:
+  - ./config/default.yml
 
 Naming/FileName:
   Enabled: true
   Exclude:
     - "rubocop-github.gemspec"
+    - "lib/rubocop-github.rb"
+    - "lib/rubocop-github-rails.rb"
