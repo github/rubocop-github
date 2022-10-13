@@ -1,8 +1,8 @@
-inherit_from:
-  - ./config/default.yml
-
 require:
   - rubocop/cop/internal_affairs
+
+inherit_from:
+  - ./config/default.yml
 
 InternalAffairs/CopDescription:
   Enabled: true
@@ -74,3 +74,5 @@ Naming/FileName:
   Enabled: true
   Exclude:
     - "rubocop-github.gemspec"
+    - "lib/rubocop-github.rb"
+    - "lib/rubocop-github-rails.rb"
