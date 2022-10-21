@@ -454,6 +454,15 @@ Lint/EmptyConditionalBody:
 Lint/EmptyEnsure:
   Enabled: true
 
+Lint/EmptyExpression:
+  Enabled: false
+
+Lint/EmptyFile:
+  Enabled: false
+
+Lint/EmptyWhen:
+  Enabled: false
+
 Lint/EmptyInterpolation:
   Enabled: true
 
@@ -606,6 +615,9 @@ Lint/RegexpAsCondition:
 
 Lint/RequireParentheses:
   Enabled: true
+
+Lint/RequireRangeParentheses:
+  Enabled: false
 
 Lint/RequireRelativeSelfPath:
   Enabled: false
@@ -1129,6 +1141,9 @@ Style/EmptyCaseCondition:
 Style/EmptyElse:
   Enabled: false
 
+Style/EmptyHeredoc:
+  Enabled: false
+
 Style/EmptyLambdaParameter:
   Enabled: false
 
@@ -1271,6 +1286,9 @@ Style/LambdaCall:
   Enabled: true
 
 Style/LineEndConcatenation:
+  Enabled: false
+
+Style/MagicCommentFormat:
   Enabled: false
 
 Style/MapCompactWithConditionalBlock:
