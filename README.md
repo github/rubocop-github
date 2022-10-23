@@ -34,7 +34,13 @@ inherit_gem:
 
 By default, `rubocop-performance` and `rubocop-rake` rules are enforced, because it's assumed that every Ruby project cares about these two sets. Why? Well, everyone should care about performance, and every project uses Rake (and Bundler) as de facto tools.
 
-This gem also has `rubocop-minitest` and `rubocop-rails` as dependencies, so you can simply add those in for whichever project needs them:
+This gem also has the following Rubocop tools as dependencies:
+
+- `rubocop-minitest`
+- `rubocop-rails`
+- `rubocop-sorbet
+
+You can add those in for whichever project needs them:
 
 ```yaml
 inherit_gem:
@@ -52,7 +58,9 @@ This project also excludes directories that are ancillary to the core lib code:
 AllCops:
   Exclude:
     - bin/**/*
+    - db/**/*
     - node_modules/**/*
+    - sorbet/**/*
     - tmp/**/*
     - vendor/**/*
 ```

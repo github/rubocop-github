@@ -15,6 +15,7 @@ AllCops:
     - bin/**/*
     - db/**/*
     - node_modules/**/*
+    - sorbet/**/*
     - tmp/**/*
     - vendor/**/*
 
