@@ -683,7 +683,7 @@ Lint/UnreachableLoop:
 # TODO: Enable this since it's in the styleguide.
 Lint/UnusedBlockArgument:
   Enabled: false
-  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-around-equals
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#underscore-unused-vars
 
 Lint/UnusedMethodArgument:
   Enabled: false
