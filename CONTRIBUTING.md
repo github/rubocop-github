@@ -7,7 +7,7 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 
 ## What to contribute
 
-This repository, `rubocop-github` is part of a broader RuboCop ecosystem.
+This repository, `rubocop-github`, is part of a broader RuboCop ecosystem.
 
 If the Cop you would like to propose is **generally applicable outside of GitHub**:
 
