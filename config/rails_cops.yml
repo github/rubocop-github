@@ -5,7 +5,7 @@ GitHub/RailsControllerRenderActionSymbol:
 
 GitHub/RailsControllerRenderLiteral:
   Enabled: pending
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/guides/rails-render-literal.md
   Include:
     - 'app/controllers/**/*.rb'
 
@@ -18,16 +18,25 @@ GitHub/RailsControllerRenderPathsExist:
 
 GitHub/RailsControllerRenderShorthand:
   Enabled: pending
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-controller-render-shorthand.md
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/guides/rails-controller-render-shorthand.md
   Include:
     - 'app/controllers/**/*.rb'
+
+GitHub/RailsRenderInline:
+  Enabled: pending
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/guides/rails-controller-render-inline.md
+  Include:
+    - 'app/controllers/**/*.rb'
+    - 'app/helpers/**/*.rb'
+    - 'app/view_models/**/*.rb'
+    - 'app/views/**/*.erb'
 
 GitHub/RailsRenderObjectCollection:
   Enabled: pending
 
 GitHub/RailsViewRenderLiteral:
   Enabled: pending
-  StyleGuide: https://github.com/github/rubocop-github/blob/master/guides/rails-render-literal.md
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/guides/rails-render-literal.md
   Include:
     - 'app/helpers/**/*.rb'
     - 'app/view_models/**/*.rb'

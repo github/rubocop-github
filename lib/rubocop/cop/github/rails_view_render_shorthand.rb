@@ -6,6 +6,8 @@ module RuboCop
   module Cop
     module GitHub
       class RailsViewRenderShorthand < Base
+        extend AutoCorrector
+
         MSG = "Prefer `render` partial shorthand"
 
         def_node_matcher :render_with_options?, <<-PATTERN
@@ -26,9 +28,13 @@ module RuboCop
             locals_key = option_pairs.map { |pair| locals_key?(pair) }.compact.first
 
             if option_pairs.length == 1 && partial_key
-              add_offense(node, message: "Use `render #{partial_key.source}` instead")
+              add_offense(node, message: "Use `render #{partial_key.source}` instead") do |corrector|
+                corrector.replace(node.source_range, "render #{partial_key.source}")
+              end
             elsif option_pairs.length == 2 && partial_key && locals_key
-              add_offense(node, message: "Use `render #{partial_key.source}, #{locals_key.source}` instead")
+              add_offense(node, message: "Use `render #{partial_key.source}, #{locals_key.source}` instead") do |corrector|
+                corrector.replace(node.source_range, "render #{partial_key.source}, #{locals_key.source}")
+              end
             end
           end
         end
