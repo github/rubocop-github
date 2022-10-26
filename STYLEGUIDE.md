@@ -37,9 +37,11 @@ This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
 
 * Use soft-tabs with a two space indent.
   <a name="default-indentation"></a><sup>[[link](#default-indentation)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutindentationstyle">RuboCop rule: Layout/IndentationStyle</a>
 
 * Indent `when` with the start of the `case` expression.
   <a name="indent-when-as-start-of-case"></a><sup>[[link](#indent-when-as-start-of-case)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutcaseindentation">RuboCop rule: Layout/CaseIndentation</a>
 
 ``` ruby
 # bad
@@ -83,10 +85,18 @@ end
 
 * Never leave trailing whitespace.
   <a name="trailing-whitespace"></a><sup>[[link](#trailing-whitespace)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layouttrailingwhitespace">RuboCop rule: Layout/TrailingWhitespace</a>
 
 * Use spaces around operators, after commas, colons and semicolons, around `{`
   and before `}`.
   <a name="spaces-operators"></a><sup>[[link](#spaces-operators)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspacearoundoperators">RuboCop rule: Layout/SpaceAroundOperators</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceaftercomma">RuboCop rule: Layout/SpaceAfterComma</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceaftercolon">RuboCop rule: Layout/SpaceAfterColon</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspacebeforeblockbraces">RuboCop rule: Layout/SpaceBeforeBlockBraces</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceinsidehashliteralbraces">RuboCop rule: Layout/SpaceInsideHashLiteralBraces</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylehashsyntax">RuboCop rule: Style/HashSyntax</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspacearoundoperators">RuboCop rule: Layout/SpaceAroundOperators</a>
 
 ``` ruby
 sum = 1 + 2
@@ -97,6 +107,8 @@ a, b = 1, 2
 
 * No spaces after `(`, `[` or before `]`, `)`.
   <a name="no-spaces-braces"></a><sup>[[link](#no-spaces-braces)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceinsideparens">RuboCop rule: Layout/SpaceInsideParens</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceinsidereferencebrackets">RuboCop rule: Layout/SpaceInsideReferenceBrackets</a>
 
 ``` ruby
 some(arg).other
@@ -105,6 +117,7 @@ some(arg).other
 
 * No spaces after `!`.
   <a name="no-spaces-bang"></a><sup>[[link](#no-spaces-bang)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspaceafternot">RuboCop rule: Layout/SpaceAfterNot</a>
 
 ``` ruby
 !array.include?(element)
@@ -114,10 +127,12 @@ some(arg).other
 
 * End each file with a [newline](https://github.com/bbatsov/ruby-style-guide#newline-eof).
   <a name="newline-eof"></a><sup>[[link](#newline-eof)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layouttrailingemptylines">RuboCop rule: Layout/TrailingEmptyLines</a>
 
 * Use empty lines between `def`s and to break up a method into logical
   paragraphs.
   <a name="empty-lines-def"></a><sup>[[link](#empty-lines-def)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutemptylinebetweendefs">RuboCop rule: Layout/EmptyLineBetweenDefs</a>
 
 ``` ruby
 def some_method
@@ -137,12 +152,14 @@ end
 
 * Keep each line of code to a readable length. Unless you have a reason to, keep lines to a maximum of 118 characters. Why 118? That's the width at which the pull request diff UI needs horizontal scrolling (making pull requests harder to review).
   <a name="line-length"></a><sup>[[link](#line-length)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutlinelength">RuboCop rule: Layout/LineLength</a>
 
 ## Classes
 
 * Avoid the usage of class (`@@`) variables due to their unusual behavior
 in inheritance.
   <a name="class-variables"></a><sup>[[link](#class-variables)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleclassvars">RuboCop rule: Style/ClassVars</a>
 
 ``` ruby
 class Parent
@@ -167,6 +184,7 @@ Parent.print_class_var # => will print "child"
 * Use `def self.method` to define singleton methods. This makes the methods
   more resistant to refactoring changes.
   <a name="singleton-methods"></a><sup>[[link](#singleton-methods)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleclassmethodsdefinitions">RuboCop rule: Style/ClassMethodsDefinitions</a>
 
 ``` ruby
 class TestClass
@@ -184,6 +202,7 @@ class TestClass
 * Avoid `class << self` except when necessary, e.g. single accessors and aliased
   attributes.
   <a name="class-method-definitions"></a><sup>[[link](#class-method-definitions)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleclassmethodsdefinitions">RuboCop rule: Style/ClassMethodsDefinitions</a>
 
 ``` ruby
 class TestClass
@@ -217,6 +236,8 @@ end
 * Indent the `public`, `protected`, and `private` methods as much the
   method definitions they apply to. Leave one blank line above them.
   <a name="access-modifier-identation"></a><sup>[[link](#access-modifier-identation)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutaccessmodifierindentation">RuboCop rule: Layout/AccessModifierIndentation</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutemptylinesaroundaccessmodifier">RuboCop rule: Layout/EmptyLinesAroundAccessModifier</a>
 
 ``` ruby
 class SomeClass
@@ -234,6 +255,7 @@ end
 * Avoid explicit use of `self` as the recipient of internal class or instance
   messages unless to specify a method shadowed by a variable.
   <a name="self-messages"></a><sup>[[link](#self-messages)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleredundantself">RuboCop rule: Style/RedundantSelf</a>
 
 ``` ruby
 class SomeClass
@@ -251,6 +273,7 @@ end
 * Prefer `%w` to the literal array syntax when you need an array of
 strings.
   <a name="percent-w"></a><sup>[[link](#percent-w)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylewordarray">RuboCop rule: Style/WordArray</a>
 
 ``` ruby
 # bad
@@ -268,6 +291,7 @@ STATES = %w(draft open closed)
 
 * Use symbols instead of strings as hash keys.
   <a name="symbols-as-keys"></a><sup>[[link](#symbols-as-keys)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylestringhashkeys">RuboCop rule: Style/StringHashKeys</a>
 
 ``` ruby
 # bad
@@ -303,9 +327,10 @@ end
 
 Avoid calling `send` and its cousins unless you really need it. Metaprogramming can be extremely powerful, but in most cases you can write code that captures your meaning by being explicit:
 <a name="avoid-send"></a><sup>[[link](#avoid-send)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylesend">RuboCop rule: Style/Send</a>
 
 ``` ruby
-# avoid 
+# avoid
 unless [:base, :head].include?(base_or_head)
   raise ArgumentError, "base_or_head must be either :base or :head"
 end
@@ -369,6 +394,7 @@ end
 
 Use the Ruby 1.9 syntax for hash literals when all the keys are symbols:
 <a name="symbols-as-hash-keys"></a><sup>[[link](#symbols-as-hash-keys)]</sup>
+* <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylestringhashkeys">RuboCop rule: Style/StringHashKeys</a>
 
 ``` ruby
 # bad
@@ -399,6 +425,7 @@ link_to("Account", controller: "users", action: "show", id: user)
 
 If you have a hash with mixed key types, use the legacy hashrocket style to avoid mixing styles within the same hash:
 <a name="consistent-hash-syntax"></a><sup>[[link](#consistent-hash-syntax)]</sup>
+* <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylehashsyntax">RuboCop rule: Style/HashSyntax</a>
 
 ``` ruby
 
@@ -420,6 +447,7 @@ hsh = {
 
 [Keyword arguments](http://magazine.rubyist.net/?Ruby200SpecialEn-kwarg) are recommended but not required when a method's arguments may otherwise be opaque or non-obvious when called. Additionally, prefer them over the old "Hash as pseudo-named args" style from pre-2.0 ruby.
 <a name="keyword-arguments"></a><sup>[[link](#keyword-arguments)]</sup>
+* <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleoptionalbooleanparameter">RuboCop rule: Style/OptionalBooleanParameter</a>
 
 So instead of this:
 
@@ -447,21 +475,26 @@ remove_member(user, skip_membership_check: true)
 
 * Use `snake_case` for methods and variables.
   <a name="snake-case-methods-vars"></a><sup>[[link](#snake-case-methods-vars)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingsnakecase">RuboCop rule: Naming/SnakeCase</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingvariablename">RuboCop rule: Naming/VariableName</a>
 
 * Use `CamelCase` for classes and modules.  (Keep acronyms like HTTP,
   RFC, XML uppercase.)
   <a name="camelcase-classes-modules"></a><sup>[[link](#camelcase-classes-modules)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingclassandmodulecamelcase">RuboCop rule: Naming/ClassAndModuleCamelCase</a>
 
 * Use `SCREAMING_SNAKE_CASE` for other constants.
   <a name="screaming-snake-case-constants"></a><sup>[[link](#screaming-snake-case-constants)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingconstantname">RuboCop rule: Naming/ConstantName</a>
 
 * The names of predicate methods (methods that return a boolean value)
   should end in a question mark. (i.e. `Array#empty?`).
   <a name="bool-methods-qmark"></a><sup>[[link](#bool-methods-qmark)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingpredicatename">RuboCop rule: Naming/PredicateName</a>
 
 * The names of potentially "dangerous" methods (i.e. methods that modify `self` or the
   arguments, `exit!`, etc.) should end with an exclamation mark. Bang methods
-  should only exist if a non-bang counterpart (method name which does NOT end with !) 
+  should only exist if a non-bang counterpart (method name which does NOT end with !)
   also exists.
   <a name="dangerous-method-bang"></a><sup>[[link](#dangerous-method-bang)]</sup>
 
@@ -469,6 +502,7 @@ remove_member(user, skip_membership_check: true)
 
 * Use `%w` freely.
   <a name="use-percent-w-freely"></a><sup>[[link](#use-percent-w-freely)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylewordarray">RuboCop rule: Style/WordArray</a>
 
 ``` ruby
 STATES = %w(draft open closed)
@@ -477,6 +511,7 @@ STATES = %w(draft open closed)
 * Use `%()` for single-line strings which require both interpolation
   and embedded double-quotes. For multi-line strings, prefer heredocs.
   <a name="percent-parens-single-line"></a><sup>[[link](#percent-parens-single-line)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylebarepercentliterals">RuboCop rule: Style/BarePercentLiterals</a>
 
 ``` ruby
 # bad (no interpolation needed)
@@ -497,6 +532,7 @@ STATES = %w(draft open closed)
 
 * Use `%r` only for regular expressions matching *more than* one '/' character.
   <a name="percent-r-regular-expressions"></a><sup>[[link](#percent-r-regular-expressions)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleregexpliteral">RuboCop rule: Style/RegexpLiteral</a>
 
 ``` ruby
 # bad
@@ -515,7 +551,7 @@ STATES = %w(draft open closed)
 * Avoid using $1-9 as it can be hard to track what they contain. Named groups
   can be used instead.
   <a name="capture-with-named-groups"></a><sup>[[link](#capture-with-named-groups)]</sup>
-
+  * <a href="https://docs.rubocop.org/rubocop/cops_lint.html#mixedregexpcapturetypes">RuboCop rule: Lint/MixedRegexpCaptureTypes</a>
 ``` ruby
 # bad
 /(regexp)/ =~ string
@@ -574,6 +610,7 @@ documentation about the libraries that the current file uses.
 
 * Prefer string interpolation instead of string concatenation:
   <a name="string-interpolation"></a><sup>[[link](#string-interpolation)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylestringconcatenation">RuboCop rule: Style/StringConcatenation</a>
 
 ``` ruby
 # bad
@@ -587,6 +624,7 @@ email_with_name = "#{user.name} <#{user.email}>"
   will always work without a delimiter change, and `'` is a lot more
   common than `"` in string literals.
   <a name="double-quotes"></a><sup>[[link](#double-quotes)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylestringliterals">RuboCop rule: Style/StringLiterals</a>
 
 ``` ruby
 # bad
@@ -618,6 +656,7 @@ end
 * Use `def` with parentheses when there are arguments. Omit the
   parentheses when the method doesn't accept any arguments.
   <a name="method-parens-when-arguments"></a><sup>[[link](#method-parens-when-arguments)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styledefwithparentheses">RuboCop rule: Style/DefWithParentheses</a>
 
  ``` ruby
  def some_method
@@ -635,9 +674,11 @@ end
   always use parentheses in the method invocation. For example, write
   `f((3 + 2) + 1)`.
   <a name="parens-no-spaces"></a><sup>[[link](#parens-no-spaces)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemethodcallwithargsparentheses">RuboCop rule: Style/MethodCallWithArgsParentheses</a>
 
 * Never put a space between a method name and the opening parenthesis.
   <a name="no-spaces-method-parens"></a><sup>[[link](#no-spaces-method-parens)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleparenthesesasgroupedexpression">RuboCop rule: Style/ParenthesesAsGroupedExpression</a>
 
 ``` ruby
 # bad
@@ -653,6 +694,7 @@ f(3 + 2) + 1
 
 * Never use `then` for multi-line `if/unless`.
   <a name="no-then-for-multi-line-if-unless"></a><sup>[[link](#no-then-for-multi-line-if-unless)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemultilineifthen">RuboCop rule: Style/MultilineIfThen</a>
 
 ``` ruby
 # bad
@@ -668,10 +710,12 @@ end
 
 * The `and` and `or` keywords are banned. It's just not worth it. Always use `&&` and `||` instead.
   <a name="no-and-or-or"></a><sup>[[link](#no-and-or-or)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleandor">RuboCop rule: Style/AndOr</a>
 
 * Favor modifier `if/unless` usage when you have a single-line
   body.
   <a name="favor-modifier-if-unless"></a><sup>[[link](#favor-modifier-if-unless)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemultilineternaryoperator">RuboCop rule: Style/MultilineTernaryOperator</a>
 
 ``` ruby
 # bad
@@ -685,6 +729,7 @@ do_something if some_condition
 
 * Never use `unless` with `else`. Rewrite these with the positive case first.
   <a name="no-else-with-unless"></a><sup>[[link](#no-else-with-unless)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleunlesselse">RuboCop rule: Style/UnlessElse</a>
 
 ``` ruby
 # bad
@@ -704,6 +749,7 @@ end
 
 * Don't use parentheses around the condition of an `if/unless/while`.
   <a name="no-parens-if-unless-while"></a><sup>[[link](#no-parens-if-unless-while)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleparenthesesaroundcondition">RuboCop rule: Style/ParenthesesAroundCondition</a>
 
 ``` ruby
 # bad
@@ -723,6 +769,7 @@ end
   trivial. However, do use the ternary operator(`?:`) over `if/then/else/end` constructs
   for single line conditionals.
   <a name="trivial-ternary"></a><sup>[[link](#trivial-ternary)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemultilineternaryoperator">RuboCop rule: Style/MultilineTernaryOperator</a>
 
 ``` ruby
 # bad
@@ -734,11 +781,13 @@ result = some_condition ? something : something_else
 
 * Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
   <a name="no-multiline-ternary"></a><sup>[[link](#no-multiline-ternary)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemultilineternaryoperator">RuboCop rule: Style/MultilineTernaryOperator</a>
 
 * Use one expression per branch in a ternary operator. This
   also means that ternary operators must not be nested. Prefer
   `if/else` constructs in these cases.
   <a name="one-expression-per-branch"></a><sup>[[link](#one-expression-per-branch)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylenestedternaryoperator">RuboCop rule: Style/NestedTernaryOperator</a>
 
 ``` ruby
 # bad
@@ -760,6 +809,7 @@ end
   doesn't introduce a new scope (unlike `each`) and variables defined
   in its block will be visible outside it.
   <a name="avoid-for"></a><sup>[[link](#avoid-for)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylefor">RuboCop rule: Style/For</a>
 
 ``` ruby
 arr = [1, 2, 3]
@@ -779,6 +829,7 @@ arr.each { |elem| puts elem }
   definitions" (e.g. in Rakefiles and certain DSLs).  Avoid `do...end`
   when chaining.
   <a name="squiggly-braces"></a><sup>[[link](#squiggly-braces)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleblockdelimiters">RuboCop rule: Style/BlockDelimiters</a>
 
 ``` ruby
 names = ["Bozhidar", "Steve", "Sarah"]
@@ -801,11 +852,12 @@ end.map { |name| name.upcase }
 ```
 
 * Some will argue that multiline chaining would look OK with the use of `{...}`,
- but they should ask themselves: is this code really readable and can't the block's 
+ but they should ask themselves: is this code really readable and can't the block's
  contents be extracted into nifty methods?
 
 * Avoid `return` where not required.
   <a name="avoid-return"></a><sup>[[link](#avoid-return)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleredundantreturn">RuboCop rule: Style/RedundantReturn</a>
 
 ``` ruby
 # bad
@@ -821,6 +873,7 @@ end
 
 * Use spaces around the `=` operator when assigning default values to method parameters:
   <a name="spaces-around-equals"></a><sup>[[link](#spaces-around-equals)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylespacearoundequalsinparameterdefault">RuboCop rule: Style/SpaceAroundEqualsInParameterDefault</a>
 
 ``` ruby
 # bad
@@ -853,6 +906,7 @@ if (v = next_value) == "hello" ...
 
 * Use `||=` freely to initialize variables.
   <a name="memoization-for-initialization"></a><sup>[[link](#memoize-away)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleorassignment">RuboCop rule: Style/OrAssignment</a>
 
 ``` ruby
 # set name to Bozhidar, only if it's nil or false
@@ -862,6 +916,7 @@ name ||= "Bozhidar"
 * Don't use `||=` to initialize boolean variables. (Consider what
   would happen if the current value happened to be `false`.)
   <a name="no-memoization-for-boolean"></a><sup>[[link](#no-memoization-for-boolean)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleorassignment">RuboCop rule: Style/OrAssignment</a>
 
 ``` ruby
 # bad - would set enabled to true even if it was false
@@ -876,9 +931,11 @@ enabled = true if enabled.nil?
   one-liner scripts is discouraged. Prefer long form versions such as
   `$PROGRAM_NAME`.
   <a name="no-cryptic-vars"></a><sup>[[link](#no-cryptic-vars)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylespecialglobalvars">RuboCop rule: Style/SpecialGlobalVars</a>
 
 * Use `_` for unused block parameters.
   <a name="underscore-unused-vars"></a><sup>[[link](#underscore-unused-vars)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleunusedblockargument">RuboCop rule: Style/UnusedBlockArgument</a>
 
 ``` ruby
 # bad
@@ -893,6 +950,7 @@ result = hash.map { |_, v| v + 1 }
   For example, `String === "hi"` is true and `"hi" === String` is false.
   Instead, use `is_a?` or `kind_of?` if you must.
   <a name="type-checking-is-a-kind-of"></a><sup>[[link](#type-checking-is-a-kind-of)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylecaseequality">RuboCop rule: Style/CaseEquality</a>
 
   Refactoring is even better. It's worth looking hard at any code that explicitly checks types.
 
