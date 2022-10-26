@@ -27,6 +27,9 @@ This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
     1. [Conditional keywords](#conditional-keywords)
     2. [Ternary operator](#ternary-operator)
 17. [Syntax](#syntax)
+18. [Rails](#rails)
+    1. [content_for](#content_for)
+    2. [Instance Variables in Views](#instance-variables-in-views)
 
 ## Layout
 
@@ -950,5 +953,130 @@ result = hash.map { |_, v| v + 1 }
   * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylecaseequality">RuboCop rule: Style/CaseEquality</a>
 
   Refactoring is even better. It's worth looking hard at any code that explicitly checks types.
+
+## Rails
+
+### content_for
+
+Limit usage of `content_for` helper. The use of `content_for` is the same as setting an instance variable plus `capture`.
+
+``` erb
+<% content_for :foo do %>
+  Hello
+<% end %>
+```
+
+Is effectively the same as
+
+``` erb
+<% @foo_content = capture do %>
+  Hello
+<% end %>
+```
+
+See "Instance Variables in Views" below.
+
+#### Common Anti-patterns
+
+**Using `content_for` within the same template to capture data.**
+
+Instead, just use `capture`.
+
+``` erb
+<!-- bad -->
+<% content_for :page do %>
+  Hello
+<% end %>
+<% if foo? %>
+  <div class="container">
+    <%= yield :page %>
+  </div>
+<% else %>
+  <%= yield :page %>
+<% end %>
+```
+
+Simply capture and use a local variable since the result is only needed in this template.
+
+``` erb
+<!-- good -->
+<% page = capture do %>
+  Hello
+<% end %>
+<% if foo? %>
+  <div class="container">
+    <%= page %>
+  </div>
+<% else %>
+  <%= page %>
+<% end %>
+```
+
+**Using `content_for` to pass content to a subtemplate.**
+
+Instead, `render layout:` with a block.
+
+``` erb
+<!-- bad -->
+<% content_for :page do %>
+  Hello
+<% end %>
+<%= render partial: "page" %>
+<!-- _page.html.erb -->
+<div class="container">
+  <%= yield :page %>
+</div>
+```
+
+Pass the content in a block directly to the `render` function.
+
+``` erb
+<!-- good -->
+<%= render layout: "page" do %>
+  Hello
+<% end %>
+<!-- _page.html.erb -->
+<div class="container">
+  <%= yield %>
+</div>
+```
+
+### Instance Variables in Views
+
+In general, passing data between templates with instance variables is discouraged. This even applies from controllers to templates, not just between partials.
+
+`:locals` can be used to pass data from a controller just like partials.
+
+``` ruby
+def show
+  render "blob/show", locals: {
+    :repository => current_repository,
+    :commit     => current_commit,
+    :blob       => current_blob
+  }
+end
+```
+
+Rails implicit renders are also discouraged.
+
+Always explicitly render templates with a full directory path. This makes template callers easier to trace. You can find all the callers of `"app/view/site/hompage.html.erb"` with a simple project search for `"site/homepage"`.
+
+``` ruby
+def homepage
+  render "site/homepage"
+end
+```
+
+#### Exceptions
+
+There are some known edge cases where you might be forced to use instance variables. In these cases, its okay to do so.
+
+##### Legacy templates
+
+If you need to call a subview that expects an instance variable be set. If possible consider refactoring the subview to accept a local instead.
+
+##### Layouts
+
+Unfortunately the only way to get data into a layout template is with instance variables. You can't explicitly pass locals to them.
 
 [rubocop-guide]: https://github.com/rubocop-hq/ruby-style-guide

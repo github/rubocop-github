@@ -2,9 +2,6 @@ require:
   - rubocop-github-rails
   - rubocop-rails
 
-GitHub/RailsApplicationRecord:
-  Enabled: true
-
 GitHub/RailsControllerRenderActionSymbol:
   Enabled: true
 
@@ -15,9 +12,6 @@ GitHub/RailsControllerRenderPathsExist:
   Enabled: true
 
 GitHub/RailsControllerRenderShorthand:
-  Enabled: true
-
-GitHub/RailsRenderInline:
   Enabled: true
 
 GitHub/RailsRenderObjectCollection:
@@ -94,7 +88,7 @@ Rails/ApplicationMailer:
   Enabled: false
 
 Rails/ApplicationRecord:
-  Enabled: false
+  Enabled: true
 
 Rails/ArelStar:
   Enabled: false
@@ -307,7 +301,7 @@ Rails/RelativeDateConstant:
   Enabled: false
 
 Rails/RenderInline:
-  Enabled: false
+  Enabled: true
 
 Rails/RenderPlainText:
   Enabled: false

@@ -182,16 +182,14 @@ Layout/HeredocIndentation:
   Enabled: false
 
 Layout/IndentationConsistency:
-  Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#indentation
 
 Layout/IndentationStyle:
-  Enabled: true
   EnforcedStyle: spaces
   IndentationWidth: 2
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#default-indentation
 
 Layout/IndentationWidth:
-  Enabled: true
   Width: 2
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#default-indentation
 
@@ -262,11 +260,9 @@ Layout/SingleLineBlockChain:
   Enabled: false
 
 Layout/SpaceAfterColon:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
 
 Layout/SpaceAfterComma:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
 
 Layout/SpaceAfterMethodName:
@@ -276,18 +272,16 @@ Layout/SpaceAfterNot:
   Enabled: true
 
 Layout/SpaceAfterSemicolon:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
 
 Layout/SpaceAroundBlockParameters:
   Enabled: true
 
 Layout/SpaceAroundEqualsInParameterDefault:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-around-equals
 
 Layout/SpaceAroundKeyword:
-  Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
 
 Layout/SpaceAroundMethodCallOperator:
   Enabled: false
@@ -317,7 +311,6 @@ Layout/SpaceInLambdaLiteral:
   Enabled: false
 
 Layout/SpaceInsideArrayLiteralBrackets:
-  Enabled: true
   EnforcedStyle: no_space
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-spaces-braces
 
@@ -349,7 +342,6 @@ Layout/TrailingEmptyLines:
   Enabled: true
 
 Layout/TrailingWhitespace:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#trailing-whitespace
 
 Lint/AmbiguousAssignment:
@@ -691,7 +683,7 @@ Lint/UnreachableLoop:
 # TODO: Enable this since it's in the styleguide.
 Lint/UnusedBlockArgument:
   Enabled: false
-  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-around-equals
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#underscore-unused-vars
 
 Lint/UnusedMethodArgument:
   Enabled: false
@@ -1090,7 +1082,6 @@ Style/DateTime:
   Enabled: false
 
 Style/DefWithParentheses:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#method-parens-when-arguments
 
 Style/Dir:
@@ -1178,7 +1169,6 @@ Style/FloatDivision:
   Enabled: false
 
 Style/For:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#avoid-for
 
 Style/FormatString:
@@ -1215,7 +1205,6 @@ Style/HashLikeCase:
   Enabled: false
 
 Style/HashSyntax:
-  Enabled: true
   EnforcedStyle: ruby19_no_mixed_keys
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#symbols-as-keys
 
@@ -1316,7 +1305,6 @@ Style/MultilineIfModifier:
   Enabled: false
 
 Style/MultilineIfThen:
-  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-then-for-multi-line-if-unless
 
 Style/MultilineInPatternThen:
@@ -1583,8 +1571,8 @@ Style/StringHashKeys:
   Enabled: false
 
 Style/StringLiterals:
-  Enabled: true
   EnforcedStyle: double_quotes
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#double-quotes
 
 Style/StringLiteralsInInterpolation:
   Enabled: false
