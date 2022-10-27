@@ -935,7 +935,7 @@ enabled = true if enabled.nil?
 
 * Use `_` for unused block parameters.
   <a name="underscore-unused-vars"></a><sup>[[link](#underscore-unused-vars)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleunusedblockargument">RuboCop rule: Style/UnusedBlockArgument</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_lint.html#lintunusedblockargument">RuboCop rule: Lint/UnusedBlockArgument</a>
 
 ``` ruby
 # bad
