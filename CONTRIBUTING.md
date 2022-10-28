@@ -29,6 +29,25 @@ If the Cop is **only applicable for GitHub**, then this is the right place to pr
 
 ## For Maintainers
 
+### Updating Rubocop Dependencies
+
+Rubocop regularly releases new versions with new cops. We want to keep up to date with the latest Rubocop releases, and keep these rules and styleguide in sync to reduce burden on consumers of this gem.
+
+- Run `bundle update rubocop rubocop-performance rubocop-rails` to update the dependencies within this repository. Major updates will require updating the `.gemspec` file because of the pinned version constraints.
+- Run `bundle exec rubocop`, and copy the output of newly introduced rules into `config/default_pending.yml` and `config/rails_pending.yml`. They should look like this:
+
+  ```sh
+  Lint/DuplicateMagicComment: # new in 1.37
+    Enabled: true
+  Style/OperatorMethodCall: # new in 1.37
+    Enabled: true
+  Style/RedundantStringEscape: # new in 1.37
+    Enabled: true
+  ```
+
+- Run `bundle exec rubocop` again to ensure that it runs cleanly without any pending cops. Also run `bundle exec rake` to run the tests.
+- Work through the pending cops, and copy them to `config/{default,rails}.yml` with an explicity `Enabled: true` or `Enabled: false` depending on your decision as to whether they should be part of our standard ruleset.
+
 ### Releasing a new version
 
 1. Update `rubocop-github.gemspec` with the next version number

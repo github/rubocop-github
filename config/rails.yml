@@ -1,3 +1,6 @@
+inherit_from:
+  - ./rails_pending.yml
+
 require:
   - rubocop-github-rails
   - rubocop-rails
