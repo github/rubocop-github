@@ -1,0 +1,20 @@
+Rails/ActionControllerFlashBeforeRender: # new in 2.16
+  Enabled: false
+Rails/ActionOrder: # new in 2.17
+  Enabled: false
+Rails/ActiveSupportOnLoad: # new in 2.16
+  Enabled: false
+Rails/FreezeTime: # new in 2.16
+  Enabled: false
+Rails/IgnoredColumnsAssignment: # new in 2.17
+  Enabled: false
+Rails/RootPathnameMethods: # new in 2.16
+  Enabled: false
+Rails/ToSWithArgument: # new in 2.16
+  Enabled: false
+Rails/TopLevelHashWithIndifferentAccess: # new in 2.16
+  Enabled: false
+Rails/WhereMissing: # new in 2.16
+  Enabled: false
+Rails/WhereNotWithMultipleConditions: # new in 2.17
+  Enabled: false

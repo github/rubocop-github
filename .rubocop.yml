@@ -1,5 +1,6 @@
 inherit_from:
   - ./config/default.yml
+  - ./config/rails.yml
 
 Naming/FileName:
   Enabled: true
