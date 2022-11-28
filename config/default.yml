@@ -561,7 +561,9 @@ Lint/OutOfRangeRegexpRef:
   Enabled: false
 
 Lint/ParenthesesAsGroupedExpression:
-  Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-spaces-method-parens
+  Exclude:
+  - "**/*.erb"
 
 Lint/PercentStringArray:
   Enabled: false
