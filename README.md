@@ -16,10 +16,10 @@ Inherit all of the stylistic rules and cops through an inheritance declaration i
 
   ```yaml
   # .rubocop.yml
-  inherit_from:
+  inherit_gem:
     rubocop-github:
-      - config/default.yml # generic Ruby rules and cops
-      - config/rails.yml # Rails-specific rules and cops
+    - config/default.yml # generic Ruby rules and cops
+    - config/rails.yml # Rails-specific rules and cops
   ```
 
 Alternatively, only require the additional custom cops in your `.rubocop.yml` without inheriting/enabling the other stylistic rules:
