@@ -17,7 +17,7 @@ class CopTest < MiniTest::Test
 
   def investigate(cop, src, filename = nil)
     processed_source = RuboCop::ProcessedSource.new(src, RUBY_VERSION.to_f, filename)
-    team = RuboCop::Cop::Team.new([cop], nil, raise_error: true)
+    team = RuboCop::Cop::Team.new([cop], cop.config, raise_error: true)
     report = team.investigate(processed_source)
     report.offenses
   end

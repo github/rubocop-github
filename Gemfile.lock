@@ -32,9 +32,9 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     minitest (5.16.3)
-    nokogiri (1.13.9-arm64-darwin)
+    nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.9-x86_64-darwin)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.1)
@@ -86,4 +86,4 @@ DEPENDENCIES
   rubocop-github!
 
 BUNDLED WITH
-   2.3.24
+   2.4.9
