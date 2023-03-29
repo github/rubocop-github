@@ -290,7 +290,10 @@ Layout/SpaceAroundMethodCallOperator:
   Enabled: false
 
 Layout/SpaceAroundOperators:
-  Enabled: false
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
+  Exclude:
+  - "**/*.erb"
 
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
@@ -997,9 +1000,8 @@ Style/AccessorGrouping:
 Style/Alias:
   Enabled: false
 
-# TODO: Enable this since it's in the styleguide.
 Style/AndOr:
-  Enabled: false
+  Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-and-or-or
 
 Style/ArgumentsForwarding:
@@ -1057,7 +1059,8 @@ Style/ClassMethods:
   Enabled: true
 
 Style/ClassMethodsDefinitions:
-  Enabled: false
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#classes
 
 Style/ClassVars:
   Enabled: false
@@ -1373,7 +1376,10 @@ Style/NestedParenthesizedCalls:
   Enabled: false
 
 Style/NestedTernaryOperator:
-  Enabled: false
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#one-expression-per-branch
+  Exclude:
+  - "**/*.erb"
 
 Style/Next:
   Enabled: false
@@ -1424,7 +1430,10 @@ Style/OptionalBooleanParameter:
   Enabled: false
 
 Style/OrAssignment:
-  Enabled: false
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#memoize-away
+  Exclude:
+  - "**/*.erb"
 
 Style/ParallelAssignment:
   Enabled: false
