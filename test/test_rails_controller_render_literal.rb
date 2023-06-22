@@ -442,6 +442,17 @@ class TestRailsControllerRenderLiteral < CopTest
     assert_equal 1, offenses.count
   end
 
+  def test_render_literal_splat_locals_offense
+    offenses = investigate cop, <<-RUBY, "app/controllers/products_controller.rb"
+      class ProductsController < ActionController::Base
+        def index
+          render "products/product", locals: { **locals }
+        end
+      end
+    RUBY
+
+    assert_equal 1, offenses.count
+  end
 
   def test_render_literal_dynamic_local_key_offense
     offenses = investigate cop, <<-RUBY, "app/controllers/products_controller.rb"

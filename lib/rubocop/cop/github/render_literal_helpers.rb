@@ -41,7 +41,8 @@ module RuboCop
         PATTERN
 
         def hash_with_literal_keys?(hash)
-          hash.pairs.all? { |pair| literal?(pair.key) }
+          hash.children.all? { |child| child.pair_type? } &&
+            hash.pairs.all? { |pair| literal?(pair.key) }
         end
 
         def render_view_component?(node)
