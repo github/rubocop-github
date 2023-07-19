@@ -145,6 +145,14 @@ class TestRailsViewRenderLiteral < CopTest
     assert_equal 1, offenses.count
   end
 
+  def test_render_literal_splat_locals_offense
+    offenses = erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render "products/product", { **locals } %>
+    ERB
+
+    assert_equal 1, offenses.count
+  end
+
   def test_render_options_static_locals_no_offense
     offenses = erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
       <%= render partial: "products/product", locals: { product: product } %>
@@ -164,6 +172,14 @@ class TestRailsViewRenderLiteral < CopTest
   def test_render_options_dynamic_local_key_offense
     offenses = erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
       <%= render partial: "products/product", locals: { product_key => product } %>
+    ERB
+
+    assert_equal 1, offenses.count
+  end
+
+  def test_render_options_local_splat_offense
+    offenses = erb_investigate cop, <<-ERB, "app/views/products/index.html.erb"
+      <%= render partial: "products/product", locals: { **locals } %>
     ERB
 
     assert_equal 1, offenses.count
