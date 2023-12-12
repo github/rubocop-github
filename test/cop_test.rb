@@ -3,7 +3,7 @@
 require "action_view"
 require "minitest"
 
-class CopTest < MiniTest::Test
+class CopTest < Minitest::Test
   def cop_class
     raise NotImplementedError
   end
