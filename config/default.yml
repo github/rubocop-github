@@ -44,6 +44,9 @@ Gemspec/RequiredRubyVersion:
 Gemspec/RubyVersionGlobalsUsage:
   Enabled: false
 
+GitHub/AvoidObjectSendWithDynamicMethod:
+  Enabled: true
+
 GitHub/InsecureHashAlgorithm:
   Enabled: true
 
