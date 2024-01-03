@@ -62,11 +62,12 @@ module RuboCop
         end
 
         def source_range_for_method_call(node)
-          begin_pos = if node.receiver # e.g., for `foo.send(:bar)`, `foo` is the receiver
-            node.receiver.source_range.end_pos
-          else # e.g., `send(:bar)`
-            node.source_range.begin_pos
-          end
+          begin_pos =
+            if node.receiver # e.g., for `foo.send(:bar)`, `foo` is the receiver
+              node.receiver.source_range.end_pos
+            else # e.g., `send(:bar)`
+              node.source_range.begin_pos
+            end
           end_pos = node.loc.selector.end_pos
           Parser::Source::Range.new(processed_source.buffer, begin_pos, end_pos)
         end
