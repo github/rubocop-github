@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## v0.21.0
+
+- Added new GitHub/AvoidObjectSendWithDynamicMethod cop to discourage use of methods like Object#send
+
 ## v0.20.0
 
 - Updated minimum dependencies for "rubocop" (`>= 1.37`), "rubocop-performance" (`>= 1.15`), and "rubocop-rails", (`>= 2.17`).
