@@ -71,6 +71,7 @@ Layout/BlockEndNewline:
 Layout/CaseIndentation:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#indent-when-as-start-of-case
+  EnforcedStyle: end
 
 Layout/ClassStructure:
   Enabled: false
