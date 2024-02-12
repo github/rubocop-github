@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Update Gemspec `required_ruby_version` to `>= 3.0.0`
+
 ## v0.21.0
 
 - Added new GitHub/AvoidObjectSendWithDynamicMethod cop to discourage use of methods like Object#send

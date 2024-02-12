@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "minitest"
   s.add_development_dependency "rake"
 
-  s.required_ruby_version = ">= 2.5.0"
+  s.required_ruby_version = ">= 3.0.0"
 
   s.email = "engineering@github.com"
   s.authors = "GitHub"
