@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Update Gemspec `required_ruby_version to `>= 3.0.0`
+- Update Gemspec `required_ruby_version` to `>= 3.0.0`
 
 ## v0.21.0
 
