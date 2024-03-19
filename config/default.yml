@@ -219,6 +219,7 @@ Layout/LineEndStringConcatenationIndentation:
 
 Layout/LineLength:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#line-length
 
 Layout/MultilineArrayBraceLayout:
   Enabled: false
@@ -1042,6 +1043,7 @@ Style/BlockDelimiters:
 
 Style/CaseEquality:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#type-checking-is-a-kind-of
 
 Style/CaseLikeIf:
   Enabled: false
@@ -1067,6 +1069,7 @@ Style/ClassMethodsDefinitions:
 
 Style/ClassVars:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#class-variables
 
 Style/CollectionCompact:
   Enabled: false
