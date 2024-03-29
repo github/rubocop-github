@@ -43,7 +43,7 @@ class TestRailsViewRenderLiteral < CopTest
     ERB
 
     assert_equal 2, offenses.count
-    assert_equal "render must be used with a literal template and use literals for locals keys", offenses[0].message
+    assert_equal "#{cop.name}: render must be used with a literal template and use literals for locals keys", offenses[0].message
   end
 
   def test_render_component_no_offense
@@ -102,7 +102,7 @@ class TestRailsViewRenderLiteral < CopTest
     ERB
 
     assert_equal 1, offenses.count
-    assert_equal "render must be used with a literal template and use literals for locals keys", offenses[0].message
+    assert_equal "#{cop.name}: render must be used with a literal template and use literals for locals keys", offenses[0].message
   end
 
   def test_render_inline_no_offense

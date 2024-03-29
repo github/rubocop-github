@@ -47,7 +47,7 @@ class TestRailsControllerRenderActionSymbol < CopTest
     RUBY
 
     assert_equal 3, offenses.count
-    expected_message = "Prefer `render` with string instead of symbol"
+    expected_message = "#{cop.name}: Prefer `render` with string instead of symbol"
     assert_equal expected_message, offenses[0].message
     assert_equal expected_message, offenses[1].message
     assert_equal expected_message, offenses[2].message

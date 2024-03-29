@@ -57,7 +57,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_digest_method_md5_str
@@ -70,7 +70,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_digest_method_md5_symbol
@@ -83,7 +83,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_digest_method_sha256_str
@@ -122,7 +122,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_alias_for_openssl_digest_md5
@@ -133,7 +133,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_alias_for_digest_sha1
@@ -144,7 +144,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_alias_for_openssl_digest_sha1
@@ -155,7 +155,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_alias_for_digest_sha256
@@ -200,7 +200,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_md5_hexdigest
@@ -213,7 +213,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_md5_digest_by_name
@@ -226,7 +226,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_sha1_digest_by_name
@@ -239,7 +239,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_sha1_hexdigest_by_name_mixed_case
@@ -252,7 +252,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_sha256_digest_by_name
@@ -277,7 +277,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_sha1_hmac_by_name
@@ -290,7 +290,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_sha256_hmac_by_name
@@ -315,7 +315,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_sha1_digest_instance_by_name
@@ -328,7 +328,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::MSG}", offenses.first.message
   end
 
   def test_openssl_sha256_digest_instance_by_name
@@ -367,7 +367,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::UUID_V3_MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::UUID_V3_MSG}", offenses.first.message
   end
 
   def test_uuid_v3_with_md5_allowed
@@ -405,7 +405,7 @@ class TestInsecureHashAlgorithm < CopTest
     RUBY
 
     assert_equal 1, offenses.count
-    assert_equal cop_class::UUID_V5_MSG, offenses.first.message
+    assert_equal "#{cop.name}: #{cop_class::UUID_V5_MSG}", offenses.first.message
   end
 
   def test_uuid_v5_with_sha1_allowed

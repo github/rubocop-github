@@ -31,7 +31,7 @@ class TestRailsViewRenderShorthand < CopTest
     ERB
 
     assert_equal 1, offenses.count
-    assert_equal "Use `render \"foo/bar\"` instead", offenses[0].message
+    assert_equal "#{cop.name}: Use `render \"foo/bar\"` instead", offenses[0].message
   end
 
   def test_render_partial_with_locals_offense
@@ -40,7 +40,7 @@ class TestRailsViewRenderShorthand < CopTest
     ERB
 
     assert_equal 1, offenses.count
-    assert_equal "Use `render \"foo/bar\", { bar: 42 }` instead", offenses[0].message
+    assert_equal "#{cop.name}: Use `render \"foo/bar\", { bar: 42 }` instead", offenses[0].message
   end
 
   def test_render_layout_no_offense

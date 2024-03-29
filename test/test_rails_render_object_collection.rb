@@ -27,7 +27,7 @@ class TestRailsRenderObjectCollection < CopTest
     ERB
 
     assert_equal 1, offenses.count
-    assert_equal "Avoid `render object:`, instead `render partial: \"account\", locals: { account: @buyer }`", offenses[0].message
+    assert_equal "#{cop.name}: Avoid `render object:`, instead `render partial: \"account\", locals: { account: @buyer }`", offenses[0].message
   end
 
   def test_render_collection_with_object_offense
@@ -36,7 +36,7 @@ class TestRailsRenderObjectCollection < CopTest
     ERB
 
     assert_equal 1, offenses.count
-    assert_equal "Avoid `render collection:`", offenses[0].message
+    assert_equal "#{cop.name}: Avoid `render collection:`", offenses[0].message
   end
 
   def test_render_spacer_template_with_object_offense
@@ -45,6 +45,6 @@ class TestRailsRenderObjectCollection < CopTest
     ERB
 
     assert_equal 1, offenses.count
-    assert_equal "Avoid `render collection:`", offenses[0].message
+    assert_equal "#{cop.name}: Avoid `render collection:`", offenses[0].message
   end
 end

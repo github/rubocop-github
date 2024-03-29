@@ -55,9 +55,9 @@ class TestRailsControllerRenderShorthand < CopTest
     RUBY
 
     assert_equal 3, offenses.count
-    assert_equal "Use `render \"edit\"` instead", offenses[0].message
-    assert_equal "Use `render \"new\"` instead", offenses[1].message
-    assert_equal "Use `render \"confirm.html.erb\"` instead", offenses[2].message
+    assert_equal "#{cop.name}: Use `render \"edit\"` instead", offenses[0].message
+    assert_equal "#{cop.name}: Use `render \"new\"` instead", offenses[1].message
+    assert_equal "#{cop.name}: Use `render \"confirm.html.erb\"` instead", offenses[2].message
   end
 
   def test_render_template_offense
@@ -78,8 +78,8 @@ class TestRailsControllerRenderShorthand < CopTest
     RUBY
 
     assert_equal 3, offenses.count
-    assert_equal "Use `render \"books/new\"` instead", offenses[0].message
-    assert_equal "Use `render \"books/show\", locals: { book: @book }` instead", offenses[1].message
-    assert_equal "Use `render \"books/edit.html.erb\", status: :ok, layout: \"application\"` instead", offenses[2].message
+    assert_equal "#{cop.name}: Use `render \"books/new\"` instead", offenses[0].message
+    assert_equal "#{cop.name}: Use `render \"books/show\", locals: { book: @book }` instead", offenses[1].message
+    assert_equal "#{cop.name}: Use `render \"books/edit.html.erb\", status: :ok, layout: \"application\"` instead", offenses[2].message
   end
 end
