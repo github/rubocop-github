@@ -16,7 +16,7 @@ class TestAvoidObjectSendWithDynamicMethod < CopTest
       end
     RUBY
     assert_equal 1, offenses.size
-    assert_equal "Avoid using Object#send with a dynamic method name.", offenses.first.message
+    assert_equal "#{cop.name}: Avoid using Object#send with a dynamic method name.", offenses.first.message
   end
 
   def test_offended_by_public_send_call
@@ -24,7 +24,7 @@ class TestAvoidObjectSendWithDynamicMethod < CopTest
       foo.public_send(bar)
     RUBY
     assert_equal 1, offenses.size
-    assert_equal "Avoid using Object#public_send with a dynamic method name.", offenses.first.message
+    assert_equal "#{cop.name}: Avoid using Object#public_send with a dynamic method name.", offenses.first.message
   end
 
   def test_offended_by_call_to___send__
@@ -32,7 +32,7 @@ class TestAvoidObjectSendWithDynamicMethod < CopTest
       foo.__send__(bar)
     RUBY
     assert_equal 1, offenses.size
-    assert_equal "Avoid using Object#__send__ with a dynamic method name.", offenses.first.message
+    assert_equal "#{cop.name}: Avoid using Object#__send__ with a dynamic method name.", offenses.first.message
   end
 
   def test_offended_by_send_calls_without_receiver
@@ -42,9 +42,9 @@ class TestAvoidObjectSendWithDynamicMethod < CopTest
       __send__(a_variable, "foo", "bar")
     RUBY
     assert_equal 3, offenses.size
-    assert_equal "Avoid using Object#send with a dynamic method name.", offenses[0].message
-    assert_equal "Avoid using Object#public_send with a dynamic method name.", offenses[1].message
-    assert_equal "Avoid using Object#__send__ with a dynamic method name.", offenses[2].message
+    assert_equal "#{cop.name}: Avoid using Object#send with a dynamic method name.", offenses[0].message
+    assert_equal "#{cop.name}: Avoid using Object#public_send with a dynamic method name.", offenses[1].message
+    assert_equal "#{cop.name}: Avoid using Object#__send__ with a dynamic method name.", offenses[2].message
   end
 
   def test_unoffended_by_other_method_calls
