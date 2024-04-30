@@ -14,17 +14,17 @@ Gem::Specification.new do |s|
   s.license = "MIT"
 
   s.files = Dir["README.md", "LICENSE.txt", "config/*.yml"]
-  s.required_ruby_version =">= 2.7", "< 4.0"
+  s.required_ruby_version = ">= 2.7", "< 4.0"
 
   s.add_dependency("rubocop")
 
   s.add_dependency("rubocop-minitest")
   s.add_dependency("rubocop-performance")
   s.add_dependency("rubocop-rails")
+  s.add_dependency("rubocop-rails-accessibility")
   s.add_dependency("rubocop-rake")
-  s.add_dependency("rubocop-sorbet")
-
   s.add_dependency("rubocop-shopify")
+  s.add_dependency("rubocop-sorbet")
 
   s.add_development_dependency("rake")
 

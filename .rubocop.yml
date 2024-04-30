@@ -1,4 +1,3 @@
-ruby_version: 3.0
 require: rubocop-performance
 
 inherit_from: ./config/default.yml

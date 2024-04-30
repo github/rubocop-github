@@ -5,19 +5,20 @@ This repository enables all of [Shopify's recommended RuboCop configurations](ht
 - [`rubocop-minitest`](https://github.com/rubocop/rubocop-minitest)
 - [`rubocop-performance`](https://github.com/rubocop/rubocop-performance)
 - [`rubocop-rails`](https://github.com/rubocop/rubocop-rails)
+- [`rubocop-rails-accessibility`](https://github.com/github/rubocop-rails-accessibility)
 - [`rubocop-rake`](https://github.com/rubocop/rubocop-rake)
 
 ## Installation
 
 ### Gemfile
 
-``` ruby
+```ruby
 gem "rubocop-standard"
 ```
 
 ### .rubocop.yml
 
-``` yaml
+```yaml
 require:
   - rubocop-standard
 ```
@@ -38,7 +39,8 @@ This gem also has the following Rubocop tools as dependencies:
 
 - `rubocop-minitest`
 - `rubocop-rails`
-- `rubocop-sorbet
+- `rubocop-rails-accessibility`
+- `rubocop-sorbet`
 
 You can add those in for whichever project needs them:
 
@@ -47,7 +49,7 @@ inherit_gem:
   rubocop-standard:
     - config/default.yml
     - config/minitest.yml
-    - config/rails.yml
+    - config/rails.yml # includes rails-accessibility
 ```
 
 ## Other features
@@ -63,4 +65,15 @@ AllCops:
     - sorbet/**/*
     - tmp/**/*
     - vendor/**/*
+```
+
+Rails environments also includes `staging`:
+
+```yml
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - production
 ```

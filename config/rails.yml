@@ -1,5 +1,6 @@
 require:
   - rubocop-rails
+  - rubocop-rails-accessibility
 
 Rails/UnknownEnv:
   Environments:
