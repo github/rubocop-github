@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "./cop_test"
+require_relative "cop_test"
 require "minitest/autorun"
 require "rubocop/cop/github/avoid_object_send_with_dynamic_method"
 
