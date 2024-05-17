@@ -5,68 +5,68 @@ Style/OperatorMethodCall: # new in 1.37
 Style/RedundantStringEscape: # new in 1.37
   Enabled: false
 Gemspec/DevelopmentDependencies: # new in 1.44
-  Enabled: true
+  Enabled: false
 Lint/DuplicateMatchPattern: # new in 1.50
-  Enabled: true
+  Enabled: false
 Lint/ItWithoutArgumentsInBlock: # new in 1.59
-  Enabled: true
+  Enabled: false
 Lint/LiteralAssignmentInCondition: # new in 1.58
-  Enabled: true
+  Enabled: false
 Lint/MixedCaseRange: # new in 1.53
-  Enabled: true
+  Enabled: false
 Lint/RedundantRegexpQuantifiers: # new in 1.53
-  Enabled: true
+  Enabled: false
 Lint/UselessRescue: # new in 1.43
-  Enabled: true
+  Enabled: false
 Metrics/CollectionLiteralLength: # new in 1.47
-  Enabled: true
+  Enabled: false
 Style/ArrayIntersect: # new in 1.40
-  Enabled: true
+  Enabled: false
 Style/ComparableClamp: # new in 1.44
-  Enabled: true
+  Enabled: false
 Style/ConcatArrayLiterals: # new in 1.41
-  Enabled: true
+  Enabled: false
 Style/DataInheritance: # new in 1.49
-  Enabled: true
+  Enabled: false
 Style/DirEmpty: # new in 1.48
-  Enabled: true
+  Enabled: false
 Style/ExactRegexpMatch: # new in 1.51
-  Enabled: true
+  Enabled: false
 Style/FileEmpty: # new in 1.48
-  Enabled: true
+  Enabled: false
 Style/MapIntoArray: # new in 1.63
-  Enabled: true
+  Enabled: false
 Style/MapToSet: # new in 1.42
-  Enabled: true
+  Enabled: false
 Style/MinMaxComparison: # new in 1.42
-  Enabled: true
+  Enabled: false
 Style/RedundantArrayConstructor: # new in 1.52
-  Enabled: true
+  Enabled: false
 Style/RedundantConstantBase: # new in 1.40
-  Enabled: true
+  Enabled: false
 Style/RedundantCurrentDirectoryInPath: # new in 1.53
-  Enabled: true
+  Enabled: false
 Style/RedundantDoubleSplatHashBraces: # new in 1.41
-  Enabled: true
+  Enabled: false
 Style/RedundantEach: # new in 1.38
-  Enabled: true
+  Enabled: false
 Style/RedundantFilterChain: # new in 1.52
-  Enabled: true
+  Enabled: false
 Style/RedundantHeredocDelimiterQuotes: # new in 1.45
-  Enabled: true
+  Enabled: false
 Style/RedundantLineContinuation: # new in 1.49
-  Enabled: true
+  Enabled: false
 Style/RedundantRegexpArgument: # new in 1.53
-  Enabled: true
+  Enabled: false
 Style/RedundantRegexpConstructor: # new in 1.52
-  Enabled: true
+  Enabled: false
 Style/ReturnNilInPredicateMethodDefinition: # new in 1.53
-  Enabled: true
+  Enabled: false
 Style/SingleLineDoEndBlock: # new in 1.57
-  Enabled: true
+  Enabled: false
 Style/SuperWithArgsParentheses: # new in 1.58
-  Enabled: true
+  Enabled: false
 Style/YAMLFileRead: # new in 1.53
-  Enabled: true
+  Enabled: false
 Performance/MapMethodChain: # new in 1.19
-  Enabled: true
+  Enabled: false
