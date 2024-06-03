@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "./cop_test"
+require_relative "cop_test"
 require "minitest/autorun"
 require "rubocop/cop/github/rails_controller_render_action_symbol"
 
