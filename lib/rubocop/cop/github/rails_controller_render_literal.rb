@@ -11,6 +11,8 @@ module RuboCop
 
         MSG = "render must be used with a string literal or an instance of a Class"
 
+        LOCALS_MSG = "render must be used with a hash literal for the locals keyword argument"
+
         def_node_matcher :ignore_key?, <<-PATTERN
           (pair (sym {
             :body
@@ -99,7 +101,7 @@ module RuboCop
           if option_pairs
             locals = option_pairs.map { |pair| locals_key?(pair) }.compact.first
             if locals && (!locals.hash_type? || !hash_with_literal_keys?(locals))
-              add_offense(node)
+              add_offense(node, message: LOCALS_MSG)
             end
           end
         end
