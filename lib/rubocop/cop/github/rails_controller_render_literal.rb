@@ -9,7 +9,7 @@ module RuboCop
       class RailsControllerRenderLiteral < Base
         include RenderLiteralHelpers
 
-        MSG = "render must be used with a string literal or an instance of a Class"
+        MSG = "render must be used with a string literal or an instance of a Class, and use literals for locals keys"
 
         def_node_matcher :ignore_key?, <<-PATTERN
           (pair (sym {
