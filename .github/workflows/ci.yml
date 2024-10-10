@@ -1,4 +1,6 @@
 name: CI
+permissions:
+  contents: read
 
 on: pull_request
 
@@ -14,7 +16,7 @@ jobs:
       - name: Update .ruby-version with matrix value
         run: echo "${{ matrix.ruby_version }}" >| .ruby-version
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@f26937343756480a8cb3ae1f623b9c8d89ed6984
         with:
           bundler-cache: true
           rubygems: latest
