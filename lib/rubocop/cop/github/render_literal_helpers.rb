@@ -29,11 +29,11 @@ module RuboCop
         PATTERN
 
         def_node_matcher :render_view_component_instance_with_content?, <<-PATTERN
-          (send nil? {:render :render_to_string} (send (send _ :new ...) `:with_content ...))
+          (send nil? {:render :render_to_string} (send (send _ :new ...) :with_content ...))
         PATTERN
 
         def_node_matcher :render_view_component_instance_with_inline_block?, <<-PATTERN
-          (send nil? {:render :render_to_string} (block (send (send _ :new ...) ...) ...))
+          (block (send nil? {:render :render_to_string} (send _ :new ...)) ...)
         PATTERN
 
         def_node_matcher :render_view_component_collection?, <<-PATTERN
