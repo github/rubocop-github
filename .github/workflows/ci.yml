@@ -19,6 +19,5 @@ jobs:
         uses: ruby/setup-ruby@401c19e14f474b54450cd3905bb8b86e2c8509cf
         with:
           bundler-cache: true
-          rubygems: latest
       - name: Run tests
         run: bundle exec rake
