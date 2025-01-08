@@ -678,7 +678,7 @@ end
 
 * Never put a space between a method name and the opening parenthesis.
   <a name="no-spaces-method-parens"></a><sup>[[link](#no-spaces-method-parens)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleparenthesesasgroupedexpression">RuboCop rule: Style/ParenthesesAsGroupedExpression</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_lint.html#lintparenthesesasgroupedexpression">RuboCop rule: Lint/ParenthesesAsGroupedExpression</a>
 
 ``` ruby
 # bad
