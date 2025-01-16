@@ -70,3 +70,47 @@ Style/YAMLFileRead: # new in 1.53
   Enabled: false
 Performance/MapMethodChain: # new in 1.19
   Enabled: false
+Gemspec/AddRuntimeDependency: # new in 1.65
+  Enabled: false
+Lint/ConstantReassignment: # new in 1.70
+  Enabled: false
+Lint/DuplicateSetElement: # new in 1.67
+  Enabled: false
+Lint/HashNewWithKeywordArgumentsAsDefault: # new in 1.69
+  Enabled: false
+Lint/NumericOperationWithConstantResult: # new in 1.69
+  Enabled: false
+Lint/SharedMutableDefault: # new in 1.70
+  Enabled: false
+Lint/UnescapedBracketInRegexp: # new in 1.68
+  Enabled: false
+Lint/UselessDefined: # new in 1.69
+  Enabled: false
+Lint/UselessNumericOperation: # new in 1.66
+  Enabled: false
+Style/AmbiguousEndlessMethodDefinition: # new in 1.68
+  Enabled: false
+Style/BitwisePredicate: # new in 1.68
+  Enabled: false
+Style/CombinableDefined: # new in 1.68
+  Enabled: false
+Style/DigChain: # new in 1.69
+  Enabled: false
+Style/FileNull: # new in 1.69
+  Enabled: false
+Style/FileTouch: # new in 1.69
+  Enabled: false
+Style/ItAssignment: # new in 1.70
+  Enabled: false
+Style/KeywordArgumentsMerging: # new in 1.68
+  Enabled: false
+Style/RedundantInterpolationUnfreeze: # new in 1.66
+  Enabled: false
+Style/SafeNavigationChainLength: # new in 1.68
+  Enabled: false
+Style/SendWithLiteralMethodName: # new in 1.64
+  Enabled: false
+Style/SuperArguments: # new in 1.64
+  Enabled: false
+Performance/StringBytesize: # new in 1.23
+  Enabled: false

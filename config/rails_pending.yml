@@ -96,3 +96,7 @@ Rails/ThreeStateBooleanColumn: # new in 2.19
   Enabled: false
 Rails/UnusedRenderContent: # new in 2.21
   Enabled: false
+Rails/EnumSyntax: # new in 2.26
+  Enabled: false
+Rails/WhereRange: # new in 2.25
+  Enabled: false
