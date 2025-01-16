@@ -331,7 +331,8 @@ Layout/SpaceInsideBlockBraces:
   Enabled: true
 
 Layout/SpaceInsideHashLiteralBraces:
-  Enabled: false
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
 
 Layout/SpaceInsideParens:
   Enabled: true
