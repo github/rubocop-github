@@ -252,22 +252,6 @@ class SomeClass
 end
 ```
 
-* Avoid explicit use of `self` as the recipient of internal class or instance
-  messages unless to specify a method shadowed by a variable.
-  <a name="self-messages"></a><sup>[[link](#self-messages)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleredundantself">RuboCop rule: Style/RedundantSelf</a>
-
-``` ruby
-class SomeClass
-  attr_accessor :message
-
-  def greeting(name)
-    message = "Hi #{name}" # local variable in Ruby, not attribute writer
-    self.message = message
-  end
-end
-```
-
 ## Collections
 
 * Prefer `%w` to the literal array syntax when you need an array of
