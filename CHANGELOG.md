@@ -1,8 +1,8 @@
 # rubocop-github
 
-## Unreleased
+## v0.22.0
 
-- Update Gemspec `required_ruby_version` to `>= 3.0.0`
+- Read the automatic release notes on [the /releases page for this gem](https://github.com/github/rubocop-github/releases).
 
 ## v0.21.0
 
