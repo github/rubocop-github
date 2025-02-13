@@ -16,7 +16,7 @@ jobs:
       - name: Update .ruby-version with matrix value
         run: echo "${{ matrix.ruby_version }}" >| .ruby-version
       - name: Set up Ruby
-        uses: ruby/setup-ruby@d781c1b4ed31764801bfae177617bb0446f5ef8d
+        uses: ruby/setup-ruby@f2f42b7848feff522ffa488a5236ba0a73bccbdd
         with:
           bundler-cache: true
       - name: Run tests
