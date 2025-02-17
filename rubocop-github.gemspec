@@ -10,6 +10,12 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/github/rubocop-github"
   s.license = "MIT"
 
+  s.metadata = {
+    "source_code_uri" => "https://github.com/github/rubocop-github",
+    "documentation_uri" => "https://github.com/github/rubocop-github",
+    "bug_tracker_uri" => "https://github.com/github/rubocop-github/issues"
+  }
+
   s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb", "guides/*.md"]
 
   s.add_dependency "rubocop", ">= 1.37"
