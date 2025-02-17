@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "lib/version"
+
 Gem::Specification.new do |s|
   s.name = "rubocop-github"
-  s.version = "0.22.0"
+  s.version = VERSION
   s.summary = "RuboCop GitHub"
   s.description = "Code style checking for GitHub Ruby repositories "
   s.homepage = "https://github.com/github/rubocop-github"
