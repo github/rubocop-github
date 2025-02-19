@@ -4,7 +4,6 @@ We welcome your contributions to the project. Thank you!
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-
 ## What to contribute
 
 This repository, `rubocop-github`, is part of a broader RuboCop ecosystem.
@@ -50,12 +49,8 @@ Rubocop regularly releases new versions with new cops. We want to keep up to dat
 
 ### Releasing a new version
 
-1. Update `rubocop-github.gemspec` with the next version number
-1. Update the `CHANGELOG` with changes and contributor
-1. Run `bundle` to update gem version contained in the lockfile
-1. Make a commit: `Release v{VERSION}`
-1. Tag the commit : `git tag v{VERSION}`
-1. Create the package: `gem build rubocop-github.gemspec`
-1. Push to GitHub: `git push origin && git push origin --tags`
-1. Push to Rubygems: `gem push rubocop-github-{VERSION}.gem`
-1. Publish a new release on GitHub: https://github.com/github/rubocop-github/releases/new
+1. Update [`lib/version.rb`](lib/version.rb) with the next version number
+2. Update the `CHANGELOG` with changes and contributor
+3. Run `bundle` to update gem version contained in the lockfile
+4. Commit your changes and open a pull request
+5. When the pull request is approved and merged into `main`, the [`.github/workflows/release.yml`](.github/workflows/release.yml) workflow will automatically run to release the new version to RubyGems and GitHub Packages 🎉.
