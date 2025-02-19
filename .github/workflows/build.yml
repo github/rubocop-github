@@ -29,5 +29,8 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: bootstrap
+        run: script/bootstrap
+
       - name: build
         run: script/build
