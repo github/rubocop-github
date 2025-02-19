@@ -1,0 +1,32 @@
+#! /usr/bin/env bash
+
+set -e # prevent any kind of script failures
+
+# COLORS
+export OFF='\033[0m'
+export RED='\033[0;31m'
+export GREEN='\033[0;32m'
+export BLUE='\033[0;34m'
+export PURPLE='\033[0;35m'
+
+# set RUBY_ENV to development (as a default) if not set
+: "${RUBY_ENV:=development}"
+
+export RUBY_ENV
+
+# set the working directory to the root of the project
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+export DIR
+
+# set the ruby version to the one specified in the .ruby-version file
+[ -z "$RBENV_VERSION" ] && RBENV_VERSION=$(cat "$DIR/.ruby-version")
+export RBENV_VERSION
+
+# set the path to include the rbenv shims if they exist
+[ -d "/usr/share/rbenv/shims" ] && export PATH=/usr/share/rbenv/shims:$PATH
+
+shopt -s nocasematch # enable case-insensitive matching
+if [[ "$RUBY_ENV" == "production" ]]; then
+  export BUNDLE_WITHOUT="development"
+fi
+shopt -u nocasematch # disable case-insensitive matching

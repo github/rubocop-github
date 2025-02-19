@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+set -e
+
+source script/env "$@"
+
+bundle exec rake test

@@ -24,16 +24,19 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: bootstrap
+        run: script/bootstrap
+
       - name: lint
-        run: bundle exec rubocop -c .rubocop.yml lib/ test/
+        run: script/lint
 
       - name: test
-        run: bundle exec rake
+        run: script/test
 
       - name: set GEM_NAME from gemspec
         run: echo "GEM_NAME=$(ls | grep gemspec | cut -d. -f1)" >> $GITHUB_ENV
 
-        # builds the gem and saves the version to GITHUB_ENV
+      # builds the gem and saves the version to GITHUB_ENV
       - name: build
         run: echo "GEM_VERSION=$(gem build ${{ env.GEM_NAME }}.gemspec 2>&1 | grep Version | cut -d':' -f 2 | tr -d " \t\n\r")" >> $GITHUB_ENV
 

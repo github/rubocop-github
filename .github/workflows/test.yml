@@ -23,10 +23,12 @@ jobs:
       - name: Update .ruby-version with matrix value
         run: echo "${{ matrix.ruby_version }}" >| .ruby-version
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@32110d4e311bd8996b2a82bf2a43b714ccc91777 # pin@v1.221.0
+      - uses: ruby/setup-ruby@32110d4e311bd8996b2a82bf2a43b714ccc91777 # pin@v1.221.0
         with:
           bundler-cache: true
+
+      - name: bootstrap
+        run: script/bootstrap
 
       - name: Run tests
         run: bundle exec rake

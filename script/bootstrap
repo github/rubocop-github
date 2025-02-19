@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+set -e # prevent any kind of script failures
+
+source script/env "$@"
+
+# bootstrap gem dependencies
+if [ "$BUNDLE_WITHOUT" == "" ]; then
+  echo -e "${BLUE}Installing Gems for ${PURPLE}development${BLUE}...${OFF}"
+else
+  echo -e "${BLUE}Installing Gems for ${GREEN}production${BLUE}...${OFF}"
+fi
+
+# what gets installed is set via the BUNDLE_WITHOUT env var in the script/env file
+bundle install --local
+bundle binstubs --all

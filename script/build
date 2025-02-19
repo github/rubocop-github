@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+set -e
+
+source script/env "$@"
+
+GEM_NAME=$(ls | grep gemspec | cut -d. -f1)
+echo "Attempting to build gem $GEM_NAME..."
+gem build $GEM_NAME
+if [ $? -eq 0 ]; then
+echo "Gem built successfully!"
+else
+echo "Gem build failed!"
+exit 1
+fi

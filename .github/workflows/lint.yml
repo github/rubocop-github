@@ -22,5 +22,8 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: bootstrap
+        run: script/bootstrap
+
       - name: lint
-        run: bundle exec rubocop -c .rubocop.yml lib/ test/
+        run: script/lint
