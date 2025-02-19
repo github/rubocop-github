@@ -1,6 +1,6 @@
 # RuboCop GitHub
 
-[![CI](https://github.com/github/rubocop-github/actions/workflows/ci.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/ci.yml)
+[![test](https://github.com/github/rubocop-github/actions/workflows/test.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/test.yml)
 [![build](https://github.com/github/rubocop-github/actions/workflows/build.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/build.yml)
 [![lint](https://github.com/github/rubocop-github/actions/workflows/lint.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/lint.yml)
 [![release](https://github.com/github/rubocop-github/actions/workflows/release.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/release.yml)
