@@ -1,23 +1,31 @@
-name: CI
+name: test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 permissions:
   contents: read
 
-on: pull_request
-
 jobs:
   test:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         ruby_version: ["3.0", "3.1", "3.2", "3.3"]
-    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Update .ruby-version with matrix value
         run: echo "${{ matrix.ruby_version }}" >| .ruby-version
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@32110d4e311bd8996b2a82bf2a43b714ccc91777
+
+      - uses: ruby/setup-ruby@32110d4e311bd8996b2a82bf2a43b714ccc91777 # pin@v1.221.0
         with:
           bundler-cache: true
-      - name: Run tests
-        run: bundle exec rake
+
+      - name: test
+        run: script/test

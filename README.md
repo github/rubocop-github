@@ -1,4 +1,9 @@
-# RuboCop GitHub ![CI](https://github.com/github/rubocop-github/workflows/CI/badge.svg?event=push)
+# RuboCop GitHub
+
+[![test](https://github.com/github/rubocop-github/actions/workflows/test.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/test.yml)
+[![build](https://github.com/github/rubocop-github/actions/workflows/build.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/build.yml)
+[![lint](https://github.com/github/rubocop-github/actions/workflows/lint.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/lint.yml)
+[![release](https://github.com/github/rubocop-github/actions/workflows/release.yml/badge.svg)](https://github.com/github/rubocop-github/actions/workflows/release.yml)
 
 This repository provides recommended RuboCop configuration and additional Cops for use on GitHub open source and internal Ruby projects, and is the home of [GitHub's Ruby Style Guide](./STYLEGUIDE.md).
 
