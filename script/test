@@ -2,6 +2,4 @@
 
 set -e
 
-source script/env "$@"
-
 bundle exec rake test

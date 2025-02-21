@@ -24,9 +24,6 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: bootstrap
-        run: script/bootstrap
-
       - name: lint
         run: script/lint
 

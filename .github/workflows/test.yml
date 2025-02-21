@@ -27,8 +27,5 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: bootstrap
-        run: script/bootstrap
-
-      - name: Run tests
-        run: bundle exec rake
+      - name: test
+        run: script/test
