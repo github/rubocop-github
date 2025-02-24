@@ -118,7 +118,6 @@ DEPENDENCIES
   minitest
   rake
   rubocop-github!
-  securerandom (~> 0.3.2)
 
 BUNDLED WITH
    2.4.9

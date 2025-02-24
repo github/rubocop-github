@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "actionview", "~> 7.1.5.1"
   s.add_development_dependency "minitest"
   s.add_development_dependency "rake"
-  s.add_development_dependency "securerandom", "~> 0.3.2"
 
   s.email = "engineering@github.com"
   s.authors = "GitHub"
