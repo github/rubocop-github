@@ -37,27 +37,27 @@ GEM
     connection_pool (2.5.0)
     crass (1.0.6)
     drb (2.2.1)
-    erubi (1.13.0)
+    erubi (1.13.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     json (2.10.1)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
     logger (1.6.6)
-    loofah (2.23.1)
+    loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mini_portile2 (2.8.8)
     minitest (5.25.4)
     mutex_m (0.3.0)
-    nokogiri (1.17.2)
+    nokogiri (1.18.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.17.2-arm64-darwin)
+    nokogiri (1.18.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-darwin)
+    nokogiri (1.18.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-linux)
+    nokogiri (1.18.3-x86_64-linux-gnu)
       racc (~> 1.4)
     parallel (1.26.3)
     parser (3.3.7.1)
@@ -99,7 +99,7 @@ GEM
       rubocop (>= 1.72.1, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
     ruby-progressbar (1.13.0)
-    securerandom (0.3.2)
+    securerandom (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (3.1.4)
@@ -114,10 +114,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  actionview
+  actionview (~> 7.1.5.1)
   minitest
   rake
   rubocop-github!
 
 BUNDLED WITH
-   2.4.9
+   2.6.5
