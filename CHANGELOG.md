@@ -1,9 +1,5 @@
 # rubocop-github
 
-## v0.23.0
-
-- Read the automatic release notes on [the /releases page for this gem](https://github.com/github/rubocop-github/releases).
-
 ## v0.22.0
 
 - Read the automatic release notes on [the /releases page for this gem](https://github.com/github/rubocop-github/releases).
