@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 3.0.0"
 
-  s.add_dependency "rubocop", ">= 1.37"
+  s.add_dependency "rubocop", ">= 1.72"
   s.add_dependency "rubocop-performance", ">= 1.15"
   s.add_dependency "rubocop-rails", ">= 2.17"
 
