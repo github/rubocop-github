@@ -39,7 +39,7 @@ jobs:
       - name: build
         run: echo "GEM_VERSION=$(gem build ${{ env.GEM_NAME }}.gemspec 2>&1 | grep Version | cut -d':' -f 2 | tr -d " \t\n\r")" >> $GITHUB_ENV
 
-      - uses: actions/attest-build-provenance@520d128f165991a6c774bcb264f323e3d70747f4 # pin@v2
+      - uses: actions/attest-build-provenance@bd77c077858b8d561b7a36cbe48ef4cc642ca39d # pin@v2
         with:
           subject-path: "${{ env.GEM_NAME }}-${{ env.GEM_VERSION }}.gem"
 
