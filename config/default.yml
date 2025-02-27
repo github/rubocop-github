@@ -3,6 +3,8 @@ inherit_from:
 
 require:
   - rubocop-github
+
+plugins:
   - rubocop-performance
 
 Bundler/DuplicatedGem:
