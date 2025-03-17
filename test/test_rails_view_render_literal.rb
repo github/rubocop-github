@@ -78,6 +78,30 @@ class TestRailsViewRenderLiteral < CopTest
     assert_equal 0, offenses.count
   end
 
+  def test_render_component_instance_inline_block_no_offense
+    offenses = erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
+      <%= render Module::MyClass.new(title: "foo", bar: "baz") { "Content" } %>
+    ERB
+
+    assert_equal 0, offenses.count
+  end
+
+  def test_render_component_instance_data_object_no_offense
+    offenses = erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
+      <%= render Module::MyClass.new(title: "foo", bar: "baz", data: { foo: "bar" }) %>
+    ERB
+
+    assert_equal 0, offenses.count
+  end
+
+  def test_render_component_instance_data_object_no_offense
+    offenses = erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
+      <%= render Module::MyClass.new(title: "foo", bar: "baz", data: { foo: "bar" }) %>
+    ERB
+
+    assert_equal 0, offenses.count
+  end
+
   def test_render_component_collection_no_offense
     offenses = erb_investigate cop, <<-ERB, "app/views/foo/index.html.erb"
       <%= render MyClass.with_collection(title: "foo", bar: "baz") %>
