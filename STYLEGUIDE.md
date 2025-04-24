@@ -3,6 +3,7 @@
 This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
 
 ## Table of Contents
+
 1. [Layout](#layout)
    1. [Indentation](#indentation)
    2. [Inline](#inline)
@@ -760,6 +761,22 @@ end
 # good
 if x > 10
   # body omitted
+end
+```
+
+* Don't use `unless` with a negated condition.
+  <a name="no-unless-negation"></a><sup>[[link](#no-unless-negation)]</sup>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylenegatedunless">RuboCop rule: Style/NegatedUnless</a>
+
+```ruby
+# bad
+unless !condition?
+  do_something
+end
+
+# good
+if condition?
+  do_something
 end
 ```
 
