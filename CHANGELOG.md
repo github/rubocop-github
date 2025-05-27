@@ -1,5 +1,15 @@
 # rubocop-github
 
+## v0.25.0
+
+- Read the automatic release notes on [the /releases page for this gem](https://github.com/github/rubocop-github/releases).
+- Updated related gems
+- Specify plugin class names for included rubocop plugins
+
+## v0.24.0
+
+- Read the automatic release notes on [the /releases page for this gem](https://github.com/github/rubocop-github/releases).
+
 ## v0.23.0
 
 - Read the automatic release notes on [the /releases page for this gem](https://github.com/github/rubocop-github/releases).
