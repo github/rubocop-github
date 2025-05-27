@@ -54,7 +54,7 @@ module RuboCop
 
           if render_literal?(node) && node.arguments.count > 1
             locals = node.arguments[1]
-          elsif options_pairs = render_with_options?(node)
+          elsif option_pairs = render_with_options?(node)
             locals = option_pairs.map { |pair| locals_key?(pair) }.compact.first
           end
 
