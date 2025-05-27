@@ -5,7 +5,8 @@ require:
   - rubocop-github-rails
 
 plugins:
-  - rubocop-rails
+  - rubocop-rails:
+      plugin_class_name: RuboCop::Rails::Plugin
 
 GitHub/RailsControllerRenderActionSymbol:
   Enabled: true

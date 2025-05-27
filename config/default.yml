@@ -5,7 +5,8 @@ require:
   - rubocop-github
 
 plugins:
-  - rubocop-performance
+  - rubocop-performance:
+      plugin_class_name: RuboCop::Performance::Plugin
 
 Bundler/DuplicatedGem:
   Enabled: true
