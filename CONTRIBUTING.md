@@ -51,6 +51,6 @@ Rubocop regularly releases new versions with new cops. We want to keep up to dat
 
 1. Update [`lib/version.rb`](lib/version.rb) with the next version number
 2. Update the `CHANGELOG` with changes and contributor
-3. Run `bundle` to update gem version contained in the lockfile
+3. Run `bundle install` to update gem version contained in the lockfile
 4. Commit your changes and open a pull request
 5. When the pull request is approved and merged into `main`, the [`.github/workflows/release.yml`](.github/workflows/release.yml) workflow will automatically run to release the new version to RubyGems and GitHub Packages 🎉.
