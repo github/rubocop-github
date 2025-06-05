@@ -12,6 +12,7 @@ test/tmp
 test/version_tmp
 tmp
 bin/
+vendor/
 
 # YARD artifacts
 .yardoc
