@@ -49,7 +49,7 @@ jobs:
           GEM_HOST_API_KEY=${{ secrets.GITHUB_TOKEN }} gem push --KEY github --host https://rubygems.pkg.github.com/${OWNER} ${{ env.GEM_NAME }}-${{ env.GEM_VERSION }}.gem
 
       - name: release
-        uses: ncipollo/release-action@bcfe5470707e8832e12347755757cec0eb3c22af # pin@v1.18.0
+        uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # pin@v1.20.0
         with:
           artifacts: "${{ env.GEM_NAME }}-${{ env.GEM_VERSION }}.gem"
           tag: "v${{ env.GEM_VERSION }}"
