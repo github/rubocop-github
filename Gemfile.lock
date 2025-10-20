@@ -63,7 +63,7 @@ GEM
       racc
     prism (1.6.0)
     racc (1.8.1)
-    rack (3.2.2)
+    rack (3.2.3)
     rails-dom-testing (2.3.0)
       activesupport (>= 5.0.0)
       minitest
