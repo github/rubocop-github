@@ -236,7 +236,7 @@ end
 
 * Indent the `public`, `protected`, and `private` methods as much the
   method definitions they apply to. Leave one blank line above them.
-  <a name="access-modifier-identation"></a><sup>[[link](#access-modifier-identation)]</sup>
+  <a name="access-modifier-indentation"></a><sup>[[link](#access-modifier-indentation)]</sup>
   * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutaccessmodifierindentation">RuboCop rule: Layout/AccessModifierIndentation</a>
   * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutemptylinesaroundaccessmodifier">RuboCop rule: Layout/EmptyLinesAroundAccessModifier</a>
 
