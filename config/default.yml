@@ -55,6 +55,7 @@ GitHub/InsecureHashAlgorithm:
 
 Layout/AccessModifierIndentation:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#user-content-access-modifier-indentation
 
 Layout/ArgumentAlignment:
   Enabled: false
@@ -117,12 +118,14 @@ Layout/EmptyLineAfterMultilineCondition:
 
 Layout/EmptyLineBetweenDefs:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#empty-lines-def
 
 Layout/EmptyLines:
   Enabled: false
 
 Layout/EmptyLinesAroundAccessModifier:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#access-modifier-indentation
 
 Layout/EmptyLinesAroundArguments:
   Enabled: false
@@ -354,6 +357,7 @@ Layout/SpaceInsideStringInterpolation:
 
 Layout/TrailingEmptyLines:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#newlines
 
 Layout/TrailingWhitespace:
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#trailing-whitespace
@@ -531,6 +535,7 @@ Lint/MissingSuper:
 
 Lint/MixedRegexpCaptureTypes:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#capture-with-named-groups
 
 Lint/MultipleComparison:
   Enabled: false
@@ -793,9 +798,11 @@ Naming/BlockParameterName:
 
 Naming/ClassAndModuleCamelCase:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#naming
 
 Naming/ConstantName:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#naming
 
 Naming/FileName:
   Enabled: true
@@ -826,6 +833,7 @@ Naming/RescuedExceptionsVariableName:
 
 Naming/VariableName:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#naming
 
 Naming/VariableNumber:
   Enabled: false
@@ -1032,6 +1040,7 @@ Style/AutoResourceCleanup:
 
 Style/BarePercentLiterals:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#percent-literals
 
 Style/BeginBlock:
   Enabled: true
@@ -1044,10 +1053,11 @@ Style/BlockComments:
 
 Style/BlockDelimiters:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#syntax
 
 Style/CaseEquality:
   Enabled: true
-  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#type-checking-is-a-kind-of
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#user-content-type-checking-is-a-kind-of
 
 Style/CaseLikeIf:
   Enabled: false
@@ -1306,6 +1316,7 @@ Style/MapToHash:
 
 Style/MethodCallWithArgsParentheses:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#parens-no-spaces
 
 Style/MethodCallWithoutArgsParentheses:
   Enabled: true
@@ -1372,6 +1383,7 @@ Style/NegatedIfElseCondition:
 
 Style/NegatedUnless:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#user-content-no-unless-negation
 
 Style/NegatedWhile:
   Enabled: false
@@ -1530,6 +1542,7 @@ Style/RedundantReturn:
 
 Style/RedundantSelf:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#self-messages
 
 Style/RedundantSelfAssignment:
   Enabled: false
@@ -1545,6 +1558,7 @@ Style/RedundantSortBy:
 
 Style/RegexpLiteral:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#percent-r-regular-expressions
 
 Style/RescueModifier:
   Enabled: false
@@ -1572,6 +1586,7 @@ Style/Semicolon:
 
 Style/Send:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#avoid-send
 
 Style/SignalException:
   Enabled: false
@@ -1593,6 +1608,7 @@ Style/SoleNestedConditional:
 
 Style/SpecialGlobalVars:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-cryptic-vars
 
 Style/StabbyLambdaParentheses:
   Enabled: true
@@ -1611,6 +1627,7 @@ Style/StringConcatenation:
 
 Style/StringHashKeys:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#symbols-as-keys
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
@@ -1699,8 +1716,10 @@ Style/WhileUntilDo:
 Style/WhileUntilModifier:
   Enabled: false
 
+# TODO: Enable this since it's in the styleguide.
 Style/WordArray:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#percent-w
 
 Style/YodaCondition:
   Enabled: false
