@@ -1096,4 +1096,24 @@ If you need to call a subview that expects an instance variable be set. If possi
 
 Unfortunately the only way to get data into a layout template is with instance variables. You can't explicitly pass locals to them.
 
+
+### Avoid `Class#descendants` and `Class#subclasses`
+
+Avoid using `Class#descendants` and `Class#subclasses` as they are unreliable for several reasons:
+
+* They don't know about classes that haven't been autoloaded yet
+* They're non-deterministic with regards to garbage collection of classes. If you use `Class#descendants` or `Class#subclasses` in tests, where there is a pattern to dynamically define classes, GC is unpredictable for when those classes are cleaned up and removed by the GC.
+
+```ruby
+# bad
+class Person < ApplicationRecord
+end
+
+class Employee < Person
+end
+
+Person.descendants # => Unreliable, may or may not include Employee
+Person.subclasses  # => Unreliable, may or may not include Employee
+```
+
 [rubocop-guide]: https://github.com/rubocop-hq/ruby-style-guide
