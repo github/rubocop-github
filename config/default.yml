@@ -53,6 +53,10 @@ GitHub/AvoidObjectSendWithDynamicMethod:
 GitHub/InsecureHashAlgorithm:
   Enabled: true
 
+GitHub/UnreliableSubclasses:
+  Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#avoid-classdescendants-and-classsubclasses
+
 Layout/AccessModifierIndentation:
   Enabled: false
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#user-content-access-modifier-indentation

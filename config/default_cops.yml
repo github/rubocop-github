@@ -1,3 +1,7 @@
 GitHub/InsecureHashAlgorithm:
   Description: 'Encourage usage of secure hash algorithms'
   Enabled: pending
+
+GitHub/UnreliableSubclasses:
+  Description: "Avoid `Class#subclasses` and `Class#descendants`; they miss not-yet-autoloaded classes and depend on GC timing."
+  Enabled: pending
