@@ -843,8 +843,7 @@ arr.each { |elem| puts elem }
 * Prefer `{...}` over `do...end` for single-line blocks.  Avoid using
   `{...}` for multi-line blocks (multiline chaining is always
   ugly). Always use `do...end` for "control flow" and "method
-  definitions" (e.g. in Rakefiles and certain DSLs).  Avoid `do...end`
-  when chaining.
+  definitions" (e.g. in Rakefiles and certain DSLs).
   <a name="squiggly-braces"></a><sup>[[link](#squiggly-braces)]</sup>
   * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleblockdelimiters">RuboCop rule: Style/BlockDelimiters</a>
 
@@ -858,19 +857,7 @@ names.each { |name| puts name }
 names.each do |name|
   puts name
 end
-
-# good
-names.select { |name| name.start_with?("S") }.map { |name| name.upcase }
-
-# bad
-names.select do |name|
-  name.start_with?("S")
-end.map { |name| name.upcase }
 ```
-
-* Some will argue that multiline chaining would look OK with the use of `{...}`,
- but they should ask themselves: is this code really readable and can't the block's
- contents be extracted into nifty methods?
 
 * Avoid `return` where not required.
   <a name="avoid-return"></a><sup>[[link](#avoid-return)]</sup>
