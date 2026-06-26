@@ -840,9 +840,8 @@ end
 arr.each { |elem| puts elem }
 ```
 
-* Prefer `{...}` over `do...end` for single-line blocks.  Avoid using
-  `{...}` for multi-line blocks (multiline chaining is always
-  ugly). Always use `do...end` for "control flow" and "method
+* Prefer `{...}` over `do...end` for single-line blocks. Avoid using
+  `{...}` for multi-line blocks. Always use `do...end` for "control flow" and "method
   definitions" (e.g. in Rakefiles and certain DSLs).
   <a name="squiggly-braces"></a><sup>[[link](#squiggly-braces)]</sup>
   * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleblockdelimiters">RuboCop rule: Style/BlockDelimiters</a>
