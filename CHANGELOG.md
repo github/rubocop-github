@@ -1,5 +1,9 @@
 # rubocop-github
 
+## Unreleased
+
+- Added `GitHub/UnreliableSubclasses` cop. Flags `Class#descendants` and `Class#subclasses` when the receiver is a constant. Both happily skip classes that haven't been autoloaded yet. Both also depend on GC timing for dynamically-defined classes, which is great fun in tests.
+
 ## v0.26.0
 
 - Read the automatic release notes on [the /releases page for this gem](https://github.com/github/rubocop-github/releases).

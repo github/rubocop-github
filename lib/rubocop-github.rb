@@ -8,3 +8,4 @@ RuboCop::GitHub::Inject.default_defaults!
 
 require "rubocop/cop/github/avoid_object_send_with_dynamic_method"
 require "rubocop/cop/github/insecure_hash_algorithm"
+require "rubocop/cop/github/unreliable_subclasses"

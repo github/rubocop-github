@@ -31,6 +31,8 @@ This is GitHub's Ruby Style Guide, inspired by [RuboCop's guide][rubocop-guide].
 18. [Rails](#rails)
     1. [content_for](#content_for)
     2. [Instance Variables in Views](#instance-variables-in-views)
+19. [Subclasses](#subclasses)
+    1. [Avoid Class#descendants and Class#subclasses](#avoid-classdescendants-and-classsubclasses)
 
 ## Layout
 
@@ -1081,5 +1083,44 @@ If you need to call a subview that expects an instance variable be set. If possi
 ##### Layouts
 
 Unfortunately the only way to get data into a layout template is with instance variables. You can't explicitly pass locals to them.
+
+## Subclasses
+
+### Avoid `Class#descendants` and `Class#subclasses`
+
+Skip `Class#descendants` (ActiveSupport) and `Class#subclasses` (Ruby). They might lie to you in two ways:
+
+* If a class hasn't been autoloaded yet, they don't see it. So your answer depends on what the app happened to touch first.
+* GC can drop dynamically defined classes whenever it feels like it. Tests love this one.
+
+If you really, really need it, add a `rubocop:disable` on the line with a short note so that future-you isn't confused.
+
+* <a href="https://github.com/github/rubocop-github/blob/main/lib/rubocop/cop/github/unreliable_subclasses.rb">RuboCop rule: GitHub/UnreliableSubclasses</a>
+
+``` ruby
+class Person < ApplicationRecord
+end
+
+class Employee < Person
+end
+
+# bad
+Person.descendants # => maybe [Employee], maybe [], who knows? Not me! I never lost control.
+Person.subclasses  # => same problem
+
+# good. Keep an explicit registry
+class Person < ApplicationRecord
+  TYPES = []
+
+  def self.inherited(subclass)
+    super
+    TYPES << subclass
+  end
+end
+
+Person::TYPES # => [Employee, ...]
+```
+
+Other alternatives: eager load the dependency tree ([`Rails.application.eager_load!`](https://api.rubyonrails.org/classes/Rails/Application.html#method-i-eager_load-21) in tests, `config.eager_load = true` in prod) or use [`ActiveSupport::DescendantsTracker`](https://api.rubyonrails.org/classes/ActiveSupport/DescendantsTracker.html) directly if you really need the reflection.
 
 [rubocop-guide]: https://github.com/rubocop-hq/ruby-style-guide
