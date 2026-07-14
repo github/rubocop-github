@@ -478,7 +478,7 @@ remove_member(user, skip_membership_check: true)
 
 * Use `snake_case` for methods and variables.
   <a name="snake-case-methods-vars"></a><sup>[[link](#snake-case-methods-vars)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingsnakecase">RuboCop rule: Naming/SnakeCase</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingmethodname">RuboCop rule: Naming/MethodName</a>
   * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingvariablename">RuboCop rule: Naming/VariableName</a>
 
 * Use `CamelCase` for classes and modules.  (Keep acronyms like HTTP,
@@ -493,7 +493,7 @@ remove_member(user, skip_membership_check: true)
 * The names of predicate methods (methods that return a boolean value)
   should end in a question mark. (i.e. `Array#empty?`).
   <a name="bool-methods-qmark"></a><sup>[[link](#bool-methods-qmark)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingpredicatename">RuboCop rule: Naming/PredicateName</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_naming.html#namingpredicateprefix">RuboCop rule: Naming/PredicatePrefix</a>
 
 * The names of potentially "dangerous" methods (i.e. methods that modify `self` or the
   arguments, `exit!`, etc.) should end with an exclamation mark. Bang methods
@@ -718,7 +718,7 @@ end
 * Favor modifier `if/unless` usage when you have a single-line
   body.
   <a name="favor-modifier-if-unless"></a><sup>[[link](#favor-modifier-if-unless)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemultilineternaryoperator">RuboCop rule: Style/MultilineTernaryOperator</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleifunlessmodifier">RuboCop rule: Style/IfUnlessModifier</a>
 
 ``` ruby
 # bad
@@ -788,7 +788,7 @@ end
   trivial. However, do use the ternary operator(`?:`) over `if/then/else/end` constructs
   for single line conditionals.
   <a name="trivial-ternary"></a><sup>[[link](#trivial-ternary)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylemultilineternaryoperator">RuboCop rule: Style/MultilineTernaryOperator</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#styleonelineconditional">RuboCop rule: Style/OneLineConditional</a>
 
 ``` ruby
 # bad
@@ -878,7 +878,7 @@ end
 
 * Use spaces around the `=` operator when assigning default values to method parameters:
   <a name="spaces-around-equals"></a><sup>[[link](#spaces-around-equals)]</sup>
-  * <a href="https://docs.rubocop.org/rubocop/cops_style.html#stylespacearoundequalsinparameterdefault">RuboCop rule: Style/SpaceAroundEqualsInParameterDefault</a>
+  * <a href="https://docs.rubocop.org/rubocop/cops_layout.html#layoutspacearoundequalsinparameterdefault">RuboCop rule: Layout/SpaceAroundEqualsInParameterDefault</a>
 
 ``` ruby
 # bad

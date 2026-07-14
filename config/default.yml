@@ -287,6 +287,7 @@ Layout/SpaceAfterMethodName:
 
 Layout/SpaceAfterNot:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-spaces-bang
 
 Layout/SpaceAfterSemicolon:
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
@@ -311,6 +312,7 @@ Layout/SpaceAroundOperators:
 
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#spaces-operators
 
 Layout/SpaceBeforeBrackets:
   Enabled: false
@@ -346,6 +348,7 @@ Layout/SpaceInsideHashLiteralBraces:
 
 Layout/SpaceInsideParens:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-spaces-braces
 
 Layout/SpaceInsidePercentLiteralDelimiters:
   Enabled: false
@@ -355,6 +358,7 @@ Layout/SpaceInsideRangeLiteral:
 
 Layout/SpaceInsideReferenceBrackets:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-spaces-braces
 
 Layout/SpaceInsideStringInterpolation:
   Enabled: false
@@ -825,12 +829,14 @@ Naming/MemoizedInstanceVariableName:
 
 Naming/MethodName:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#snake-case-methods-vars
 
 Naming/MethodParameterName:
   Enabled: false
 
 Naming/PredicatePrefix:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#bool-methods-qmark
 
 Naming/RescuedExceptionsVariableName:
   Enabled: false
@@ -1269,6 +1275,7 @@ Style/IfInsideElse:
 
 Style/IfUnlessModifier:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#favor-modifier-if-unless
 
 Style/IfUnlessModifierOfIfUnless:
   Enabled: false
@@ -1369,6 +1376,7 @@ Style/MultilineMethodSignature:
 
 Style/MultilineTernaryOperator:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-multiline-ternary
 
 Style/MultilineWhenThen:
   Enabled: false
@@ -1442,6 +1450,7 @@ Style/ObjectThen:
 
 Style/OneLineConditional:
   Enabled: true
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#trivial-ternary
 
 Style/OpenStructUse:
   Enabled: false
@@ -1454,6 +1463,7 @@ Style/OptionalArguments:
 
 Style/OptionalBooleanParameter:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#keyword-arguments
 
 Style/OrAssignment:
   Enabled: true
@@ -1466,6 +1476,7 @@ Style/ParallelAssignment:
 
 Style/ParenthesesAroundCondition:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-parens-if-unless-while
 
 Style/PercentLiteralDelimiters:
   Enabled: false
@@ -1628,6 +1639,7 @@ Style/StringChars:
 
 Style/StringConcatenation:
   Enabled: false
+  StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#string-interpolation
 
 Style/StringHashKeys:
   Enabled: false
