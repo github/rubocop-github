@@ -23,7 +23,7 @@ jobs:
       - name: Update .ruby-version with matrix value
         run: echo "${{ matrix.ruby_version }}" >| .ruby-version
 
-      - uses: ruby/setup-ruby@a30dfa457ad68707b8b910ac3a244714b61c0626 # pin@v1.320.0
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # pin@v1.321.0
         with:
           bundler-cache: true
 
