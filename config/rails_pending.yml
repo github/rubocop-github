@@ -100,3 +100,15 @@ Rails/EnumSyntax: # new in 2.26
   Enabled: false
 Rails/WhereRange: # new in 2.25
   Enabled: false
+Rails/FindByOrAssignmentMemoization: # new in 2.33
+  Enabled: true
+Rails/HttpStatusNameConsistency: # new in 2.34
+  Enabled: true
+Rails/MultipleRoutePaths: # new in 2.29
+  Enabled: true
+Rails/OrderArguments: # new in 2.33
+  Enabled: true
+Rails/RedirectBackOrTo: # new in 2.34
+  Enabled: true
+Rails/StrongParametersExpect: # new in 2.29
+  Enabled: true
