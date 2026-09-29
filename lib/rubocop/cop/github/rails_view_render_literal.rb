@@ -52,7 +52,10 @@ module RuboCop
             return
           end
 
+          # `many?` is an ActiveSupport extension, but this cop runs without ActiveSupport.
+          # rubocop:disable Style/CollectionQuerying
           if render_literal?(node) && node.arguments.count > 1
+            # rubocop:enable Style/CollectionQuerying
             locals = node.arguments[1]
           elsif option_pairs = render_with_options?(node)
             locals = option_pairs.map { |pair| locals_key?(pair) }.compact.first
