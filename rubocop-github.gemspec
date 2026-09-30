@@ -18,11 +18,11 @@ Gem::Specification.new do |s|
 
   s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb", "guides/*.md"]
 
-  s.required_ruby_version = ">= 3.3.0"
+  s.required_ruby_version = ">= 3.4.2"
 
-  s.add_dependency "rubocop", ">= 1.76"
+  s.add_dependency "rubocop", ">= 1.91"
   s.add_dependency "rubocop-performance", ">= 1.24"
-  s.add_dependency "rubocop-rails", ">= 2.23"
+  s.add_dependency "rubocop-rails", ">= 2.34"
 
   s.add_development_dependency "actionview", "~> 8.1.3"
   s.add_development_dependency "minitest"

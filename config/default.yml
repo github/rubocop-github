@@ -412,6 +412,9 @@ Lint/ConstantOverwrittenInRescue:
 Lint/ConstantResolution:
   Enabled: false
 
+Lint/CopDirectiveSyntax:
+  Enabled: false
+
 Lint/Debugger:
   Enabled: true
 
@@ -1147,9 +1150,6 @@ Style/Documentation:
   Enabled: false
 
 Style/DocumentationMethod:
-  Enabled: false
-
-Style/DoubleCopDisableDirective:
   Enabled: false
 
 Style/DoubleNegation:
