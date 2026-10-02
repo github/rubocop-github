@@ -60,10 +60,16 @@ Lint/UselessAccessModifier:
   ContextCreatingMethods:
     - concerning
 
+Rails/ActionControllerFlashBeforeRender:
+  Enabled: true
+
 Rails/ActionControllerTestCase:
   Enabled: false
 
 Rails/ActionFilter:
+  Enabled: false
+
+Rails/ActionOrder:
   Enabled: false
 
 Rails/ActiveRecordAliases:
@@ -77,6 +83,9 @@ Rails/ActiveRecordOverride:
 
 Rails/ActiveSupportAliases:
   Enabled: false
+
+Rails/ActiveSupportOnLoad:
+  Enabled: true
 
 Rails/AddColumnIndex:
   Enabled: false
@@ -123,6 +132,9 @@ Rails/ContentTag:
 Rails/CreateTableWithTimestamps:
   Enabled: false
 
+Rails/DangerousColumnNames:
+  Enabled: true
+
 Rails/Date:
   Enabled: false
 
@@ -159,6 +171,9 @@ Rails/EagerEvaluationLogMessage:
 Rails/EnumHash:
   Enabled: false
 
+Rails/EnumSyntax:
+  Enabled: true
+
 Rails/EnumUniqueness:
   Enabled: false
 
@@ -167,6 +182,9 @@ Rails/EnvironmentComparison:
 
 Rails/EnvironmentVariableAccess:
   Enabled: false
+
+Rails/EnvLocal:
+  Enabled: true
 
 Rails/Exit:
   Enabled: false
@@ -183,8 +201,14 @@ Rails/FindBy:
 Rails/FindById:
   Enabled: false
 
+Rails/FindByOrAssignmentMemoization:
+  Enabled: true
+
 Rails/FindEach:
   Enabled: false
+
+Rails/FreezeTime:
+  Enabled: true
 
 Rails/HasAndBelongsToMany:
   Enabled: false
@@ -201,6 +225,9 @@ Rails/HttpPositionalArguments:
 Rails/HttpStatus:
   Enabled: false
 
+Rails/HttpStatusNameConsistency:
+  Enabled: false
+
 Rails/I18nLazyLookup:
   Enabled: false
 
@@ -209,6 +236,9 @@ Rails/I18nLocaleAssignment:
 
 Rails/I18nLocaleTexts:
   Enabled: false
+
+Rails/IgnoredColumnsAssignment:
+  Enabled: true
 
 Rails/IgnoredSkipActionFilterOption:
   Enabled: false
@@ -240,10 +270,16 @@ Rails/MatchRoute:
 Rails/MigrationClassName:
   Enabled: false
 
+Rails/MultipleRoutePaths:
+  Enabled: true
+
 Rails/NegateInclude:
   Enabled: false
 
 Rails/NotNullColumn:
+  Enabled: false
+
+Rails/OrderArguments:
   Enabled: false
 
 Rails/OrderById:
@@ -280,6 +316,12 @@ Rails/RakeEnvironment:
   Enabled: false
 
 Rails/ReadWriteAttribute:
+  Enabled: false
+
+Rails/RedirectBackOrTo:
+  Enabled: true
+
+Rails/RedundantActiveRecordAllMethod:
   Enabled: false
 
 Rails/RedundantAllowNil:
@@ -325,7 +367,13 @@ Rails/ReversibleMigration:
 Rails/ReversibleMigrationMethodDefinition:
   Enabled: false
 
+Rails/ResponseParsedBody:
+  Enabled: false
+
 Rails/RootJoinChain:
+  Enabled: false
+
+Rails/RootPathnameMethods:
   Enabled: false
 
 Rails/RootPublicPath:
@@ -358,8 +406,14 @@ Rails/SquishedSQLHeredocs:
 Rails/StripHeredoc:
   Enabled: false
 
+Rails/StrongParametersExpect:
+  Enabled: true
+
 Rails/TableNameAssignment:
   Enabled: false
+
+Rails/ThreeStateBooleanColumn:
+  Enabled: true
 
 Rails/TimeZone:
   Enabled: false
@@ -369,6 +423,12 @@ Rails/TimeZoneAssignment:
 
 Rails/ToFormattedS:
   Enabled: false
+
+Rails/TopLevelHashWithIndifferentAccess:
+  Enabled: true
+
+Rails/ToSWithArgument:
+  Enabled: true
 
 Rails/TransactionExitStatement:
   Enabled: false
@@ -385,6 +445,9 @@ Rails/UnknownEnv:
 Rails/UnusedIgnoredColumns:
   Enabled: false
 
+Rails/UnusedRenderContent:
+  Enabled: true
+
 Rails/Validation:
   Enabled: false
 
@@ -394,8 +457,17 @@ Rails/WhereEquals:
 Rails/WhereExists:
   Enabled: false
 
+Rails/WhereMissing:
+  Enabled: true
+
 Rails/WhereNot:
   Enabled: false
+
+Rails/WhereNotWithMultipleConditions:
+  Enabled: true
+
+Rails/WhereRange:
+  Enabled: true
 
 Style/For:
   Exclude:

@@ -26,11 +26,20 @@ Bundler/InsecureProtocolSource:
 Bundler/OrderedGems:
   Enabled: true
 
+Gemspec/AddRuntimeDependency:
+  Enabled: true
+
+Gemspec/AttributeAssignment:
+  Enabled: true
+
 Gemspec/DependencyVersion:
   Enabled: false
 
 Gemspec/DeprecatedAttributeAssignment:
   Enabled: false
+
+Gemspec/DevelopmentDependencies:
+  Enabled: true
 
 Gemspec/DuplicatedAssignment:
   Enabled: false
@@ -125,6 +134,9 @@ Layout/EmptyLineBetweenDefs:
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#empty-lines-def
 
 Layout/EmptyLines:
+  Enabled: false
+
+Layout/EmptyLinesAfterModuleInclusion:
   Enabled: false
 
 Layout/EmptyLinesAroundAccessModifier:
@@ -388,6 +400,12 @@ Lint/AmbiguousRange:
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
+Lint/ArgumentMismatch:
+  Enabled: false
+
+Lint/ArrayLiteralInRegexp:
+  Enabled: true
+
 Lint/AssignmentInCondition:
   Enabled: false
 
@@ -409,10 +427,16 @@ Lint/ConstantDefinitionInBlock:
 Lint/ConstantOverwrittenInRescue:
   Enabled: false
 
+Lint/ConstantReassignment:
+  Enabled: true
+
 Lint/ConstantResolution:
   Enabled: false
 
 Lint/CopDirectiveSyntax:
+  Enabled: false
+
+Lint/DataDefineOverride:
   Enabled: false
 
 Lint/Debugger:
@@ -425,6 +449,9 @@ Lint/DeprecatedConstants:
   Enabled: false
 
 Lint/DeprecatedOpenSSLConstant:
+  Enabled: false
+
+Lint/DeprecatedReference:
   Enabled: false
 
 Lint/DisjunctiveAssignmentInConstructor:
@@ -442,6 +469,12 @@ Lint/DuplicateElsifCondition:
 Lint/DuplicateHashKey:
   Enabled: true
 
+Lint/DuplicateMagicComment:
+  Enabled: true
+
+Lint/DuplicateMatchPattern:
+  Enabled: true
+
 Lint/DuplicateMethods:
   Enabled: true
 
@@ -453,6 +486,9 @@ Lint/DuplicateRequire:
 
 Lint/DuplicateRescueException:
   Enabled: false
+
+Lint/DuplicateSetElement:
+  Enabled: true
 
 Lint/EachWithObjectArgument:
   Enabled: true
@@ -505,6 +541,9 @@ Lint/FormatParameterMismatch:
 Lint/HashCompareByIdentity:
   Enabled: false
 
+Lint/HashNewWithKeywordArgumentsAsDefault:
+  Enabled: true
+
 Lint/HeredocMethodCallPosition:
   Enabled: false
 
@@ -526,16 +565,25 @@ Lint/InheritException:
 Lint/InterpolationCheck:
   Enabled: false
 
+Lint/ItWithoutArgumentsInBlock:
+  Enabled: true
+
 Lint/LambdaWithoutLiteralBlock:
   Enabled: false
 
 Lint/LiteralAsCondition:
   Enabled: true
 
+Lint/LiteralAssignmentInCondition:
+  Enabled: false
+
 Lint/LiteralInInterpolation:
   Enabled: true
 
 Lint/Loop:
+  Enabled: true
+
+Lint/MisplacedMagicComment:
   Enabled: true
 
 Lint/MissingCopEnableDirective:
@@ -544,11 +592,17 @@ Lint/MissingCopEnableDirective:
 Lint/MissingSuper:
   Enabled: false
 
+Lint/MixedCaseRange:
+  Enabled: true
+
 Lint/MixedRegexpCaptureTypes:
   Enabled: false
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#capture-with-named-groups
 
 Lint/MultipleComparison:
+  Enabled: false
+
+Lint/NameTypo:
   Enabled: false
 
 Lint/NestedMethodDefinition:
@@ -577,6 +631,9 @@ Lint/NumberConversion:
 
 Lint/NumberedParameterAssignment:
   Enabled: false
+
+Lint/NumericOperationWithConstantResult:
+  Enabled: true
 
 Lint/OrAssignmentToConstant:
   Enabled: false
@@ -613,6 +670,9 @@ Lint/RedundantCopEnableDirective:
 Lint/RedundantDirGlobSort:
   Enabled: false
 
+Lint/RedundantRegexpQuantifiers:
+  Enabled: true
+
 Lint/RedundantRequireStatement:
   Enabled: false
 
@@ -623,6 +683,9 @@ Lint/RedundantSplatExpansion:
   Enabled: true
 
 Lint/RedundantStringCoercion:
+  Enabled: true
+
+Lint/RedundantTypeConversion:
   Enabled: true
 
 Lint/RedundantWithIndex:
@@ -682,11 +745,20 @@ Lint/ShadowedException:
 Lint/ShadowingOuterLocalVariable:
   Enabled: false
 
+Lint/SharedMutableDefault:
+  Enabled: true
+
 Lint/StructNewOverride:
+  Enabled: false
+
+Lint/SuperArgumentMismatch:
   Enabled: false
 
 Lint/SuppressedException:
   Enabled: false
+
+Lint/SuppressedExceptionInNumberConversion:
+  Enabled: true
 
 Lint/SymbolConversion:
   Enabled: false
@@ -709,6 +781,9 @@ Lint/TripleQuotes:
 Lint/UnderscorePrefixedVariableName:
   Enabled: true
 
+Lint/UnescapedBracketInRegexp:
+  Enabled: true
+
 Lint/UnexpectedBlockArity:
   Enabled: false
 
@@ -723,6 +798,9 @@ Lint/UnreachableCode:
 
 Lint/UnreachableLoop:
   Enabled: false
+
+Lint/UnreachablePatternBranch:
+  Enabled: true
 
 # TODO: Enable this since it's in the styleguide.
 Lint/UnusedBlockArgument:
@@ -744,11 +822,29 @@ Lint/UselessAccessModifier:
 Lint/UselessAssignment:
   Enabled: false
 
+Lint/UselessConstantScoping:
+  Enabled: false
+
+Lint/UselessDefaultValueArgument:
+  Enabled: true
+
+Lint/UselessDefined:
+  Enabled: true
+
 Lint/UselessElseWithoutRescue:
   Enabled: false
 
 Lint/UselessMethodDefinition:
   Enabled: false
+
+Lint/UselessNumericOperation:
+  Enabled: false
+
+Lint/UselessOr:
+  Enabled: true
+
+Lint/UselessRescue:
+  Enabled: true
 
 Lint/UselessRuby2Keywords:
   Enabled: false
@@ -772,6 +868,9 @@ Metrics/BlockNesting:
   Enabled: false
 
 Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CollectionLiteralLength:
   Enabled: false
 
 Metrics/CyclomaticComplexity:
@@ -835,6 +934,9 @@ Naming/MethodName:
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#snake-case-methods-vars
 
 Naming/MethodParameterName:
+  Enabled: false
+
+Naming/PredicateMethod:
   Enabled: false
 
 Naming/PredicatePrefix:
@@ -923,6 +1025,9 @@ Performance/IoReadlines:
 Performance/MapCompact:
   Enabled: false
 
+Performance/MapMethodChain:
+  Enabled: false
+
 Performance/MethodObjectAsBlock:
   Enabled: false
 
@@ -978,6 +1083,9 @@ Performance/Squeeze:
 Performance/StartWith:
   Enabled: true
 
+Performance/StringBytesize:
+  Enabled: true
+
 Performance/StringIdentifierArgument:
   Enabled: false
 
@@ -997,6 +1105,9 @@ Performance/UnfreezeString:
   Enabled: false
 
 Performance/UriDefaultParser:
+  Enabled: false
+
+Performance/ZipWithoutBlock:
   Enabled: false
 
 Security/CompoundHash:
@@ -1029,6 +1140,9 @@ Style/AccessorGrouping:
 Style/Alias:
   Enabled: false
 
+Style/AmbiguousEndlessMethodDefinition:
+  Enabled: true
+
 Style/AndOr:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-and-or-or
@@ -1038,6 +1152,12 @@ Style/ArgumentsForwarding:
 
 Style/ArrayCoercion:
   Enabled: false
+
+Style/ArrayIntersect:
+  Enabled: false
+
+Style/ArrayIntersectWithSingleElement:
+  Enabled: true
 
 Style/ArrayJoin:
   Enabled: true
@@ -1059,6 +1179,9 @@ Style/BeginBlock:
   Enabled: true
 
 Style/BisectedAttrAccessor:
+  Enabled: false
+
+Style/BitwisePredicate:
   Enabled: false
 
 Style/BlockComments:
@@ -1104,10 +1227,16 @@ Style/CollectionCompact:
 Style/CollectionMethods:
   Enabled: false
 
+Style/CollectionQuerying:
+  Enabled: false
+
 Style/ColonMethodCall:
   Enabled: false
 
 Style/ColonMethodDefinition:
+  Enabled: false
+
+Style/CombinableDefined:
   Enabled: false
 
 Style/CombinableLoops:
@@ -1122,6 +1251,15 @@ Style/CommentAnnotation:
 Style/CommentedKeyword:
   Enabled: false
 
+Style/ComparableBetween:
+  Enabled: false
+
+Style/ComparableClamp:
+  Enabled: false
+
+Style/ConcatArrayLiterals:
+  Enabled: false
+
 Style/ConditionalAssignment:
   Enabled: false
 
@@ -1131,13 +1269,25 @@ Style/ConstantVisibility:
 Style/Copyright:
   Enabled: false
 
+Style/DataInheritance:
+  Enabled: true
+
 Style/DateTime:
   Enabled: false
 
 Style/DefWithParentheses:
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#method-parens-when-arguments
 
+Style/DigChain:
+  Enabled: false
+
 Style/Dir:
+  Enabled: false
+
+Style/DirEmpty:
+  Enabled: true
+
+Style/DirectiveScope:
   Enabled: false
 
 Style/DisableCopsWithinSourceCodeDirective:
@@ -1167,6 +1317,9 @@ Style/EmptyBlockParameter:
 Style/EmptyCaseCondition:
   Enabled: false
 
+Style/EmptyClassDefinition:
+  Enabled: false
+
 Style/EmptyElse:
   Enabled: false
 
@@ -1180,6 +1333,9 @@ Style/EmptyLiteral:
   Enabled: false
 
 Style/EmptyMethod:
+  Enabled: false
+
+Style/EmptyStringInsideInterpolation:
   Enabled: false
 
 Style/Encoding:
@@ -1200,6 +1356,9 @@ Style/EvalWithLocation:
 Style/EvenOdd:
   Enabled: false
 
+Style/ExactRegexpMatch:
+  Enabled: true
+
 Style/ExpandPathArguments:
   Enabled: false
 
@@ -1212,8 +1371,20 @@ Style/ExponentialNotation:
 Style/FetchEnvVar:
   Enabled: false
 
+Style/FileEmpty:
+  Enabled: true
+
+Style/FileNull:
+  Enabled: true
+
+Style/FileOpen:
+  Enabled: false
+
 Style/FileRead:
   Enabled: false
+
+Style/FileTouch:
+  Enabled: true
 
 Style/FileWrite:
   Enabled: false
@@ -1254,7 +1425,13 @@ Style/HashEachMethods:
 Style/HashExcept:
   Enabled: false
 
+Style/HashFetchChain:
+  Enabled: false
+
 Style/HashLikeCase:
+  Enabled: false
+
+Style/HashSlice:
   Enabled: false
 
 Style/HashSyntax:
@@ -1304,6 +1481,15 @@ Style/InverseMethods:
 Style/IpAddresses:
   Enabled: false
 
+Style/ItAssignment:
+  Enabled: false
+
+Style/ItBlockParameter:
+  Enabled: false
+
+Style/KeywordArgumentsMerging:
+  Enabled: false
+
 Style/KeywordParametersOrder:
   Enabled: false
 
@@ -1322,7 +1508,16 @@ Style/MagicCommentFormat:
 Style/MapCompactWithConditionalBlock:
   Enabled: false
 
+Style/MapIntoArray:
+  Enabled: false
+
+Style/MapJoin:
+  Enabled: false
+
 Style/MapToHash:
+  Enabled: false
+
+Style/MapToSet:
   Enabled: false
 
 Style/MethodCallWithArgsParentheses:
@@ -1341,6 +1536,9 @@ Style/MethodDefParentheses:
 Style/MinMax:
   Enabled: false
 
+Style/MinMaxComparison:
+  Enabled: false
+
 Style/MissingElse:
   Enabled: false
 
@@ -1355,6 +1553,9 @@ Style/MixinUsage:
 
 Style/ModuleFunction:
   Enabled: false
+
+Style/ModuleMemberExistenceCheck:
+  Enabled: true
 
 Style/MultilineBlockChain:
   Enabled: false
@@ -1398,6 +1599,9 @@ Style/NegatedUnless:
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#user-content-no-unless-negation
 
 Style/NegatedWhile:
+  Enabled: false
+
+Style/NegativeArrayIndex:
   Enabled: false
 
 Style/NestedFileDirname:
@@ -1448,12 +1652,18 @@ Style/NumericPredicate:
 Style/ObjectThen:
   Enabled: false
 
+Style/OneClassPerFile:
+  Enabled: false
+
 Style/OneLineConditional:
   Enabled: true
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#trivial-ternary
 
 Style/OpenStructUse:
   Enabled: false
+
+Style/OperatorMethodCall:
+  Enabled: true
 
 Style/OptionHash:
   Enabled: false
@@ -1478,6 +1688,9 @@ Style/ParenthesesAroundCondition:
   Enabled: false
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#no-parens-if-unless-while
 
+Style/PartitionInsteadOfDoubleSelect:
+  Enabled: false
+
 Style/PercentLiteralDelimiters:
   Enabled: false
 
@@ -1485,6 +1698,9 @@ Style/PercentQLiterals:
   Enabled: false
 
 Style/PerlBackrefs:
+  Enabled: false
+
+Style/PredicateWithKind:
   Enabled: false
 
 Style/PreferredHashMethods:
@@ -1502,8 +1718,17 @@ Style/RaiseArgs:
 Style/RandomWithOffset:
   Enabled: false
 
+Style/ReduceToHash:
+  Enabled: false
+
 Style/RedundantArgument:
   Enabled: false
+
+Style/RedundantArrayConstructor:
+  Enabled: true
+
+Style/RedundantArrayFlatten:
+  Enabled: true
 
 Style/RedundantAssignment:
   Enabled: false
@@ -1520,6 +1745,18 @@ Style/RedundantCondition:
 Style/RedundantConditional:
   Enabled: false
 
+Style/RedundantConstantBase:
+  Enabled: false
+
+Style/RedundantCurrentDirectoryInPath:
+  Enabled: false
+
+Style/RedundantDoubleSplatHashBraces:
+  Enabled: false
+
+Style/RedundantEach:
+  Enabled: true
+
 Style/RedundantException:
   Enabled: false
 
@@ -1529,7 +1766,16 @@ Style/RedundantFetchBlock:
 Style/RedundantFileExtensionInRequire:
   Enabled: false
 
+Style/RedundantFilterChain:
+  Enabled: true
+
+Style/RedundantFormat:
+  Enabled: true
+
 Style/RedundantFreeze:
+  Enabled: false
+
+Style/RedundantHeredocDelimiterQuotes:
   Enabled: false
 
 Style/RedundantInitialize:
@@ -1538,14 +1784,29 @@ Style/RedundantInitialize:
 Style/RedundantInterpolation:
   Enabled: false
 
+Style/RedundantInterpolationUnfreeze:
+  Enabled: true
+
+Style/RedundantLineContinuation:
+  Enabled: false
+
+Style/RedundantMinMaxBy:
+  Enabled: true
+
 Style/RedundantParentheses:
   Enabled: false
 
 Style/RedundantPercentQ:
   Enabled: false
 
+Style/RedundantRegexpArgument:
+  Enabled: false
+
 Style/RedundantRegexpCharacterClass:
   Enabled: false
+
+Style/RedundantRegexpConstructor:
+  Enabled: true
 
 Style/RedundantRegexpEscape:
   Enabled: false
@@ -1571,6 +1832,9 @@ Style/RedundantSort:
 Style/RedundantSortBy:
   Enabled: true
 
+Style/RedundantStringEscape:
+  Enabled: false
+
 Style/RegexpLiteral:
   Enabled: false
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#percent-r-regular-expressions
@@ -1584,10 +1848,25 @@ Style/RescueStandardError:
 Style/ReturnNil:
   Enabled: false
 
+Style/ReturnNilInPredicateMethodDefinition:
+  Enabled: false
+
+Style/ReverseFind:
+  Enabled: true
+
 Style/SafeNavigation:
   Enabled: false
 
+Style/SafeNavigationChainLength:
+  Enabled: false
+
 Style/Sample:
+  Enabled: true
+
+Style/SelectByKind:
+  Enabled: false
+
+Style/SelectByRange:
   Enabled: true
 
 Style/SelectByRegexp:
@@ -1603,6 +1882,9 @@ Style/Send:
   Enabled: false
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#avoid-send
 
+Style/SendWithLiteralMethodName:
+  Enabled: false
+
 Style/SignalException:
   Enabled: false
 
@@ -1611,6 +1893,9 @@ Style/SingleArgumentDig:
 
 Style/SingleLineBlockParams:
   Enabled: false
+
+Style/SingleLineDoEndBlock:
+  Enabled: true
 
 Style/SingleLineMethods:
   Enabled: false
@@ -1661,6 +1946,12 @@ Style/Strip:
 Style/StructInheritance:
   Enabled: false
 
+Style/SuperArguments:
+  Enabled: false
+
+Style/SuperWithArgsParentheses:
+  Enabled: false
+
 Style/SwapValues:
   Enabled: false
 
@@ -1673,8 +1964,14 @@ Style/SymbolLiteral:
 Style/SymbolProc:
   Enabled: false
 
+Style/TallyMethod:
+  Enabled: true
+
 Style/TernaryParentheses:
   Enabled: false
+
+Style/TimeNow:
+  Enabled: true
 
 Style/TopLevelMethodDefinition:
   Enabled: false
@@ -1736,6 +2033,9 @@ Style/WhileUntilModifier:
 Style/WordArray:
   Enabled: false
   StyleGuide: https://github.com/github/rubocop-github/blob/main/STYLEGUIDE.md#percent-w
+
+Style/YAMLFileRead:
+  Enabled: true
 
 Style/YodaCondition:
   Enabled: false
