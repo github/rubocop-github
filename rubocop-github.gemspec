@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["README.md", "STYLEGUIDE.md", "LICENSE", "config/*.yml", "lib/**/*.rb", "guides/*.md"]
 
-  s.required_ruby_version = ">= 3.4.2"
+  s.required_ruby_version = ">= 3.4"
 
   s.add_dependency "rubocop", ">= 1.91"
   s.add_dependency "rubocop-performance", ">= 1.24"
